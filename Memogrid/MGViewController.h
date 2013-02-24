@@ -22,5 +22,6 @@
 }
 
 - (void) failedGame;
+- (void) succeededGame;
 
 @end

@@ -97,10 +97,15 @@
 - (void) failedGame {
     UIAlertView *alert_fail = [[UIAlertView alloc] initWithTitle:@"Wrong Tile" message:@"Try again!" delegate:nil cancelButtonTitle:@"Replay" otherButtonTitles: nil];
     [alert_fail show];
+    //[self clear];
+    //[self startGame];
 }
 
-- (void) endGame {
-    
+- (void) succeededGame {
+    UIAlertView *alert_fail = [[UIAlertView alloc] initWithTitle:@"Congratulations" message:@"You did it!" delegate:nil cancelButtonTitle:@"Next level" otherButtonTitles: nil];
+    [alert_fail show];
+    [self clear];
+    [self startGame];
 }
 
 

@@ -116,6 +116,8 @@
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
                     
+                    // TODO : For some reason, the 1:1 square cannot be touched
+                    
                     BOOL goodTile = NO;
                     
                     // Check if what we selected is in the current game.
@@ -130,14 +132,14 @@
                                 goodTile = YES;
                             
                                 // Check if that tile is already removed from Remaining tile
-                                if ([[a_remainingTiles objectAtIndex:0] objectAtIndex:r] == NULL) {
+                                if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:r] isEqualToString:@"Used"]) {
                                     // We have it already, let's move on.
+                                    NSLog(@"Already typed");
                                     return;
                                 } else {
                                     // Remove it from the remaining tiles.
-                                    [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:NULL];
-                                    [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:NULL];
-
+                                    [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:@"Used"];
+                                    [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:@"Used"];
                                 }
                             }
                         }
@@ -149,8 +151,7 @@
                         return;
                     }
                     
-                    
-                    // Color it.
+                    // Color the selected tile.
                     enum colors color = status[row][col].color;
                     if (color == COLOR_ONE) {
                         color = COLOR_TWO;
@@ -163,8 +164,18 @@
                     }
                     [self setSquareWithColor:color forRow:row andColumn:col];
                     
-                    // TODO : Check if this was the last tile.
                     
+                    // Check if this was the last tile.
+                    int tilesRemaining = [[a_remainingTiles objectAtIndex:0] count];
+                    for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
+                        if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"Used"]) {
+                            tilesRemaining--;
+                        }
+                    }
+                    NSLog(@"tilesRemaining:%i", tilesRemaining);
+                    if (tilesRemaining == 0) {
+                        [[self viewController] succeededGame];
+                    }
                     
                     return;
                 }
