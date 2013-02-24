@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGSquare.h"
 
-@interface MGViewController : UIViewController
+@interface MGViewController : UIViewController {
+    // Logic elements
+    BOOL canPlay;
+    BOOL multipleColors;
+    BOOL debugMode;
+    
+    NSMutableArray *a_currentGame;
+    
+    // UI Elements
+    MGSquare * mg_square;
+}
+
+- (void) failedGame;
 
 @end

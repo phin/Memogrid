@@ -24,6 +24,11 @@
 		42A8684716D1A076009FAFD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681F16D1A076009FAFD5 /* Foundation.framework */; };
 		42A8684F16D1A076009FAFD5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42A8684D16D1A076009FAFD5 /* InfoPlist.strings */; };
 		42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685116D1A076009FAFD5 /* MemogridTests.m */; };
+		42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685C16D1AAB2009FAFD5 /* MGSquare.m */; };
+		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
+		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
+		42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
+		42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		42A8684E16D1A076009FAFD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42A8685016D1A076009FAFD5 /* MemogridTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemogridTests.h; sourceTree = "<group>"; };
 		42A8685116D1A076009FAFD5 /* MemogridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemogridTests.m; sourceTree = "<group>"; };
+		42A8685B16D1AAB2009FAFD5 /* MGSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSquare.h; sourceTree = "<group>"; };
+		42A8685C16D1AAB2009FAFD5 /* MGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSquare.m; sourceTree = "<group>"; };
+		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
+		42ED9BE116D1C7620040C951 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
+		42ED9BE216D1C7620040C951 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +129,13 @@
 		42A8682316D1A076009FAFD5 /* Memogrid */ = {
 			isa = PBXGroup;
 			children = (
-				42A8682C16D1A076009FAFD5 /* MGAppDelegate.h */,
-				42A8682D16D1A076009FAFD5 /* MGAppDelegate.m */,
-				42A8683516D1A076009FAFD5 /* MainStoryboard_iPhone.storyboard */,
-				42A8683816D1A076009FAFD5 /* MainStoryboard_iPad.storyboard */,
 				42A8683B16D1A076009FAFD5 /* MGViewController.h */,
 				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
+				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
+				42A8685C16D1AAB2009FAFD5 /* MGSquare.m */,
+				42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */,
+				42ED9BE516D1C7700040C951 /* UI */,
+				42ED9BE416D1C7680040C951 /* Libraries */,
 				42A8682416D1A076009FAFD5 /* Supporting Files */,
 			);
 			path = Memogrid;
@@ -161,6 +172,34 @@
 				42A8684D16D1A076009FAFD5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42ED9BE416D1C7680040C951 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				42ED9BE116D1C7620040C951 /* KGNoise.h */,
+				42ED9BE216D1C7620040C951 /* KGNoise.m */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		42ED9BE516D1C7700040C951 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				42A8682C16D1A076009FAFD5 /* MGAppDelegate.h */,
+				42A8682D16D1A076009FAFD5 /* MGAppDelegate.m */,
+				42A8683516D1A076009FAFD5 /* MainStoryboard_iPhone.storyboard */,
+				42A8683816D1A076009FAFD5 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = "Delegate & Storyboards";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */,
 				42A8682816D1A076009FAFD5 /* InfoPlist.strings in Resources */,
 				42A8683016D1A076009FAFD5 /* Default.png in Resources */,
 				42A8683216D1A076009FAFD5 /* Default@2x.png in Resources */,
@@ -249,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A8684F16D1A076009FAFD5 /* InfoPlist.strings in Resources */,
+				42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */,
 				42A8682A16D1A076009FAFD5 /* main.m in Sources */,
 				42A8682E16D1A076009FAFD5 /* MGAppDelegate.m in Sources */,
 				42A8683D16D1A076009FAFD5 /* MGViewController.m in Sources */,
+				42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */,
+				42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +512,7 @@
 				42A8685716D1A076009FAFD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42A8685816D1A076009FAFD5 /* Build configuration list for PBXNativeTarget "MemogridTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +521,7 @@
 				42A8685A16D1A076009FAFD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
