@@ -19,6 +19,7 @@
     
     // UI Elements
     MGSquare * mg_square;
+    KGNoiseLinearGradientView *noiseBackView;
 }
 
 - (void) failedGame;

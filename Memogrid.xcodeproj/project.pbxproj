@@ -26,6 +26,7 @@
 		42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685116D1A076009FAFD5 /* MemogridTests.m */; };
 		42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685C16D1AAB2009FAFD5 /* MGSquare.m */; };
 		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
+		42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DC61DE16DB0A5D008A41E1 /* test@114.png */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
 		42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
@@ -68,6 +69,7 @@
 		42A8685B16D1AAB2009FAFD5 /* MGSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSquare.h; sourceTree = "<group>"; };
 		42A8685C16D1AAB2009FAFD5 /* MGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSquare.m; sourceTree = "<group>"; };
 		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
+		42DC61DE16DB0A5D008A41E1 /* test@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test@114.png"; sourceTree = "<group>"; };
 		42ED9BE116D1C7620040C951 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
 		42ED9BE216D1C7620040C951 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 		42A8681116D1A076009FAFD5 = {
 			isa = PBXGroup;
 			children = (
+				42DC61DE16DB0A5D008A41E1 /* test@114.png */,
 				42A8682316D1A076009FAFD5 /* Memogrid */,
 				42A8684A16D1A076009FAFD5 /* MemogridTests */,
 				42A8681C16D1A076009FAFD5 /* Frameworks */,
@@ -281,6 +284,7 @@
 				42A8683416D1A076009FAFD5 /* Default-568h@2x.png in Resources */,
 				42A8683716D1A076009FAFD5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				42A8683A16D1A076009FAFD5 /* MainStoryboard_iPad.storyboard in Resources */,
+				42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

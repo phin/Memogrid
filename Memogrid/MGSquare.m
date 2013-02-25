@@ -117,6 +117,7 @@
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
                     
                     // TODO : For some reason, the 1:1 square cannot be touched
+                    NSLog(@"Touched Square, row: %i col:%i", row, col);
                     
                     BOOL goodTile = NO;
                     
@@ -129,6 +130,8 @@
                             if ([[a_col objectAtIndex:r] intValue] == col) {
                                 // Good!
                                 NSLog(@"Good tile");
+                                NSLog(@"Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
+                                      [[a_remainingTiles objectAtIndex:1] objectAtIndex:r]);
                                 goodTile = YES;
                             
                                 // Check if that tile is already removed from Remaining tile
@@ -173,7 +176,9 @@
                         }
                     }
                     NSLog(@"tilesRemaining:%i", tilesRemaining);
+                    NSLog(@"Remaining Tile : %@", [a_remainingTiles objectAtIndex:0]);
                     if (tilesRemaining == 0) {
+                        // TODO : Reset Game
                         [[self viewController] succeededGame];
                     }
                     

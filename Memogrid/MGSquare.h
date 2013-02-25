@@ -10,7 +10,7 @@
 
 #define ROWS 7
 #define COLS 7
-#define sq_SIZE 43
+#define sq_SIZE ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 86 : 43)
 
 enum colors {
     COLOR_ONE,
