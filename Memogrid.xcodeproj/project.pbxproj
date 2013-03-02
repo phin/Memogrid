@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
+		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
+		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681D16D1A076009FAFD5 /* UIKit.framework */; };
 		42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681F16D1A076009FAFD5 /* Foundation.framework */; };
 		42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8682116D1A076009FAFD5 /* CoreGraphics.framework */; };
@@ -43,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
+		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
+		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
+		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
+		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
+		4249398316E05277002FBBDE /* MGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAboutViewController.m; sourceTree = "<group>"; };
 		42A8681A16D1A076009FAFD5 /* Memogrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memogrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A8681D16D1A076009FAFD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A8681F16D1A076009FAFD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +107,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4249397E16E05204002FBBDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4249397F16E05233002FBBDE /* MGMenuViewController.h */,
+				4249398016E05233002FBBDE /* MGMenuViewController.m */,
+				4249398216E05277002FBBDE /* MGAboutViewController.h */,
+				4249398316E05277002FBBDE /* MGAboutViewController.m */,
+				421636FD16E26C4600627743 /* MGTutorialViewController.h */,
+				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		42A8681116D1A076009FAFD5 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +158,7 @@
 				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
 				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
 				42A8685C16D1AAB2009FAFD5 /* MGSquare.m */,
+				4249397E16E05204002FBBDE /* Views */,
 				42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */,
 				42ED9BE516D1C7700040C951 /* UI */,
 				42ED9BE416D1C7680040C951 /* Libraries */,
@@ -325,6 +348,9 @@
 				42A8682E16D1A076009FAFD5 /* MGAppDelegate.m in Sources */,
 				42A8683D16D1A076009FAFD5 /* MGViewController.m in Sources */,
 				42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */,
+				4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */,
+				4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */,
+				421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

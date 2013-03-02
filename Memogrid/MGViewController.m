@@ -58,24 +58,25 @@
     noiseBackView.backgroundColor = [UIColor colorWithRed:228./255. green:216./255. blue:204./255. alpha:1.000];
     noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
     noiseBackView.noiseOpacity = 0.05;
-    [self.view addSubview:noiseBackView];
+    [self.view insertSubview:noiseBackView atIndex:0];
+    //[self.view addSubview:noiseBackView];
     
     // Main Title
-    UILabel *l_title = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 50)];
-    l_title.textColor = [UIColor whiteColor];
-    l_title.textAlignment = NSTextAlignmentCenter;
-    l_title.font = [UIFont fontWithName:@"VerbBlack" size:40.0];
-    l_title.backgroundColor = [UIColor clearColor];
-    l_title.text = @"Memogrid";
-    l_title.shadowColor = [UIColor darkGrayColor];
-    l_title.shadowOffset = CGSizeMake(0, 1);
-    [self.view addSubview:l_title];
+//    UILabel *l_title = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 50)];
+//    l_title.textColor = [UIColor whiteColor];
+//    l_title.textAlignment = NSTextAlignmentCenter;
+//    l_title.font = [UIFont fontWithName:@"VerbBlack" size:40.0];
+//    l_title.backgroundColor = [UIColor clearColor];
+//    l_title.text = @"Memogrid";
+//    l_title.shadowColor = [UIColor darkGrayColor];
+//    l_title.shadowOffset = CGSizeMake(0, 1);
+//    [self.view addSubview:l_title];
     
-    UIButton *b_reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [b_reset setFrame:CGRectMake(20, [UIScreen mainScreen].bounds.size.height - 150, 100, 44)];
-    [b_reset setTitle:@"Reset" forState:UIControlStateNormal];
-    [b_reset addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:b_reset];
+//    UIButton *b_reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [b_reset setFrame:CGRectMake(20, [UIScreen mainScreen].bounds.size.height - 150, 100, 44)];
+//    [b_reset setTitle:@"Reset" forState:UIControlStateNormal];
+//    [b_reset addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:b_reset];
     
     UIButton *b_next = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [b_next setFrame:CGRectMake(200, [UIScreen mainScreen].bounds.size.height - 150, 100, 44)];
