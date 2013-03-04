@@ -37,6 +37,8 @@
     mg_square.backgroundColor = [UIColor clearColor];
     mg_square.canPlay = canPlay;
     [self.view addSubview:mg_square];
+    
+    mg_level = [[MGLevelManager alloc] init];
 }
 
 - (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation {
@@ -59,30 +61,6 @@
     noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
     noiseBackView.noiseOpacity = 0.05;
     [self.view insertSubview:noiseBackView atIndex:0];
-    //[self.view addSubview:noiseBackView];
-    
-    // Main Title
-//    UILabel *l_title = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 50)];
-//    l_title.textColor = [UIColor whiteColor];
-//    l_title.textAlignment = NSTextAlignmentCenter;
-//    l_title.font = [UIFont fontWithName:@"VerbBlack" size:40.0];
-//    l_title.backgroundColor = [UIColor clearColor];
-//    l_title.text = @"Memogrid";
-//    l_title.shadowColor = [UIColor darkGrayColor];
-//    l_title.shadowOffset = CGSizeMake(0, 1);
-//    [self.view addSubview:l_title];
-    
-//    UIButton *b_reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    [b_reset setFrame:CGRectMake(20, [UIScreen mainScreen].bounds.size.height - 150, 100, 44)];
-//    [b_reset setTitle:@"Reset" forState:UIControlStateNormal];
-//    [b_reset addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:b_reset];
-    
-    UIButton *b_next = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [b_next setFrame:CGRectMake(200, [UIScreen mainScreen].bounds.size.height - 150, 100, 44)];
-    [b_next setTitle:@"New Game" forState:UIControlStateNormal];
-    [b_next addTarget:self action:@selector(startGame) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:b_next];
 }
 
 #pragma mark - INTERFACE FUNCTIONS
@@ -110,9 +88,12 @@
 #pragma mark - GAME FLOW FUNCTIONS
 
 - (IBAction) startGame {
-    
+    // Set user/view interactions
     [self userCanPlay:NO];
-    [mg_square setGameWithDifficulty:5];
+
+    // Set the level.
+    int difficulty = [MGLevelManager userCurrentLevelForMode:Classic];
+    [mg_square setGameWithDifficulty:difficulty];
     
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
 }
@@ -136,6 +117,9 @@
     [alert_fail show];
     [self clear];
     [self userCanPlay:NO];
+    
+    UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self presentWithSuperview:test];
     //[self startGame];
 }
 
@@ -156,6 +140,47 @@
     [self clear];
 }
 
+#pragma mark - Next Level
+
+// Add this view to superview, and slide it in from the bottom
+- (void)presentWithSuperview:(UIView *)superview {
+    // Set initial location at bottom of superview
+    CGRect frame = self.view.frame;
+    frame.origin = CGPointMake(0.0, superview.bounds.size.height);
+    self.view.frame = frame;
+    [superview addSubview:self.view];
+    
+    // Animate to new location
+    [UIView beginAnimations:@"presentWithSuperview" context:nil];
+    frame.origin = CGPointZero;
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+// Method called when removeFromSuperviewWithAnimation's animation completes
+- (void)animationDidStop:(NSString *)animationID
+                finished:(NSNumber *)finished
+                 context:(void *)context {
+    if ([animationID isEqualToString:@"removeFromSuperviewWithAnimation"]) {
+        [self.view removeFromSuperview];
+    }
+}
+
+// Slide this view to bottom of superview, then remove from superview
+- (void)removeFromSuperviewWithAnimation {
+    [UIView beginAnimations:@"removeFromSuperviewWithAnimation" context:nil];
+    
+    // Set delegate and selector to remove from superview when animation completes
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    
+    // Move this view to bottom of superview
+    CGRect frame = self.view.frame;
+    frame.origin = CGPointMake(0.0, self.view.superview.bounds.size.height);
+    self.view.frame = frame;
+    
+    [UIView commitAnimations];
+}
 
 #pragma mark - UNLOAD
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MGSquare.h"
+#import "MGLevelManager.h"
 
 @interface MGViewController : UIViewController {
     // Logic elements
@@ -16,6 +17,8 @@
     BOOL debugMode;
     
     NSMutableArray *a_currentGame;
+    
+    MGLevelManager * mg_level;
     
     // UI Elements
     MGSquare * mg_square;

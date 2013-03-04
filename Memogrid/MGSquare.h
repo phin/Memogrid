@@ -26,7 +26,6 @@ struct color_def
     CGFloat blue;
     CGFloat alpha;
 };
-
 static struct color_def color_values[COLOR_MAX] = {
     { 205./255., 189./255., 170./255., 1 },
     { 182./255., 4./255., 0/255., 1 },
