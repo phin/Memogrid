@@ -37,7 +37,7 @@
 + (int)userCurrentLevelForMode:(GameMode)mode {
     int level = 1;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
-    // Find the first level that we didn't completed. TOFIX: For some reason, while is not working properly
+    // Find the first level that we didn't completed.
     for (int i = 0; i < [a_mode_levels count]; i++) {
         if ([[[a_mode_levels objectAtIndex:i] objectForKey:@"completed"] intValue] == 1) {
             level++;
@@ -46,7 +46,8 @@
     NSLog(@"Level %i", level);
     return level;
 }
-+ (BOOL)didUserFinishedLevel:(int)level forMode:(GameMode)mode {
++ (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode {
+
     BOOL finishedLevel = false;
     // TODO
     

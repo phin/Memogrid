@@ -14,8 +14,11 @@
 		4216371016E301C600627743 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370C16E301C600627743 /* MJPopupBackgroundView.m */; };
 		4216371116E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
 		4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
+		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
 		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
+		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
+		425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc -w"; }; };
 		42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681D16D1A076009FAFD5 /* UIKit.framework */; };
 		42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681F16D1A076009FAFD5 /* Foundation.framework */; };
 		42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8682116D1A076009FAFD5 /* CoreGraphics.framework */; };
@@ -35,6 +38,9 @@
 		42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685116D1A076009FAFD5 /* MemogridTests.m */; };
 		42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685C16D1AAB2009FAFD5 /* MGSquare.m */; };
 		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
+		42D1D1C416EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
+		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
+		42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
 		42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DC61DE16DB0A5D008A41E1 /* test@114.png */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
@@ -61,10 +67,14 @@
 		4216370C16E301C600627743 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
 		4216370D16E301C600627743 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
 		4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNextLevelViewController.h; sourceTree = "<group>"; };
+		421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNextLevelViewController.m; sourceTree = "<group>"; };
 		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
 		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
 		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
 		4249398316E05277002FBBDE /* MGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAboutViewController.m; sourceTree = "<group>"; };
+		425C83D116ED920A0069FB73 /* PagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedFlowView.h; sourceTree = "<group>"; };
+		425C83D216ED920A0069FB73 /* PagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedFlowView.m; sourceTree = "<group>"; };
 		42A8681A16D1A076009FAFD5 /* Memogrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memogrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A8681D16D1A076009FAFD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A8681F16D1A076009FAFD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +101,9 @@
 		42A8685B16D1AAB2009FAFD5 /* MGSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSquare.h; sourceTree = "<group>"; };
 		42A8685C16D1AAB2009FAFD5 /* MGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSquare.m; sourceTree = "<group>"; };
 		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
+		42D1D1C216EB9C9E004262BF /* UIViewController+HCPushBackAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HCPushBackAnimation.h"; sourceTree = "<group>"; };
+		42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HCPushBackAnimation.m"; sourceTree = "<group>"; };
+		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		42DC61DE16DB0A5D008A41E1 /* test@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test@114.png"; sourceTree = "<group>"; };
 		42ED9BE116D1C7620040C951 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
 		42ED9BE216D1C7620040C951 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
@@ -101,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */,
 				42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */,
 				42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */,
 				42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */,
@@ -139,6 +153,8 @@
 				4249398316E05277002FBBDE /* MGAboutViewController.m */,
 				421636FD16E26C4600627743 /* MGTutorialViewController.h */,
 				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
+				421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */,
+				421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -166,6 +182,7 @@
 		42A8681C16D1A076009FAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42D1D1C816EBA2E8004262BF /* QuartzCore.framework */,
 				42A8681D16D1A076009FAFD5 /* UIKit.framework */,
 				42A8681F16D1A076009FAFD5 /* Foundation.framework */,
 				42A8682116D1A076009FAFD5 /* CoreGraphics.framework */,
@@ -227,6 +244,10 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
+				425C83D216ED920A0069FB73 /* PagedFlowView.m */,
+				42D1D1C216EB9C9E004262BF /* UIViewController+HCPushBackAnimation.h */,
+				42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */,
 				4216370B16E301C600627743 /* MJPopupBackgroundView.h */,
 				4216370C16E301C600627743 /* MJPopupBackgroundView.m */,
 				4216370D16E301C600627743 /* UIViewController+MJPopupViewController.h */,
@@ -383,6 +404,9 @@
 				4216370616E28FEA00627743 /* MGLevelManager.m in Sources */,
 				4216370F16E301C600627743 /* MJPopupBackgroundView.m in Sources */,
 				4216371116E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */,
+				42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */,
+				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
+				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +418,8 @@
 				42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */,
 				4216371016E301C600627743 /* MJPopupBackgroundView.m in Sources */,
 				4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */,
+				42D1D1C416EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m in Sources */,
+				425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

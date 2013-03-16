@@ -7,6 +7,8 @@
 //
 
 #import "MGViewController.h"
+#import "MGNextLevelViewController.h"
+#import "MGMenuViewController.h"
 
 @interface MGViewController ()
 
@@ -21,6 +23,18 @@
     [self initVars]; // Init Variables
     [self initUI];   // Setup UI
     [self initGame]; // Init Game
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+    [self animationPopFrontScaleUp];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // Start a new game on that view
+    [self startGame];
 }
 
 #pragma mark - INITIALIZATION
@@ -79,7 +93,6 @@
 }
 
 - (void)viewWillLayoutSubviews {
-    
     noiseBackView.frame = self.view.bounds;
     [super viewWillLayoutSubviews];
 }
@@ -89,7 +102,7 @@
 
 - (IBAction) startGame {
     // Set user/view interactions
-    [self userCanPlay:NO];
+    [self stopGuessing];
 
     // Set the level.
     int difficulty = [MGLevelManager userCurrentLevelForMode:Classic];
@@ -101,7 +114,11 @@
 - (void) startGuessing {
     [self clear];
     [self userCanPlay:YES];
-    
+}
+
+- (void) stopGuessing {
+    [self clear];
+    [self userCanPlay:NO];
 }
 
 - (void) failedGame {
@@ -113,14 +130,12 @@
 }
 
 - (void) succeededGame {
-    UIAlertView *alert_fail = [[UIAlertView alloc] initWithTitle:@"Congratulations" message:@"You did it!" delegate:nil cancelButtonTitle:@"Next level" otherButtonTitles: nil];
-    [alert_fail show];
-    [self clear];
-    [self userCanPlay:NO];
+
+    [self stopGuessing];
     
-    UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [self presentWithSuperview:test];
-    //[self startGame];
+    MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
+    [self presentViewController:vc_next animated:YES completion:nil];
+    [self animationPushBackScaleDown];
 }
 
 
@@ -142,44 +157,12 @@
 
 #pragma mark - Next Level
 
-// Add this view to superview, and slide it in from the bottom
-- (void)presentWithSuperview:(UIView *)superview {
-    // Set initial location at bottom of superview
-    CGRect frame = self.view.frame;
-    frame.origin = CGPointMake(0.0, superview.bounds.size.height);
-    self.view.frame = frame;
-    [superview addSubview:self.view];
-    
-    // Animate to new location
-    [UIView beginAnimations:@"presentWithSuperview" context:nil];
-    frame.origin = CGPointZero;
-    self.view.frame = frame;
-    [UIView commitAnimations];
-}
-
-// Method called when removeFromSuperviewWithAnimation's animation completes
-- (void)animationDidStop:(NSString *)animationID
-                finished:(NSNumber *)finished
-                 context:(void *)context {
-    if ([animationID isEqualToString:@"removeFromSuperviewWithAnimation"]) {
-        [self.view removeFromSuperview];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"gameToMenu"]) {
+        //MGMenuViewController * vc_menu = [segue destinationViewController];
+        [self animationPushBackScaleDown];
     }
-}
-
-// Slide this view to bottom of superview, then remove from superview
-- (void)removeFromSuperviewWithAnimation {
-    [UIView beginAnimations:@"removeFromSuperviewWithAnimation" context:nil];
-    
-    // Set delegate and selector to remove from superview when animation completes
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-    
-    // Move this view to bottom of superview
-    CGRect frame = self.view.frame;
-    frame.origin = CGPointMake(0.0, self.view.superview.bounds.size.height);
-    self.view.frame = frame;
-    
-    [UIView commitAnimations];
 }
 
 #pragma mark - UNLOAD

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PagedFlowView.h"
 
-@interface MGTutorialViewController : UIViewController
+@interface MGTutorialViewController : UIViewController <PagedFlowViewDelegate, PagedFlowViewDataSource>
+
+@property (nonatomic, retain) IBOutlet PagedFlowView *pv_tutorial;
+@property (nonatomic, retain) IBOutlet UIPageControl *pc_tutorial;
 
 @end

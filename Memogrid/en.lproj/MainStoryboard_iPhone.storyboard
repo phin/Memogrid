@@ -76,7 +76,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py6-uo-xuW">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bPj-YN-oZz"/>
+                                    <constraint firstAttribute="width" constant="127" id="yRl-rY-Lqm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Game Center">
@@ -89,7 +89,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-oz-p49">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="R9x-eV-3qf"/>
+                                    <constraint firstAttribute="width" constant="144" id="fZW-fR-0WE"/>
+                                    <constraint firstAttribute="height" constant="50" id="iJU-Ji-TBo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="About">
@@ -105,7 +106,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="rYN-vK-ocM"/>
+                                    <constraint firstAttribute="height" constant="70" id="vDv-L2-caX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Play!">
@@ -122,17 +123,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.89411771299999998" green="0.84705889229999998" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="py6-uo-xuW" firstAttribute="leading" secondItem="uNV-kC-ZtC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Cm-Cy-r8c"/>
+                            <constraint firstItem="py6-uo-xuW" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="J7G-9D-CqD"/>
                             <constraint firstAttribute="trailing" secondItem="2jm-q3-0IG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Kbc-Tr-TPA"/>
+                            <constraint firstItem="QlU-1U-6tK" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Ksd-8u-Hi3"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="leading" secondItem="uNV-kC-ZtC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MF6-QZ-cxd"/>
-                            <constraint firstItem="py6-uo-xuW" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="162" id="RQT-au-CgH"/>
-                            <constraint firstItem="QlU-1U-6tK" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="45" id="UfC-PK-91J"/>
-                            <constraint firstItem="EW7-oz-p49" firstAttribute="top" secondItem="py6-uo-xuW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ww9-uJ-4Uw"/>
+                            <constraint firstItem="EW7-oz-p49" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fOK-Qx-nYB"/>
+                            <constraint firstAttribute="bottom" secondItem="py6-uo-xuW" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="fZw-D7-7xK"/>
                             <constraint firstItem="2jm-q3-0IG" firstAttribute="leading" secondItem="uNV-kC-ZtC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hE3-2u-O4Y"/>
-                            <constraint firstItem="2jm-q3-0IG" firstAttribute="top" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hI9-Ns-tdC"/>
                             <constraint firstAttribute="trailing" secondItem="py6-uo-xuW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="i57-Rh-z6C"/>
-                            <constraint firstItem="py6-uo-xuW" firstAttribute="centerX" secondItem="QlU-1U-6tK" secondAttribute="centerX" type="default" id="tpC-xe-jrW"/>
-                            <constraint firstAttribute="trailing" secondItem="EW7-oz-p49" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xgc-tP-kzV"/>
+                            <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ttL-En-k8F"/>
+                            <constraint firstItem="QlU-1U-6tK" firstAttribute="centerX" secondItem="2jm-q3-0IG" secondAttribute="centerX" type="default" id="uER-YN-4Sj"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBX-pP-p89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-1040"/>
+            <point key="canvasLocation" x="714" y="-1052"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="JWB-dj-SLA">
@@ -292,6 +292,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
             <relationships>
                 <relationship kind="action" name="goBackToGame:"/>
+                <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
             </relationships>
         </class>
         <class className="MGViewController" superclassName="UIViewController">
@@ -299,6 +301,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PagedFlowView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagedFlowView.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -30,10 +30,13 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self animationPopFrontScaleUp];
+}
+
 - (IBAction)backToGame:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        // Reset game.
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
