@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MGMenuViewController : UIViewController
+@interface MGMenuViewController : UIViewController {
+    KGNoiseLinearGradientView *noiseBackView;
+}
 
 - (IBAction)backToGame:(id)sender;
 

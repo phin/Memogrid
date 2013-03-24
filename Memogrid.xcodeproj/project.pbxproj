@@ -16,6 +16,10 @@
 		4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
 		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
+		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
+		4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49316FE9DE800C6A494 /* MGButtonSquare.m */; };
+		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
+		4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49616FEA01D00C6A494 /* Memogrid@2x.png */; };
 		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
@@ -72,6 +76,12 @@
 		421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNextLevelViewController.m; sourceTree = "<group>"; };
 		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
 		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
+		4247F48F16FE8B7300C6A494 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButton.h; sourceTree = "<group>"; };
+		4247F49016FE8B7300C6A494 /* MGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButton.m; sourceTree = "<group>"; };
+		4247F49216FE9DE700C6A494 /* MGButtonSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButtonSquare.h; sourceTree = "<group>"; };
+		4247F49316FE9DE800C6A494 /* MGButtonSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButtonSquare.m; sourceTree = "<group>"; };
+		4247F49516FEA01D00C6A494 /* Memogrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Memogrid.png; sourceTree = "<group>"; };
+		4247F49616FEA01D00C6A494 /* Memogrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Memogrid@2x.png"; sourceTree = "<group>"; };
 		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
 		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
 		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
@@ -152,6 +162,10 @@
 			children = (
 				4247F48C16FE7A8100C6A494 /* MGMenuButton.h */,
 				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
+				4247F48F16FE8B7300C6A494 /* MGButton.h */,
+				4247F49016FE8B7300C6A494 /* MGButton.m */,
+				4247F49216FE9DE700C6A494 /* MGButtonSquare.h */,
+				4247F49316FE9DE800C6A494 /* MGButtonSquare.m */,
 			);
 			name = "Custom Elements";
 			sourceTree = "<group>";
@@ -206,7 +220,6 @@
 		42A8682316D1A076009FAFD5 /* Memogrid */ = {
 			isa = PBXGroup;
 			children = (
-				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				42A8683B16D1A076009FAFD5 /* MGViewController.h */,
 				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
 				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
@@ -214,6 +227,7 @@
 				4216370316E28FC900627743 /* Levels */,
 				4249397E16E05204002FBBDE /* Views */,
 				42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */,
+				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				42ED9BE516D1C7700040C951 /* UI */,
 				42ED9BE416D1C7680040C951 /* Libraries */,
 				42A8682416D1A076009FAFD5 /* Supporting Files */,
@@ -275,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */,
+				4247F49516FEA01D00C6A494 /* Memogrid.png */,
+				4247F49616FEA01D00C6A494 /* Memogrid@2x.png */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -371,6 +387,8 @@
 				42A8683A16D1A076009FAFD5 /* MainStoryboard_iPad.storyboard in Resources */,
 				42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */,
 				4216370216E28CCD00627743 /* Levels.plist in Resources */,
+				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
+				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +439,8 @@
 				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
 				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
 				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
+				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
+				4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +567,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -558,6 +579,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

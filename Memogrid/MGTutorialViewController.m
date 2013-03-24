@@ -26,11 +26,29 @@
     return self;
 }
 
+#pragma mark - Init
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self initUI];
+    [self initTutorial];
+}
+
+
+- (void) initUI {
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    // Background
+    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
+    noiseBackView.backgroundColor = [UIColor colorWithRed:27./255. green:27./255. blue:27./255. alpha:1.000];
+    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
+    noiseBackView.noiseOpacity = 0.05;
+    [self.view insertSubview:noiseBackView atIndex:0];
+}
+
+- (void) initTutorial {
     pv_tutorial.delegate = self;
     pv_tutorial.dataSource = self;
     pv_tutorial.pageControl = pc_tutorial;
@@ -40,6 +58,7 @@
     a_tutorials = [[NSMutableArray alloc] initWithObjects:[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor yellowColor], nil];
 }
 
+#pragma mark - Flow
 
 - (IBAction)goBackToGame:(id)sender {
     id p;

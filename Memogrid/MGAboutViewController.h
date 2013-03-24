@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MGAboutViewController : UIViewController
+@interface MGAboutViewController : UIViewController {
+    KGNoiseLinearGradientView *noiseBackView;
+}
 
 @end

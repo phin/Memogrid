@@ -89,7 +89,7 @@
         }
     }
     
-    [KGNoise drawNoiseWithOpacity:0.05 andBlendMode:kCGBlendModeNormal];
+    //[KGNoise drawNoiseWithOpacity:0.05 andBlendMode:kCGBlendModeNormal];
 }
 
 - (void) setSquareWithColor:(enum colors)color forRow:(int)row andColumn:(int)column {

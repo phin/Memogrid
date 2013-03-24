@@ -28,7 +28,6 @@
     
     // Frame
     [self setBackgroundColor:[UIColor clearColor]];
-    
 }
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -36,6 +35,7 @@
     [super setHighlighted:highlighted];
     
     // Redraw with an highlighted state
+    [self setNeedsDisplay];
 }
 
 
@@ -47,8 +47,16 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
-    UIColor* r_first = [UIColor colorWithRed: 0.459 green: 0.459 blue: 0.459 alpha: 1];
-    UIColor* r_firstDropShadowColor = [UIColor colorWithRed: 0.278 green: 0.278 blue: 0.278 alpha: 1];
+    UIColor* r_first;
+    UIColor* r_firstDropShadowColor;
+    if ([self isHighlighted]) {
+        //// Color Declarations Highlighted
+        r_first = [UIColor colorWithRed: 0.714 green: 0.016 blue: 0 alpha: 1];
+        r_firstDropShadowColor = [UIColor colorWithRed: 0.424 green: 0.039 blue: 0.031 alpha: 1];
+    } else {
+        r_first = [UIColor colorWithRed: 0.459 green: 0.459 blue: 0.459 alpha: 1];
+        r_firstDropShadowColor = [UIColor colorWithRed: 0.278 green: 0.278 blue: 0.278 alpha: 1];
+    }
     
     //// Shadow Declarations
     UIColor* r_firstDropShadow = r_firstDropShadowColor;

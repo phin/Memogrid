@@ -11,6 +11,7 @@
 
 @interface MGTutorialViewController : UIViewController <PagedFlowViewDelegate, PagedFlowViewDataSource> {
     NSMutableArray *a_tutorials;
+    KGNoiseLinearGradientView *noiseBackView;
 }
 
 @property (nonatomic, retain) IBOutlet PagedFlowView *pv_tutorial;

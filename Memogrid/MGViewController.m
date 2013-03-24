@@ -73,7 +73,7 @@
     
     // Background
     noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:228./255. green:216./255. blue:204./255. alpha:1.000];
+    noiseBackView.backgroundColor = [UIColor colorWithRed:27./255. green:27./255. blue:27./255. alpha:1.000];
     noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
     noiseBackView.noiseOpacity = 0.05;
     [self.view insertSubview:noiseBackView atIndex:0];
@@ -81,13 +81,6 @@
 
 #pragma mark - INTERFACE FUNCTIONS
 
-- (void) hideControls {
-    
-}
-
-- (void) showControls {
-    
-}
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     mg_square.frame = [self getMainSquareFrameForOrientation:toInterfaceOrientation];

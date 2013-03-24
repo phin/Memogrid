@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import "KGNoise.h"
     #import "UIViewController+HCPushBackAnimation.h"
+    #import "MGButton.h"
 #endif
