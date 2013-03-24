@@ -20,6 +20,8 @@
 		4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49316FE9DE800C6A494 /* MGButtonSquare.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
 		4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49616FEA01D00C6A494 /* Memogrid@2x.png */; };
+		4247F49B16FEA7BA00C6A494 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49916FEA7BA00C6A494 /* back.png */; };
+		4247F49C16FEA7BA00C6A494 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49A16FEA7BA00C6A494 /* back@2x.png */; };
 		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
@@ -82,6 +84,8 @@
 		4247F49316FE9DE800C6A494 /* MGButtonSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButtonSquare.m; sourceTree = "<group>"; };
 		4247F49516FEA01D00C6A494 /* Memogrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Memogrid.png; sourceTree = "<group>"; };
 		4247F49616FEA01D00C6A494 /* Memogrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Memogrid@2x.png"; sourceTree = "<group>"; };
+		4247F49916FEA7BA00C6A494 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		4247F49A16FEA7BA00C6A494 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
 		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
 		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		4247F48B16FE7A5E00C6A494 /* Custom Elements */ = {
 			isa = PBXGroup;
 			children = (
+				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
+				42A8685C16D1AAB2009FAFD5 /* MGSquare.m */,
 				4247F48C16FE7A8100C6A494 /* MGMenuButton.h */,
 				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
 				4247F48F16FE8B7300C6A494 /* MGButton.h */,
@@ -173,6 +179,8 @@
 		4249397E16E05204002FBBDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42A8683B16D1A076009FAFD5 /* MGViewController.h */,
+				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
 				4249397F16E05233002FBBDE /* MGMenuViewController.h */,
 				4249398016E05233002FBBDE /* MGMenuViewController.m */,
 				4249398216E05277002FBBDE /* MGAboutViewController.h */,
@@ -220,14 +228,10 @@
 		42A8682316D1A076009FAFD5 /* Memogrid */ = {
 			isa = PBXGroup;
 			children = (
-				42A8683B16D1A076009FAFD5 /* MGViewController.h */,
-				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
-				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
-				42A8685C16D1AAB2009FAFD5 /* MGSquare.m */,
-				4216370316E28FC900627743 /* Levels */,
-				4249397E16E05204002FBBDE /* Views */,
 				42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */,
 				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
+				4249397E16E05204002FBBDE /* Views */,
+				4216370316E28FC900627743 /* Levels */,
 				42ED9BE516D1C7700040C951 /* UI */,
 				42ED9BE416D1C7680040C951 /* Libraries */,
 				42A8682416D1A076009FAFD5 /* Supporting Files */,
@@ -288,6 +292,8 @@
 		42ED9BE516D1C7700040C951 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4247F49916FEA7BA00C6A494 /* back.png */,
+				4247F49A16FEA7BA00C6A494 /* back@2x.png */,
 				42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */,
 				4247F49516FEA01D00C6A494 /* Memogrid.png */,
 				4247F49616FEA01D00C6A494 /* Memogrid@2x.png */,
@@ -389,6 +395,8 @@
 				4216370216E28CCD00627743 /* Levels.plist in Resources */,
 				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
+				4247F49B16FEA7BA00C6A494 /* back.png in Resources */,
+				4247F49C16FEA7BA00C6A494 /* back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

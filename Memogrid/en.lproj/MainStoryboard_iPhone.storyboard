@@ -55,7 +55,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-oz-p49" customClass="MGButton">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Tre-JN-hMR"/>
                                     <constraint firstAttribute="height" constant="54" id="eU9-ys-ffG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -72,6 +71,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG" customClass="MGButton">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9v9-v5-nRn"/>
                                     <constraint firstAttribute="height" constant="54" id="mxo-MJ-PWF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -89,7 +89,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MEMOGRID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izp-k1-RCD">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="177" id="0dG-We-wjc"/>
-                                    <constraint firstAttribute="height" constant="37" id="gF8-2n-pOX"/>
+                                    <constraint firstAttribute="height" constant="37" id="LKQ-wC-SRG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -97,23 +97,29 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-vH-RgB"/>
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="27" id="7eo-ma-vys"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="85V-oi-UM3"/>
-                            <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="27" id="Vam-vp-dQ5"/>
+                            <constraint firstItem="izp-k1-RCD" firstAttribute="centerX" secondItem="uNV-kC-ZtC" secondAttribute="centerX" type="default" id="AAk-cy-C7y"/>
+                            <constraint firstItem="2jm-q3-0IG" firstAttribute="top" secondItem="HrH-vH-RgB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ayy-on-nDa"/>
+                            <constraint firstItem="HrH-vH-RgB" firstAttribute="centerX" secondItem="2jm-q3-0IG" secondAttribute="centerX" type="default" id="EIC-n1-zJe"/>
+                            <constraint firstItem="HrH-vH-RgB" firstAttribute="centerX" secondItem="izp-k1-RCD" secondAttribute="centerX" type="default" id="TlI-00-qXv"/>
                             <constraint firstItem="izp-k1-RCD" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="erx-HY-K78"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="leading" secondItem="2jm-q3-0IG" secondAttribute="leading" type="default" id="jmk-pd-aZ6"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="trailing" secondItem="2jm-q3-0IG" secondAttribute="trailing" type="default" id="jrE-w1-NLL"/>
-                            <constraint firstItem="EW7-oz-p49" firstAttribute="centerX" secondItem="uNV-kC-ZtC" secondAttribute="centerX" type="default" id="oFi-1M-9p7"/>
-                            <constraint firstItem="izp-k1-RCD" firstAttribute="centerX" secondItem="2jm-q3-0IG" secondAttribute="centerX" type="default" id="rlo-YZ-WLs"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="pc_levels" destination="HrH-vH-RgB" id="hsg-gt-qkK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06A-pk-rfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-365"/>
+            <point key="canvasLocation" x="251" y="-365"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="S3b-wK-YJw">
@@ -167,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBX-pP-p89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="-1052"/>
+            <point key="canvasLocation" x="251" y="-1029"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="JWB-dj-SLA">
@@ -183,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="52" id="IAA-UX-9Nf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" image="back.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -216,7 +222,7 @@
                                     <constraint firstAttribute="height" constant="54" id="NNK-2B-mGU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Share on Facebook!">
+                                <state key="normal" title="Share on Facebook">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -285,6 +291,9 @@
             <point key="canvasLocation" x="714" y="-365"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back.png" width="22" height="29"/>
+    </resources>
     <classes>
         <class className="MGAboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGAboutViewController.h"/>
@@ -305,11 +314,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backToGame:"/>
+                <relationship kind="outlet" name="pc_levels" candidateClass="UIPageControl"/>
             </relationships>
         </class>
         <class className="MGTutorialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="goBackToGame:"/>
                 <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
             </relationships>

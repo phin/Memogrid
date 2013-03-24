@@ -40,6 +40,9 @@
     [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [self setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    
+    // Image
+    self.imageEdgeInsets = UIEdgeInsetsMake(-2, 0, 0, 0);
 }
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -48,6 +51,7 @@
     
     // Redraw with an highlighted state
     self.titleEdgeInsets = UIEdgeInsetsMake(highlighted ? 6 : -2, 0, 0, 0);
+    self.imageEdgeInsets = UIEdgeInsetsMake(highlighted ? 6 : -2, 0, 0, 0);
     [self setNeedsDisplay];
 }
 

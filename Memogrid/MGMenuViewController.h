@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PagedFlowView.h"
 
-@interface MGMenuViewController : UIViewController {
+@interface MGMenuViewController : UIViewController <PagedFlowViewDataSource, PagedFlowViewDelegate> {
+    
     KGNoiseLinearGradientView *noiseBackView;
+    
+    // Levels
+    PagedFlowView *pv_levels;
+    IBOutlet UIPageControl *pc_levels;
 }
 
 - (IBAction)backToGame:(id)sender;
