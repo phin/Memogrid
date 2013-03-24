@@ -23,6 +23,8 @@
     // UI Elements
     MGSquare * mg_square;
     KGNoiseLinearGradientView *noiseBackView;
+    
+    IBOutlet UIButton *b_newgame;
 }
 
 - (void) failedGame;

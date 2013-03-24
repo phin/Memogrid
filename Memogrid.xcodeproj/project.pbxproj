@@ -15,6 +15,7 @@
 		4216371116E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
 		4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
 		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
+		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
@@ -69,6 +70,8 @@
 		4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNextLevelViewController.h; sourceTree = "<group>"; };
 		421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNextLevelViewController.m; sourceTree = "<group>"; };
+		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
+		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
 		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
 		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
 		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
@@ -144,6 +147,15 @@
 			name = Levels;
 			sourceTree = "<group>";
 		};
+		4247F48B16FE7A5E00C6A494 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				4247F48C16FE7A8100C6A494 /* MGMenuButton.h */,
+				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
+			);
+			name = "Custom Elements";
+			sourceTree = "<group>";
+		};
 		4249397E16E05204002FBBDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 		42A8682316D1A076009FAFD5 /* Memogrid */ = {
 			isa = PBXGroup;
 			children = (
+				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				42A8683B16D1A076009FAFD5 /* MGViewController.h */,
 				42A8683C16D1A076009FAFD5 /* MGViewController.m */,
 				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
@@ -407,6 +420,7 @@
 				42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */,
 				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
 				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
+				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,6 +46,7 @@
 }
 
 - (void) initGame {
+    
     // Init rectangle de jeu
     mg_square = [[MGSquare alloc] initWithFrame:[self getMainSquareFrameForOrientation:[self interfaceOrientation]]];
     mg_square.backgroundColor = [UIColor clearColor];
@@ -53,6 +54,7 @@
     [self.view addSubview:mg_square];
     
     mg_level = [[MGLevelManager alloc] init];
+    [MGLevelManager init];
 }
 
 - (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation {
@@ -106,6 +108,7 @@
 
     // Set the level.
     int difficulty = [MGLevelManager userCurrentLevelForMode:Classic];
+    //int difficulty = 4; // DEBUG
     [mg_square setGameWithDifficulty:difficulty];
     
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
@@ -122,28 +125,33 @@
 }
 
 - (void) failedGame {
-    UIAlertView *alert_fail = [[UIAlertView alloc] initWithTitle:@"Wrong Tile" message:@"Try again!" delegate:nil cancelButtonTitle:@"Replay" otherButtonTitles: nil];
-    [alert_fail show];
-    // TODO : Reset Game
-    //[self clear];
-    //[self startGame];
+    [self endedLevelWithSuccess:NO];
 }
 
 - (void) succeededGame {
+    [self endedLevelWithSuccess:YES];
+}
 
+- (void) endedLevelWithSuccess:(BOOL)didWin {
     [self stopGuessing];
     
+    if (didWin) {
+        int current = [MGLevelManager userCurrentLevelForMode:Classic];
+        [MGLevelManager userFinishedLevel:current forMode:Classic];
+    }
+    
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
+    vc_next.didWin = didWin;
     [self presentViewController:vc_next animated:YES completion:nil];
     [self animationPushBackScaleDown];
 }
-
 
 #pragma mark - GAME FUNCTIONS
 
 - (void) userCanPlay:(BOOL)usercanplay {
     canPlay = usercanplay;
     mg_square.canPlay = canPlay;
+    b_newgame.hidden = !usercanplay;
 }
 
 - (void) clear {
@@ -160,7 +168,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
-        //MGMenuViewController * vc_menu = [segue destinationViewController];
         [self animationPushBackScaleDown];
     }
 }

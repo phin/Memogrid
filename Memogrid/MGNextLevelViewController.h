@@ -10,4 +10,6 @@
 
 @interface MGNextLevelViewController : UIViewController
 
+@property (nonatomic) BOOL didWin;
+
 @end

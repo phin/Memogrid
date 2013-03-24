@@ -19,9 +19,10 @@ typedef enum {
 
 // User related
 + (int)userCurrentLevelForMode:(GameMode)mode;
-+ (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode;
++ (void)userFinishedLevel:(int)level forMode:(GameMode)mode;
 
 // General
++ (void)init;
 + (int)getTotalLevelsForMode:(GameMode)mode;
 
 @end

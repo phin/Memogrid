@@ -178,7 +178,6 @@
                     NSLog(@"tilesRemaining:%i", tilesRemaining);
                     NSLog(@"Remaining Tile : %@", [a_remainingTiles objectAtIndex:0]);
                     if (tilesRemaining == 0) {
-                        // TODO : Reset Game
                         [[self viewController] succeededGame];
                     }
                     
@@ -212,33 +211,56 @@
 
 // Game functions
 
--(int)getRandomNumber:(int)from to:(int)to {
-    return (int)from + arc4random() % (to-from+1);
-}
-
 - (NSArray *)setGameWithDifficulty:(int)n {
-    
-    NSMutableArray *row_values = [NSMutableArray array];
-    NSMutableArray *col_values = [NSMutableArray array];
     
     // Clear what's existing
     [self clear];
     
     // Generate n different numbers that can be in the table
-    // TODO: Make sure that we don't have the same value twice.
+    NSMutableArray *a_row = [NSMutableArray array];
+    NSMutableArray *a_col = [NSMutableArray array];
+    
+    for (int i = 0; i < ROWS; i++) {
+        [a_row addObject:[NSString stringWithFormat:@"%i", i]];
+        [a_col addObject:[NSString stringWithFormat:@"%i", i]];
+    }
+    
+    a_row = [self shuffleArray:a_row];
+    a_col = [self shuffleArray:a_col];
+    
+    NSMutableArray *a_game_row = [NSMutableArray array];
+    NSMutableArray *a_game_col = [NSMutableArray array];
+    
     for (int i = 0; i < n; i++) {
-        int rand_row = [self getRandomNumber:0 to:(ROWS-1)];
-        int rand_col = [self getRandomNumber:0 to:(COLS-1)];
+        
+        int rand_row = [[a_row objectAtIndex:i] intValue];
+        int rand_col = [[a_col objectAtIndex:i] intValue];
+        [a_game_row addObject:[NSString stringWithFormat:@"%i", rand_row]];
+        [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
+        
         [self setSquareWithColor:COLOR_TWO forRow:rand_row andColumn:rand_col];
-        [row_values addObject:[NSString stringWithFormat:@"%i", rand_row]];
-        [col_values addObject:[NSString stringWithFormat:@"%i", rand_col]];
+
+        NSLog(@"row:%i col:%i", rand_row, rand_col);
     }
 
-    NSArray * game_values = [NSArray arrayWithObjects:row_values, col_values, nil];
+    NSArray * game_values = [NSArray arrayWithObjects:a_game_row, a_game_col, nil];
     a_currentGame    = [game_values mutableCopy];
     a_remainingTiles = [game_values mutableCopy];
+
     return game_values;
 
+}
+
+- (NSMutableArray *)shuffleArray:(NSArray *)array {
+    NSMutableArray *ma_array = [NSMutableArray arrayWithArray:array];
+    
+    NSUInteger count = [ma_array count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [ma_array exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    return ma_array;
 }
 
 @end

@@ -12,9 +12,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-0U-uYQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-0U-uYQ" customClass="MGMenuButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="sOe-qa-coZ"/>
+                                    <constraint firstAttribute="height" constant="33" id="y5Z-iL-Ut6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,17 +47,18 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411771299999998" green="0.84705889229999998" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.10588236153125763" green="0.10588236153125763" blue="0.10588236153125763" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tiR-8C-NsR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3Ns-q5-r0h"/>
                             <constraint firstAttribute="bottom" secondItem="tiR-8C-NsR" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Gv7-bs-E44"/>
-                            <constraint firstAttribute="trailing" secondItem="nsC-0U-uYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PLE-06-aD6"/>
+                            <constraint firstAttribute="trailing" secondItem="nsC-0U-uYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ORT-jU-QOh"/>
                             <constraint firstItem="nsC-0U-uYQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mfz-kC-cK6"/>
                             <constraint firstItem="tiR-8C-NsR" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pT2-Qg-VaM"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="b_newgame" destination="tiR-8C-NsR" id="zZY-X8-JAK"/>
                         <segue destination="ups-tO-mGT" kind="modal" identifier="gameToTutorial" modalTransitionStyle="crossDissolve" id="Wlg-hS-LoV"/>
                     </connections>
                 </viewController>
@@ -64,16 +69,11 @@
         <!--Menu View Controller-->
         <scene sceneID="5Ih-xk-TLd">
             <objects>
-                <viewController id="ODS-0l-u9R" customClass="MGMenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MGMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ODS-0l-u9R" customClass="MGMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uNV-kC-ZtC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlU-1U-6tK">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py6-uo-xuW">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="yRl-rY-Lqm"/>
@@ -121,18 +121,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411771299999998" green="0.84705889229999998" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="py6-uo-xuW" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="J7G-9D-CqD"/>
                             <constraint firstAttribute="trailing" secondItem="2jm-q3-0IG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Kbc-Tr-TPA"/>
-                            <constraint firstItem="QlU-1U-6tK" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Ksd-8u-Hi3"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="leading" secondItem="uNV-kC-ZtC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MF6-QZ-cxd"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fOK-Qx-nYB"/>
                             <constraint firstAttribute="bottom" secondItem="py6-uo-xuW" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="fZw-D7-7xK"/>
                             <constraint firstItem="2jm-q3-0IG" firstAttribute="leading" secondItem="uNV-kC-ZtC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hE3-2u-O4Y"/>
                             <constraint firstAttribute="trailing" secondItem="py6-uo-xuW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="i57-Rh-z6C"/>
                             <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ttL-En-k8F"/>
-                            <constraint firstItem="QlU-1U-6tK" firstAttribute="centerX" secondItem="2jm-q3-0IG" secondAttribute="centerX" type="default" id="uER-YN-4Sj"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -165,16 +163,31 @@
                                     <action selector="goBackToGame:" destination="ups-tO-mGT" eventType="touchUpInside" id="AJb-Bn-arz"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJQ-cR-81V" customClass="PagedFlowView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="28r-Cz-DNy"/>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411771299999998" green="0.84705889229999998" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="28r-Cz-DNy" firstAttribute="leading" secondItem="uH9-da-GV3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3UO-G5-E8P"/>
                             <constraint firstAttribute="bottom" secondItem="Opy-oL-kUJ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="3kO-fQ-fdo"/>
+                            <constraint firstAttribute="bottom" secondItem="28r-Cz-DNy" secondAttribute="bottom" constant="149" id="8yp-LS-1lY"/>
                             <constraint firstItem="Opy-oL-kUJ" firstAttribute="leading" secondItem="uH9-da-GV3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="92z-zc-Gdq"/>
+                            <constraint firstItem="28r-Cz-DNy" firstAttribute="top" secondItem="cJQ-cR-81V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BKb-2L-aEB"/>
+                            <constraint firstItem="cJQ-cR-81V" firstAttribute="trailing" secondItem="uH9-da-GV3" secondAttribute="trailing" type="default" id="JTf-sd-Tar"/>
+                            <constraint firstItem="cJQ-cR-81V" firstAttribute="top" secondItem="uH9-da-GV3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Kk1-e0-wCt"/>
+                            <constraint firstAttribute="trailing" secondItem="28r-Cz-DNy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hcm-2c-7w9"/>
+                            <constraint firstItem="cJQ-cR-81V" firstAttribute="leading" secondItem="uH9-da-GV3" secondAttribute="leading" type="default" id="k5T-Xo-irS"/>
                             <constraint firstAttribute="trailing" secondItem="Opy-oL-kUJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lxW-7j-paQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fAx-wg-59J"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="pc_tutorial" destination="28r-Cz-DNy" id="x4A-3h-xSn"/>
+                        <outlet property="pv_tutorial" destination="cJQ-cR-81V" id="PMz-9L-zjO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBX-pP-p89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,11 +201,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxB-0y-6q3">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WjX-X9-JHr"/>
@@ -249,11 +257,10 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411771299999998" green="0.84705889229999998" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7IF-8j-Vm9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0dl-YV-YNe"/>
                             <constraint firstItem="4HY-i3-jD4" firstAttribute="trailing" secondItem="eOd-06-ae4" secondAttribute="trailing" type="default" id="6HS-pS-y9I"/>
-                            <constraint firstItem="mxB-0y-6q3" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="147" id="Aib-jz-Rnd"/>
                             <constraint firstAttribute="trailing" secondItem="Io2-tF-i4X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Bx8-rS-mzN"/>
                             <constraint firstItem="eOd-06-ae4" firstAttribute="top" secondItem="7IF-8j-Vm9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Exr-Nu-akI"/>
                             <constraint firstItem="4HY-i3-jD4" firstAttribute="leading" secondItem="AwF-nn-eim" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Gzw-1u-lGK"/>
@@ -264,7 +271,6 @@
                             <constraint firstItem="Io2-tF-i4X" firstAttribute="top" secondItem="7IF-8j-Vm9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="njD-TH-cSb"/>
                             <constraint firstItem="eOd-06-ae4" firstAttribute="leading" secondItem="AwF-nn-eim" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ohB-7i-kD2"/>
                             <constraint firstItem="Io2-tF-i4X" firstAttribute="bottom" secondItem="eOd-06-ae4" secondAttribute="bottom" type="default" id="tOU-1H-wWP"/>
-                            <constraint firstItem="mxB-0y-6q3" firstAttribute="centerX" secondItem="7IF-8j-Vm9" secondAttribute="centerX" type="default" id="vqo-3F-xP4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CpC-38-4dw"/>
@@ -282,6 +288,9 @@
                 <relationship kind="action" name="backToMenu:"/>
             </relationships>
         </class>
+        <class className="MGMenuButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuButton.h"/>
+        </class>
         <class className="MGMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuViewController.h"/>
             <relationships>
@@ -298,6 +307,9 @@
         </class>
         <class className="MGViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="b_newgame" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

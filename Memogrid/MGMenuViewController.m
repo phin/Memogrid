@@ -36,7 +36,11 @@
 }
 
 - (IBAction)backToGame:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    id p;
+    for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
+    /* Empty for body */
+    [p dismissModalViewControllerAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning

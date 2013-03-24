@@ -11,9 +11,27 @@
 @implementation MGLevelManager
 
 // General
+
++ (void)init {
+    NSError *error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath: [self getPlistPath]]) {
+        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]; //5
+        [fileManager copyItemAtPath:bundle toPath: [self getPlistPath] error:&error]; //6
+    }
+}
+
++ (NSString *)getPlistPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
+    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"Levels.plist"];
+    return path;
+}
+
 + (NSArray *)getLevelsForMode:(GameMode)mode {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
-    NSMutableDictionary *d_all_levels = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+
+    NSMutableDictionary *d_all_levels = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getPlistPath]];
     NSMutableArray *a_mode_levels = [NSArray arrayWithArray:[d_all_levels objectForKey:[self modeToString:mode]]];
     return a_mode_levels;
 }
@@ -46,12 +64,16 @@
     NSLog(@"Level %i", level);
     return level;
 }
-+ (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode {
 
-    BOOL finishedLevel = false;
-    // TODO
-    
-    return finishedLevel;
++ (void)userFinishedLevel:(int)level forMode:(GameMode)mode {
+
+    // Set the finished level as done
+    NSString *path                 = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+    NSMutableDictionary* d_levels  = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
+    NSArray* a_current_mode        = (NSArray*)[d_levels valueForKey: [self modeToString:mode]];
+    NSMutableDictionary *d_current = [a_current_mode objectAtIndex:level-1];
+    //[d_current setObject:[NSInteg] forKey:@"completed"];
+    //[d_levels writeToFile: path atomically:YES];
 }
 
 
