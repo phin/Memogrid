@@ -23,10 +23,19 @@
 }
 
 + (NSString *)getPlistPath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); //1
-    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"Levels.plist"];
-    return path;
+
+    NSString *s_path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    s_path = [s_path stringByAppendingPathComponent:@"Levels.plist"];
+    
+    // If the file doesn't exist in the Documents Folder, copy it.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:s_path]) {
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+        [fileManager copyItemAtPath:sourcePath toPath:s_path error:nil];
+    }
+    
+    return s_path;
 }
 
 + (NSArray *)getLevelsForMode:(GameMode)mode {
@@ -45,14 +54,23 @@
 + (int)getDifficultyFromLevel:(int)level andMode:(GameMode)mode {
     int difficulty = 0;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
-    int currentUserLevel   = [self userCurrentLevelForMode:mode];
+    int currentUserLevel   = [self getUserCurrentLevelForMode:mode];
     difficulty = [[[a_mode_levels objectAtIndex:currentUserLevel] objectForKey:@"difficulty"] intValue];
     NSLog(@"Difficulty: %i", difficulty);
     return difficulty;
 }
 
++ (BOOL)finishedGameMode:(GameMode)mode {
+    // Be sure that we don't have an exception going to the next level.
+
+    int i_usr = [self getUserCurrentLevelForMode:mode];
+    int i_max = [[self getLevelsForMode:mode] count];
+    
+    return ((i_usr-1) == i_max) ? YES : NO;
+}
+
 // User related
-+ (int)userCurrentLevelForMode:(GameMode)mode {
++ (int)getUserCurrentLevelForMode:(GameMode)mode {
     int level = 1;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
     // Find the first level that we didn't completed.
@@ -65,15 +83,17 @@
     return level;
 }
 
-+ (void)userFinishedLevel:(int)level forMode:(GameMode)mode {
+// Setters
+
++ (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode {
 
     // Set the finished level as done
-    NSString *path                 = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+    NSString *path                 = [self getPlistPath];
     NSMutableDictionary* d_levels  = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
     NSArray* a_current_mode        = (NSArray*)[d_levels valueForKey: [self modeToString:mode]];
     NSMutableDictionary *d_current = [a_current_mode objectAtIndex:level-1];
-    //[d_current setObject:[NSInteg] forKey:@"completed"];
-    //[d_levels writeToFile: path atomically:YES];
+    [d_current setObject:[NSNumber numberWithBool:YES] forKey:@"completed"];
+    [d_levels writeToFile: path atomically:YES];
 }
 
 

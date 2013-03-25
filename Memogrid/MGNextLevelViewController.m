@@ -9,6 +9,7 @@
 #import "MGNextLevelViewController.h"
 #import "MGMenuViewController.h"
 #import "MGMenuButton.h"
+#import "MGLevelManager.h"
 
 @interface MGNextLevelViewController ()
 
@@ -47,8 +48,10 @@
     noiseBackView.noiseOpacity = 0.05;
     [self.view insertSubview:noiseBackView atIndex:0];
     
+    NSString *s_next = (didWin) ? @"Next Level" : @"Try again!";
+    
     MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, 220, 250, 55)];
-    [b_next setTitle:(didWin) ? @"Next Level" : @"Try again!" forState:UIControlStateNormal];
+    [b_next setTitle:s_next forState:UIControlStateNormal];
     [b_next addTarget:self action:@selector(nextLevel:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_next];
     

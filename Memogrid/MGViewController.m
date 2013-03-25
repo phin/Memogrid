@@ -96,15 +96,25 @@
 #pragma mark - GAME FLOW FUNCTIONS
 
 - (IBAction) startGame {
+    
+    // Current mode
+    GameMode gm_current = Classic;
+    
     // Set user/view interactions
     [self stopGuessing];
 
     // Set the level.
-    int difficulty = [MGLevelManager userCurrentLevelForMode:Classic];
-    //int difficulty = 4; // DEBUG
-    [mg_square setGameWithDifficulty:difficulty];
+    int current    = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+    int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
+    difficulty     = 1; // DEBUG
     
-    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
+    if ([MGLevelManager finishedGameMode:gm_current]) {
+        //TODO
+        
+    } else {
+        [mg_square setGameWithDifficulty:difficulty];
+        [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
+    }
 }
 
 - (void) startGuessing {
@@ -129,8 +139,8 @@
     [self stopGuessing];
     
     if (didWin) {
-        int current = [MGLevelManager userCurrentLevelForMode:Classic];
-        [MGLevelManager userFinishedLevel:current forMode:Classic];
+        int current = [MGLevelManager getUserCurrentLevelForMode:Classic];
+        [MGLevelManager setUserFinishedLevel:current forMode:Classic];
     }
     
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];

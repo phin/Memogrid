@@ -17,12 +17,14 @@ typedef enum {
     Simon
 } GameMode;
 
-// User related
-+ (int)userCurrentLevelForMode:(GameMode)mode;
-+ (void)userFinishedLevel:(int)level forMode:(GameMode)mode;
-
 // General
 + (void)init;
 + (int)getTotalLevelsForMode:(GameMode)mode;
++ (int)getDifficultyFromLevel:(int)level andMode:(GameMode)mode;
++ (BOOL)finishedGameMode:(GameMode)mode;
+
+// User related
++ (int)getUserCurrentLevelForMode:(GameMode)mode;
++ (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode;
 
 @end

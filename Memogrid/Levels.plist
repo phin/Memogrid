@@ -12,7 +12,25 @@
 		</dict>
 		<dict>
 			<key>difficulty</key>
+			<integer>1</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
 			<integer>2</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>2</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>3</integer>
 			<key>completed</key>
 			<false/>
 		</dict>
@@ -30,7 +48,25 @@
 		</dict>
 		<dict>
 			<key>difficulty</key>
+			<integer>4</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
 			<integer>5</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>5</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>6</integer>
 			<key>completed</key>
 			<false/>
 		</dict>
@@ -48,6 +84,18 @@
 		</dict>
 		<dict>
 			<key>difficulty</key>
+			<integer>7</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>8</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
 			<integer>8</integer>
 			<key>completed</key>
 			<false/>
@@ -60,7 +108,49 @@
 		</dict>
 		<dict>
 			<key>difficulty</key>
+			<integer>9</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
 			<integer>10</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>10</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>11</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>11</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>12</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>12</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>13</integer>
 			<key>completed</key>
 			<false/>
 		</dict>
