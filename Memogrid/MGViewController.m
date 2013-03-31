@@ -73,7 +73,7 @@
     
     // Background
     noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:27./255. green:27./255. blue:27./255. alpha:1.000];
+    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
     noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
     noiseBackView.noiseOpacity = 0.05;
     [self.view insertSubview:noiseBackView atIndex:0];
@@ -102,16 +102,17 @@
     
     // Set user/view interactions
     [self stopGuessing];
-
-    // Set the level.
-    int current    = [MGLevelManager getUserCurrentLevelForMode:gm_current];
-    int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
-    difficulty     = 1; // DEBUG
     
     if ([MGLevelManager finishedGameMode:gm_current]) {
-        //TODO
+        //Go back to the main menu
+        [self performSegueWithIdentifier:@"gameToMenu" sender:self];
         
     } else {
+        // Set the level.
+        int current    = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+        int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
+        difficulty     = 1; // DEBUG
+        l_currentlvl.text = [NSString stringWithFormat:@"%02d", current];
         [mg_square setGameWithDifficulty:difficulty];
         [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
     }

@@ -65,8 +65,8 @@
 
     int i_usr = [self getUserCurrentLevelForMode:mode];
     int i_max = [[self getLevelsForMode:mode] count];
-    
-    return ((i_usr-1) == i_max) ? YES : NO;
+
+    return (i_usr == i_max) ? YES : NO;
 }
 
 // User related

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -29,15 +29,29 @@
                                     <segue destination="ODS-0l-u9R" kind="modal" identifier="gameToMenu" id="2cD-6f-Xg7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrw-ZW-sqP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="7im-nh-HMR"/>
+                                    <constraint firstAttribute="width" constant="127" id="8Dy-vl-eic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <color key="textColor" red="0.458823561668396" green="0.458823561668396" blue="0.458823561668396" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="deviceRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.10588236153125763" green="0.10588236153125763" blue="0.10588236153125763" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nsC-0U-uYQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ORT-jU-QOh"/>
+                            <constraint firstAttribute="trailing" secondItem="nsC-0U-uYQ" secondAttribute="trailing" constant="15" id="JOY-p6-SXW"/>
+                            <constraint firstItem="vrw-ZW-sqP" firstAttribute="top" secondItem="3" secondAttribute="top" constant="17" id="WAH-WD-9xp"/>
+                            <constraint firstItem="vrw-ZW-sqP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="15" id="XzY-Xk-sNf"/>
                             <constraint firstItem="nsC-0U-uYQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mfz-kC-cK6"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="l_currentlvl" destination="vrw-ZW-sqP" id="yQz-wm-Cj3"/>
                         <segue destination="ups-tO-mGT" kind="modal" identifier="gameToTutorial" modalTransitionStyle="crossDissolve" id="Wlg-hS-LoV"/>
                     </connections>
                 </viewController>
@@ -92,10 +106,9 @@
                                     <constraint firstAttribute="height" constant="37" id="LKQ-wC-SRG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.45882356169999999" green="0.45882356169999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-vH-RgB"/>
                         </subviews>
@@ -249,10 +262,10 @@
                                     <constraint firstAttribute="height" constant="37" id="baR-7G-HpD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.45882356169999999" green="0.45882356169999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
+                                <color key="shadowColor" red="0.27843138579999999" green="0.27843138579999999" blue="0.27843138579999999" alpha="1" colorSpace="deviceRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart memogrid@phin.fr" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -320,7 +333,6 @@
         <class className="MGTutorialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
             <relationships>
-                <relationship kind="action" name="goBackToGame:"/>
                 <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
             </relationships>
@@ -329,6 +341,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="b_newgame" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="l_currentlvl" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -344,6 +357,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uPg-Dz-PIc"/>
+        <segue reference="Wlg-hS-LoV"/>
     </inferredMetricsTieBreakers>
 </document>

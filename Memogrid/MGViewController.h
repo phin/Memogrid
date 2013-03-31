@@ -24,7 +24,9 @@
     MGSquare * mg_square;
     KGNoiseLinearGradientView *noiseBackView;
     
-    IBOutlet UIButton *b_newgame;
+    // Storyboard
+    IBOutlet UIButton *b_newgame; // Debug
+    IBOutlet UILabel  *l_currentlvl;
 }
 
 - (void) failedGame;

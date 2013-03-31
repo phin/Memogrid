@@ -112,7 +112,11 @@
         for (row = 0; row < ROWS; row++) {
             for (col = 0; col < COLS; col++) {
                 CGRect ceRect = [self makeRect:col withRow:row];
-
+                
+                // TODO : User feedback not working
+                [self setSquareWithColor:COLOR_TWO forRow:row andColumn:col];
+                status[row][col].color = COLOR_TWO;
+                
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
                     
