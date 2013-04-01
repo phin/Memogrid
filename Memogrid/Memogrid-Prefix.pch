@@ -11,6 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
     #import "KGNoise.h"
     #import "UIViewController+HCPushBackAnimation.h"
     #import "MGButton.h"

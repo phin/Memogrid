@@ -9,14 +9,26 @@
 #import <UIKit/UIKit.h>
 #import "PagedFlowView.h"
 
-@interface MGMenuViewController : UIViewController <PagedFlowViewDataSource, PagedFlowViewDelegate> {
+@protocol MenuLevelDelegate <NSObject>
+
+- (void) startLevel:(int)level forMode:(NSString *)mode;
+
+@end
+
+
+@interface MGMenuViewController : UIViewController <PagedFlowViewDataSource, PagedFlowViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     
     KGNoiseLinearGradientView *noiseBackView;
     
     // Levels
     PagedFlowView *pv_levels;
     IBOutlet UIPageControl *pc_levels;
+    IBOutlet UILabel       *l_mode;
 }
+
+@property (nonatomic, strong) id<MenuLevelDelegate> delegate;
+@property (nonatomic, strong) UICollectionView *cv_classic;
+@property (nonatomic, strong) NSArray *a_classic;
 
 - (IBAction)backToGame:(id)sender;
 

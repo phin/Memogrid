@@ -52,17 +52,22 @@
 }
 
 + (int)getDifficultyFromLevel:(int)level andMode:(GameMode)mode {
+    
+    // TODO : Level is not used here.
+    
     int difficulty = 0;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
-    int currentUserLevel   = [self getUserCurrentLevelForMode:mode];
-    difficulty = [[[a_mode_levels objectAtIndex:currentUserLevel] objectForKey:@"difficulty"] intValue];
-    NSLog(@"Difficulty: %i", difficulty);
+    if (!level) {
+        level = [self getUserCurrentLevelForMode:mode];
+    }
+    difficulty = [[[a_mode_levels objectAtIndex:level] objectForKey:@"difficulty"] intValue];
+    NSLog(@"Difficulty: %i ForLevel: %i", difficulty, level);
     return difficulty;
 }
 
 + (BOOL)finishedGameMode:(GameMode)mode {
+    
     // Be sure that we don't have an exception going to the next level.
-
     int i_usr = [self getUserCurrentLevelForMode:mode];
     int i_max = [[self getLevelsForMode:mode] count];
 

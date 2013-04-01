@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
+		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
@@ -65,6 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4200AD861708E6E800B8B9B2 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
+		4200AD871708E6E800B8B9B2 /* CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCell.m; sourceTree = "<group>"; };
+		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -189,6 +194,9 @@
 				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
 				421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */,
 				421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */,
+				4200AD861708E6E800B8B9B2 /* CVCell.h */,
+				4200AD871708E6E800B8B9B2 /* CVCell.m */,
+				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
 				4247F49B16FEA7BA00C6A494 /* back.png in Resources */,
 				4247F49C16FEA7BA00C6A494 /* back@2x.png in Resources */,
+				4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +458,7 @@
 				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
 				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
 				4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */,
+				4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Seraphin Hochart. All rights reserved.
 //
 
-#import "MGNextLevelViewController.h"
 #import "MGMenuViewController.h"
+#import "MGNextLevelViewController.h"
 #import "MGMenuButton.h"
 #import "MGLevelManager.h"
 

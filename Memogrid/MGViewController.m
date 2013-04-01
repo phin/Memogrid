@@ -16,6 +16,8 @@
 
 @implementation MGViewController
 
+static int 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,8 +35,14 @@
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    // Start a new game on that view
-    [self startGame];
+    if (!forceLevel) {
+        // Start a the current game on that view
+        [self startGame];
+    } else {
+        // User chose a level
+        // Reset the trigger
+        forceLevel = NO;
+    }
 }
 
 #pragma mark - INITIALIZATION
@@ -94,6 +102,25 @@
 
 
 #pragma mark - GAME FLOW FUNCTIONS
+
+- (void) startLevel:(int)level forMode:(NSString *)mode {
+
+    forceLevel = TRUE;
+    
+    // Set the level that the user chose.
+    GameMode gm_mode = Classic;
+    if ([mode isEqualToString:@"Bicolor"]) {
+        gm_mode = Bicolor;
+    } else if ([mode isEqualToString:@"Sequence"]) {
+        gm_mode = Simon;
+    }
+
+    int difficulty = [MGLevelManager getDifficultyFromLevel:level andMode:gm_mode];
+    difficulty     = 1; // DEBUG
+    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level];
+    [mg_square setGameWithDifficulty:difficulty];
+    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
+}
 
 - (IBAction) startGame {
     
@@ -172,6 +199,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
+        MGMenuViewController *vc_menu = [segue destinationViewController];
+        vc_menu.delegate = (id)self;
         [self animationPushBackScaleDown];
     }
 }

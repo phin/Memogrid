@@ -11,10 +11,12 @@
 #import "MGLevelManager.h"
 
 @interface MGViewController : UIViewController {
+    
     // Logic elements
     BOOL canPlay;
     BOOL multipleColors;
     BOOL debugMode;
+    BOOL forceLevel;
     
     NSMutableArray *a_currentGame;
     
@@ -31,5 +33,6 @@
 
 - (void) failedGame;
 - (void) succeededGame;
+- (void) startLevel:(int)level forMode:(NSString *)mode;
 
 @end
