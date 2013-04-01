@@ -145,10 +145,19 @@ static int i_current;
         
     } else {
         // TODO : Set the level.
-        NSLog(@"%i", i_current);
-        
-        int current    = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+        int current    = 1;
         int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
+
+        
+        if (i_current) {
+            // Keep going with the level the user chose
+            i_current++;
+            NSLog(@"Chosen by user: %i", i_current);
+            current = i_current;
+        } else {
+            // Go to the next level from the user's current achievements
+            current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+        }
 
         [self startGameWithLevel:current andDifficulty:difficulty];
     }
@@ -192,8 +201,13 @@ static int i_current;
     [self stopGuessing];
         
     if (didWin) {
-        // TODO : Handle if we currently chose a level.
         int current = [MGLevelManager getUserCurrentLevelForMode:Classic];
+
+        if (i_current) {
+            // User is playing with another level
+            current = i_current;
+        }
+        
         [MGLevelManager setUserFinishedLevel:current forMode:Classic];
     }
     

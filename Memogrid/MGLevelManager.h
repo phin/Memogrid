@@ -26,5 +26,6 @@ typedef enum {
 // User related
 + (int)getUserCurrentLevelForMode:(GameMode)mode;
 + (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode;
++ (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode;
 
 @end

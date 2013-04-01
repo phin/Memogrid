@@ -52,9 +52,7 @@
 }
 
 + (int)getDifficultyFromLevel:(int)level andMode:(GameMode)mode {
-    
-    // TODO : Level is not used here.
-    
+        
     int difficulty = 0;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
     if (!level) {
@@ -86,6 +84,13 @@
     }
     NSLog(@"Level %i", level);
     return level;
+}
+
++ (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode
+{
+    // Get if the user has finished a spcific level already
+    NSArray *a_mode_levels = [self getLevelsForMode:mode];
+    return [[[a_mode_levels objectAtIndex:level-1] objectForKey:@"completed"] boolValue];
 }
 
 // Setters

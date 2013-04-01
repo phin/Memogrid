@@ -191,6 +191,9 @@
     }
     
     // TODO : Check if we succeeded at that level
+    if ([MGLevelManager userFinishedLevel:indexPath.row+1 forMode:Classic]) {
+        [cell setCompleted:YES];
+    }
     
     return cell;
 }
