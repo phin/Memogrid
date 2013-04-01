@@ -177,6 +177,9 @@
 				4247F49016FE8B7300C6A494 /* MGButton.m */,
 				4247F49216FE9DE700C6A494 /* MGButtonSquare.h */,
 				4247F49316FE9DE800C6A494 /* MGButtonSquare.m */,
+				4200AD861708E6E800B8B9B2 /* CVCell.h */,
+				4200AD871708E6E800B8B9B2 /* CVCell.m */,
+				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
 			);
 			name = "Custom Elements";
 			sourceTree = "<group>";
@@ -194,9 +197,6 @@
 				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
 				421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */,
 				421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */,
-				4200AD861708E6E800B8B9B2 /* CVCell.h */,
-				4200AD871708E6E800B8B9B2 /* CVCell.m */,
-				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";

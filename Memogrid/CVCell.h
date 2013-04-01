@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) NSString *mode;
+@property (nonatomic) BOOL completed;
 @property (nonatomic) int level;
 
 @end

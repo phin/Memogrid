@@ -16,7 +16,7 @@
 
 @implementation MGViewController
 
-static int 
+static int i_current;
 
 - (void)viewDidLoad
 {
@@ -27,12 +27,14 @@ static int
     [self initGame]; // Init Game
 }
 
--(void) viewWillAppear:(BOOL)animated {
+-(void) viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
     [self animationPopFrontScaleUp];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void) viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
     
     if (!forceLevel) {
@@ -47,14 +49,15 @@ static int
 
 #pragma mark - INITIALIZATION
 
-- (void) initVars {
+- (void) initVars
+{
     canPlay        = NO;
     multipleColors = NO;
     debugMode      = YES;
 }
 
-- (void) initGame {
-    
+- (void) initGame
+{    
     // Init rectangle de jeu
     mg_square = [[MGSquare alloc] initWithFrame:[self getMainSquareFrameForOrientation:[self interfaceOrientation]]];
     mg_square.backgroundColor = [UIColor clearColor];
@@ -65,7 +68,8 @@ static int
     [MGLevelManager init];
 }
 
-- (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation {
+- (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation
+{
     float pos_x = ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? [UIScreen mainScreen].bounds.size.width/2 - (((sq_SIZE+2) * ROWS)/2) : 1.5);
     float pos_y = [UIScreen mainScreen].bounds.size.height/2 - (((sq_SIZE+2) * ROWS)/2);
     
@@ -74,11 +78,12 @@ static int
         pos_y = [UIScreen mainScreen].bounds.size.width/2 - (((sq_SIZE+2) * ROWS)/2);
     }
     CGRect rect_game = CGRectMake(pos_x, pos_y, (sq_SIZE+2) * ROWS, (sq_SIZE+2) * COLS);
+    
     return rect_game;
 }
 
-- (void) initUI {
-    
+- (void) initUI
+{    
     // Background
     noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
     noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
@@ -90,21 +95,26 @@ static int
 #pragma mark - INTERFACE FUNCTIONS
 
 
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
     mg_square.frame = [self getMainSquareFrameForOrientation:toInterfaceOrientation];
     [self viewWillLayoutSubviews];
 }
 
-- (void)viewWillLayoutSubviews {
+- (void)viewWillLayoutSubviews
+{
     noiseBackView.frame = self.view.bounds;
     [super viewWillLayoutSubviews];
 }
 
 
-#pragma mark - GAME FLOW FUNCTIONS
+#pragma mark - GAME INIT
 
-- (void) startLevel:(int)level forMode:(NSString *)mode {
-
+- (void) startLevel:(int)level forMode:(NSString *)mode
+{
+    // Start Level Manually
+    
+    i_current  = level;
     forceLevel = TRUE;
     
     // Set the level that the user chose.
@@ -116,13 +126,12 @@ static int
     }
 
     int difficulty = [MGLevelManager getDifficultyFromLevel:level andMode:gm_mode];
-    difficulty     = 1; // DEBUG
-    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level];
-    [mg_square setGameWithDifficulty:difficulty];
-    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
+    [self startGameWithLevel:level andDifficulty:difficulty];
 }
 
-- (IBAction) startGame {
+- (IBAction) startGame
+{    
+    // Start Level Automatically
     
     // Current mode
     GameMode gm_current = Classic;
@@ -135,38 +144,55 @@ static int
         [self performSegueWithIdentifier:@"gameToMenu" sender:self];
         
     } else {
-        // Set the level.
+        // TODO : Set the level.
+        NSLog(@"%i", i_current);
+        
         int current    = [MGLevelManager getUserCurrentLevelForMode:gm_current];
         int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
-        difficulty     = 1; // DEBUG
-        l_currentlvl.text = [NSString stringWithFormat:@"%02d", current];
-        [mg_square setGameWithDifficulty:difficulty];
-        [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.5];
+
+        [self startGameWithLevel:current andDifficulty:difficulty];
     }
 }
 
-- (void) startGuessing {
+#pragma mark - GAME FLOW FUNCTIONS
+
+- (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty
+{    
+    difficulty = (debugMode) ? 1 : difficulty;
+    
+    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level];
+    [mg_square setGameWithDifficulty:difficulty];
+    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
+}
+
+- (void) startGuessing
+{
     [self clear];
     [self userCanPlay:YES];
 }
 
-- (void) stopGuessing {
+- (void) stopGuessing
+{
     [self clear];
     [self userCanPlay:NO];
 }
 
-- (void) failedGame {
+- (void) failedGame
+{
     [self endedLevelWithSuccess:NO];
 }
 
-- (void) succeededGame {
+- (void) succeededGame
+{
     [self endedLevelWithSuccess:YES];
 }
 
-- (void) endedLevelWithSuccess:(BOOL)didWin {
+- (void) endedLevelWithSuccess:(BOOL)didWin
+{
     [self stopGuessing];
-    
+        
     if (didWin) {
+        // TODO : Handle if we currently chose a level.
         int current = [MGLevelManager getUserCurrentLevelForMode:Classic];
         [MGLevelManager setUserFinishedLevel:current forMode:Classic];
     }
@@ -179,28 +205,32 @@ static int
 
 #pragma mark - GAME FUNCTIONS
 
-- (void) userCanPlay:(BOOL)usercanplay {
+- (void) userCanPlay:(BOOL)usercanplay
+{
     canPlay = usercanplay;
     mg_square.canPlay = canPlay;
     b_newgame.hidden = !usercanplay;
 }
 
-- (void) clear {
+- (void) clear
+{
     [mg_square clear];
 }
 
-- (IBAction)reset {
+- (IBAction)reset
+{
     // DEBUG ACTIONS
     [self clear];
 }
 
-#pragma mark - Next Level
+#pragma mark - NEXT LEVEL
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
         MGMenuViewController *vc_menu = [segue destinationViewController];
         vc_menu.delegate = (id)self;
+        i_current = 0;
         [self animationPushBackScaleDown];
     }
 }

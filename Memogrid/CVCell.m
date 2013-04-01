@@ -38,19 +38,26 @@
     
     self.layer.cornerRadius = 2.0;
 
-    self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    if (self.completed) {
+        self.backgroundColor = [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1];
+    } else {
+        self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    }
     
     return self;
     
 }
 
 - (void) setMode:(NSString *)mode {
-    if ([mode isEqualToString:@"Classic"]) {
-        self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2];
-    } else if ([mode isEqualToString:@"Bicolor"]) {
-        self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.5];
-    } else { // Sequence
-        self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    
+    if (!self.completed) {
+        if ([mode isEqualToString:@"Classic"]) {
+            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2];
+        } else if ([mode isEqualToString:@"Bicolor"]) {
+            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.5];
+        } else { // Sequence
+            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+        }
     }
 }
 

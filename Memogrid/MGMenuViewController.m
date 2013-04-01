@@ -65,6 +65,8 @@
     pv_levels.pageControl      = pc_levels;
     [self.view addSubview:pv_levels];
     
+    // TODO : Show the current Mode the User is playing.
+    
     NSMutableArray *secondSection = [[NSMutableArray alloc] init];
     for (int i = 0; i < 25; i++) {
         [secondSection addObject:[NSString stringWithFormat:@"item %d", i]];
