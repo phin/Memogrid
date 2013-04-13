@@ -56,7 +56,7 @@ static int i_current;
 {
     canPlay        = NO;
     multipleColors = NO;
-    debugMode      = NO;
+    debugMode      = YES;
 }
 
 - (void) initGame
@@ -142,10 +142,10 @@ static int i_current;
     // Set user/view interactions
     [self stopGuessing];
     
-    if ([MGLevelManager finishedGameMode:gm_current]) {
-        //Go back to the main menu
-        [self performSegueWithIdentifier:@"gameToMenu" sender:self];
-    } else {
+//    if ([MGLevelManager finishedGameMode:gm_current]) {
+//        //Go back to the main menu
+//        [self performSegueWithIdentifier:@"gameToMenu" sender:self];
+//    } else {
 
         // Next level
         int current    = 0;
@@ -162,14 +162,19 @@ static int i_current;
         }
 
         [self startGameWithLevel:current andDifficulty:difficulty];
-    }
+   // }
 }
 
 #pragma mark - GAME FLOW FUNCTIONS
 
 - (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty
-{    
-    difficulty = (debugMode) ? 1 : difficulty;
+{
+    // TEMPORARY
+    if (level > 25) {
+        level = 25;
+    }
+    
+    difficulty = (debugMode) ? 3 : difficulty;
     
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", level+1];
     [mg_square setGameWithDifficulty:difficulty];

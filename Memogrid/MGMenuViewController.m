@@ -111,19 +111,19 @@
     }
 
     if (index == 0) {
-        v_tutoriel = [self levelsViewForMode:@"Classic"];
+        v_tutoriel = [self levelViewForMode:@"Classic"];
 
     } else if (index == 1) {
-        v_tutoriel = [self levelsViewForMode:@"Bicolor"];
+        v_tutoriel = [self levelViewForMode:@"Sequence"];
     } else {
         // Sequence
-        v_tutoriel = [self levelsViewForMode:@"Sequence"];
+        v_tutoriel = [self levelViewForMode:@"Bicolor"];
     }
     
     return v_tutoriel;
 }
 
-- (UIView *)levelsViewForMode:(NSString *)mode {
+- (UIView *)levelViewForMode:(NSString *)mode {
     UIView *v = [[UIView alloc] init];
     
     // Add a Label as Mode title
@@ -150,12 +150,12 @@
     if ([mode isEqualToString:@"Classic"]) {
         cv_classic.tag = 111;
         label.text     = @"CLASSIC";
-    } else if ([mode isEqualToString:@"Bicolor"]) {
-        cv_classic.tag = 222;
-        label.text     = @"BICOLOR";
     } else if ([mode isEqualToString:@"Sequence"]) {
-        cv_classic.tag = 333;
+        cv_classic.tag = 222;
         label.text     = @"SEQUENCE";
+    } else if ([mode isEqualToString:@"Bicolor"]) {
+        cv_classic.tag = 333;
+        label.text     = @"BICOLOR";
     }
     
     [cv_classic registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
@@ -182,21 +182,24 @@
     [cell.titleLabel setText:[NSString stringWithFormat:@"%i",indexPath.row+1]];
     [cell setLevel:indexPath.row+1];
     
+    GameMode gm_current = Classic;
+    
     // Set the right color
     if (collectionView.tag == 111) {
         [cell setMode:@"Classic"];
     } else if (collectionView.tag == 222) {
-        [cell setMode:@"Bicolor"];
-    } else if (collectionView.tag == 333) {
         [cell setMode:@"Sequence"];
+        gm_current = Simon;
+    } else if (collectionView.tag == 333) {
+        [cell setMode:@"Bicolor"];
+        gm_current = Bicolor;
     }
     
     // Check if that level is accessible
-    
-    if ([MGLevelManager userFinishedLevel:indexPath.row forMode:Classic]) {
+    if ([MGLevelManager userFinishedLevel:indexPath.row forMode:gm_current]) {
         [cell setCanBePlayed:YES];
         [cell setCompleted:YES];
-    } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:Classic]) {
+    } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:gm_current]) {
         // Next level that the user needs to do
         [cell setCanBePlayed:YES];
     } else {
@@ -231,18 +234,23 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:Classic]) {
+    GameMode gm_current = Classic;
+    NSString *s_mode    = @"Classic";
+    
+    // Set the right color
+    if (collectionView.tag == 111) {
+    } else if (collectionView.tag == 222) {
+        gm_current = Simon;
+        s_mode     = @"Sequence";
+    } else if (collectionView.tag == 333) {
+        gm_current = Bicolor;
+        s_mode = @"Bicolor";
+    }
+    
+    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current]) {
         // Check if the user can access that level
         id dlg = self.delegate;
         [self dismissViewControllerAnimated:YES completion:nil];
-        
-        NSString *s_mode = @"Classic";
-        
-        if (collectionView.tag == 222) {
-            s_mode = @"Bicolor";
-        } else if (collectionView.tag == 333) {
-            s_mode = @"Sequence";
-        }
         
         if ([dlg respondsToSelector:@selector(startLevel:forMode:)]) {
             [dlg startLevel:indexPath.row forMode:s_mode];

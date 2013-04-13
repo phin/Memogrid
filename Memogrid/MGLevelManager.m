@@ -112,11 +112,10 @@
 }
 
 
-
 #pragma mark - Setters
 
-+ (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode {
-
++ (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode
+{
     // Set the finished level as done
     NSString *path                 = [self getPlistPath];
     NSMutableDictionary* d_levels  = [[NSMutableDictionary alloc] initWithContentsOfFile: path];

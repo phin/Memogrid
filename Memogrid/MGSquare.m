@@ -124,7 +124,6 @@
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
                     
-                    // TODO : For some reason, the 1:1 square cannot be touched
                     NSLog(@"Touched Square, row: %i col:%i", row, col);
                     
                     BOOL goodTile = NO;
@@ -136,21 +135,25 @@
                     for (int r = 0; r < [a_row count]; r++) {
                         if ([[a_row objectAtIndex:r] intValue] == row) {
                             if ([[a_col objectAtIndex:r] intValue] == col) {
-                                // Good!
-                                NSLog(@"Good tile");
+                                
+                                // Since we use a string if the object has been used, it return 0 for the first row/col where the value is "Used".
+                                // Easy fix would be to add 99.
+                                
                                 NSLog(@"Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
                                       [[a_remainingTiles objectAtIndex:1] objectAtIndex:r]);
                                 goodTile = YES;
                             
                                 // Check if that tile is already removed from Remaining tile
-                                if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:r] isEqualToString:@"Used"]) {
+                                if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:r] isEqualToString:@"99 Used"]) {
                                     // We have it already, let's move on.
                                     NSLog(@"Already typed");
                                     return;
                                 } else {
+                                    NSLog(@"Good tile");
+                                    
                                     // Remove it from the remaining tiles.
-                                    [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:@"Used"];
-                                    [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:@"Used"];
+                                    [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:@"99 Used"];
+                                    [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:@"99 Used"];
                                 }
                             }
                         }
@@ -179,7 +182,7 @@
                     // Check if this was the last tile.
                     int tilesRemaining = [[a_remainingTiles objectAtIndex:0] count];
                     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
-                        if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"Used"]) {
+                        if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
                             tilesRemaining--;
                         }
                     }
@@ -225,7 +228,7 @@
     // NSLog(@"Remaining Tiles : %@", a_remainingTiles);
     
     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
-        if (![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"Used"]) {
+        if (![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
             [self setSquareWithColor:COLOR_ANSWER forRow:[[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue] andColumn:[[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue]];
         }
     }
@@ -245,6 +248,8 @@
         [a_col addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
     }
     
+    // Not working.
+    // TODO : Check that we have unique values.
     a_row = [self shuffleArray:a_row];
     a_col = [self shuffleArray:a_col];
     
