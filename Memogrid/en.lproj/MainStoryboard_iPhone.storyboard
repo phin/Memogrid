@@ -311,6 +311,9 @@
     <classes>
         <class className="MGAboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGAboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToMenu:"/>
+            </relationships>
         </class>
         <class className="MGButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGButton.h"/>

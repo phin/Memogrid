@@ -30,7 +30,7 @@ struct color_def
 static struct color_def color_values[COLOR_MAX] = {
     { 205./255., 189./255., 170./255., 1 },
     { 182./255., 4./255., 0/255., 1 },
-    { 1, 1, 1, 1 }
+    { 0.349, 0.522, 0.153, 1 }
 };
 
 struct square {
@@ -55,5 +55,7 @@ struct square {
 
 // Game
 - (NSArray *)setGameWithDifficulty:(int)number;
+
+- (void) showAnswer;
 
 @end

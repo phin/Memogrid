@@ -190,10 +190,13 @@ static int i_current;
 
 - (void) failedGame
 {
-    // 1. TODO : Show what the user should have tapped.
+    // 1. Show what the user should have tapped.
+    [self userCanPlay:NO];
+    [mg_square showAnswer];
     
     // 2. Then go to the Lost page.
-    [self endedLevelWithSuccess:NO];
+    [self performSelector:@selector(endedLevelWithSuccess:) withObject:NO afterDelay:1.0];
+    //[self endedLevelWithSuccess:NO];
 }
 
 - (void) succeededGame

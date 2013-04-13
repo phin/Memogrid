@@ -119,9 +119,7 @@
             for (col = 0; col < COLS; col++) {
                 CGRect ceRect = [self makeRect:col withRow:row];
                 
-                // TODO : User feedback not working
-                //[self setSquareWithColor:COLOR_TWO forRow:row andColumn:col];
-                //status[row][col].color = COLOR_TWO;
+                // TODO : User feedback when tap on tile
                 
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
@@ -166,14 +164,14 @@
                     
                     // Color the selected tile.
                     enum colors color = status[row][col].color;
-                    if (color == COLOR_ONE) {
-                        color = COLOR_TWO;
-                    } else if (color == COLOR_TWO && _multipleColors) {
-                        color = COLOR_THREE;
-                    } else if (color == COLOR_TWO && !_multipleColors) {
-                        color = COLOR_ONE;
-                    } else if (color == COLOR_THREE ) {
-                        color = COLOR_ONE;
+                    if (color == COLOR_DEFAULT) {
+                        color = COLOR_RED;
+                    } else if (color == COLOR_RED && _multipleColors) {
+                        color = COLOR_ANSWER;
+                    } else if (color == COLOR_RED && !_multipleColors) {
+                        color = COLOR_DEFAULT;
+                    } else if (color == COLOR_ANSWER ) {
+                        color = COLOR_DEFAULT;
                     }
                     [self setSquareWithColor:color forRow:row andColumn:col];
                     
@@ -202,9 +200,9 @@
     int row,col;
     for (row = 0; row < ROWS; row++) {
         for (col = 0; col < COLS; col++) {
-            [self setSquareWithColor:COLOR_ONE forRow:row andColumn:col];
+            [self setSquareWithColor:COLOR_DEFAULT forRow:row andColumn:col];
             // TODO Following is not working.
-            status[row][col].color = COLOR_ONE;
+            status[row][col].color = COLOR_DEFAULT;
             status[row][col].dirty = true;
         }
     }
@@ -221,6 +219,17 @@
 
 #pragma mark - Game Functions
 
+- (void) showAnswer
+{
+    // Put all the tiles that are remaining in the remaing_tiles array.
+    // NSLog(@"Remaining Tiles : %@", a_remainingTiles);
+    
+    for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
+        if (![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"Used"]) {
+            [self setSquareWithColor:COLOR_ANSWER forRow:[[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue] andColumn:[[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue]];
+        }
+    }
+}
 
 - (NSArray *)setGameWithDifficulty:(int)n {
     
@@ -249,7 +258,7 @@
         [a_game_row addObject:[NSString stringWithFormat:@"%i", rand_row]];
         [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
         
-        [self setSquareWithColor:COLOR_TWO forRow:rand_row andColumn:rand_col];
+        [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
 
         NSLog(@"row:%i col:%i", rand_row, rand_col);
     }
