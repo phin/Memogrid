@@ -177,7 +177,7 @@ static int i_current;
     difficulty = (debugMode) ? 3 : difficulty;
     
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", level+1];
-    [mg_square setGameWithDifficulty:difficulty];
+    [mg_square setGameWithDifficulty:difficulty andMode:Classic];
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
 }
 

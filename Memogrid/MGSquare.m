@@ -234,7 +234,7 @@
     }
 }
 
-- (NSArray *)setGameWithDifficulty:(int)n {
+- (NSArray *)setGameWithDifficulty:(int)n andMode:(NSString *)mode {
     
     // Clear what's existing
     [self clear];
@@ -249,7 +249,9 @@
     }
     
     // Not working.
+    
     // TODO : Check that we have unique values.
+    
     a_row = [self shuffleArray:a_row];
     a_col = [self shuffleArray:a_col];
     
@@ -273,7 +275,6 @@
     a_remainingTiles = [game_values mutableCopy];
 
     return game_values;
-
 }
 
 -(int)getRandomNumber:(int)from to:(int)to {

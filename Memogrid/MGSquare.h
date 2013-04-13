@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGLevelManager.h"
 
 #define ROWS 7
 #define COLS 7
@@ -54,7 +55,7 @@ struct square {
 - (void)clear;
 
 // Game
-- (NSArray *)setGameWithDifficulty:(int)number;
+- (NSArray *)setGameWithDifficulty:(int)number andMode:(GameMode)mode;
 
 - (void) showAnswer;
 
