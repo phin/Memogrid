@@ -37,11 +37,11 @@
     self.titleLabel.textColor    = [UIColor whiteColor];
     
     self.layer.cornerRadius = 2.0;
-
     self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
     
-    return self;
+    self.canBePlayed = NO;
     
+    return self;
 }
 
 - (void) setMode:(NSString *)mode {
@@ -59,7 +59,20 @@
 
 - (void) setCompleted:(BOOL)completed {
     self.backgroundColor = (completed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+}
 
+- (void) setCanBePlayed:(BOOL)canBePlayed {
+    if (!self.completed) {
+        if ([self.mode isEqualToString:@"Classic"]) {
+            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.01];
+        } else if ([self.mode isEqualToString:@"Bicolor"]) {
+            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.5] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.01];
+        } else { // Sequence
+            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.01];
+        }
+    } else {
+        self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    }
 }
 
 /*

@@ -10,7 +10,8 @@
 
 @implementation MGLevelManager
 
-// General
+
+#pragma mark - Init
 
 + (void)init {
     NSError *error;
@@ -38,8 +39,12 @@
     return s_path;
 }
 
-+ (NSArray *)getLevelsForMode:(GameMode)mode {
+#pragma mark - Getters
 
++ (NSArray *)getLevelsForMode:(GameMode)mode {
+    
+    // TODO : Stop asking all the time for plist;
+    
     NSMutableDictionary *d_all_levels = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getPlistPath]];
     NSMutableArray *a_mode_levels = [NSArray arrayWithArray:[d_all_levels objectForKey:[self modeToString:mode]]];
     return a_mode_levels;
@@ -52,37 +57,50 @@
 }
 
 + (int)getDifficultyFromLevel:(int)level andMode:(GameMode)mode {
-        
-    int difficulty = 0;
+
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
     if (!level) {
         level = [self getUserCurrentLevelForMode:mode];
     }
-    difficulty = [[[a_mode_levels objectAtIndex:level] objectForKey:@"difficulty"] intValue];
+    int difficulty = [[[a_mode_levels objectAtIndex:level] objectForKey:@"difficulty"] intValue];
     NSLog(@"Difficulty: %i ForLevel: %i", difficulty, level);
     return difficulty;
 }
 
 + (BOOL)finishedGameMode:(GameMode)mode {
     
-    // Be sure that we don't have an exception going to the next level.
-    int i_usr = [self getUserCurrentLevelForMode:mode];
-    int i_max = [[self getLevelsForMode:mode] count];
+    int i_usr = [self getUserCurrentLevelForMode:mode]; // starts at 0 to 24 (Classic)
+    int i_max = [[self getLevelsForMode:mode] count];   // 25 (Classic)
 
-    return (i_usr == i_max) ? YES : NO;
+    return (i_usr+1 == i_max) ? YES : NO;
 }
 
-// User related
++ (BOOL)canPlayLevelAtIndex:(int)index forMode:(GameMode)mode {
+    if ([self userFinishedLevel:index forMode:mode]) {
+        return YES;
+    } else if (([self getUserCurrentLevelForMode:Classic]) == index) {
+        // Current level the user is trying to achieve.
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
+#pragma mark - User
+
 + (int)getUserCurrentLevelForMode:(GameMode)mode {
-    int level = 1;
+    
+    int level = 0;
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
+    
     // Find the first level that we didn't completed.
     for (int i = 0; i < [a_mode_levels count]; i++) {
         if ([[[a_mode_levels objectAtIndex:i] objectForKey:@"completed"] intValue] == 1) {
             level++;
         }
     }
-    NSLog(@"Level %i", level);
+    //NSLog(@"Level %i", level);
     return level;
 }
 
@@ -90,10 +108,12 @@
 {
     // Get if the user has finished a spcific level already
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
-    return [[[a_mode_levels objectAtIndex:level-1] objectForKey:@"completed"] boolValue];
+    return [[[a_mode_levels objectAtIndex:level] objectForKey:@"completed"] boolValue];
 }
 
-// Setters
+
+
+#pragma mark - Setters
 
 + (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode {
 
@@ -101,13 +121,13 @@
     NSString *path                 = [self getPlistPath];
     NSMutableDictionary* d_levels  = [[NSMutableDictionary alloc] initWithContentsOfFile: path];
     NSArray* a_current_mode        = (NSArray*)[d_levels valueForKey: [self modeToString:mode]];
-    NSMutableDictionary *d_current = [a_current_mode objectAtIndex:level-1];
+    NSMutableDictionary *d_current = [a_current_mode objectAtIndex:level];
     [d_current setObject:[NSNumber numberWithBool:YES] forKey:@"completed"];
     [d_levels writeToFile: path atomically:YES];
 }
 
 
-// Useful Internally
+#pragma mark - Helpers
 
 + (NSString*)modeToString:(GameMode)mode {
     NSString *result = nil;

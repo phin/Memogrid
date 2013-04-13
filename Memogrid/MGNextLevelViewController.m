@@ -55,10 +55,10 @@
     [b_next addTarget:self action:@selector(nextLevel:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_next];
     
-    MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-200, 250, 55)];
-    [b_level setTitle:@"Choose Level" forState:UIControlStateNormal];
-    [b_level addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:b_level];
+    //    MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-200, 250, 55)];
+    //    [b_level setTitle:@"Choose Level" forState:UIControlStateNormal];
+    //    [b_level addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:b_level];
 
     MGButton *b_fb = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
     [b_fb setTitle:@"Share on Facebook" forState:UIControlStateNormal];
@@ -70,15 +70,15 @@
     [b_tw addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_tw];
     
-    MGMenuButton *mb_menu = [[MGMenuButton alloc] initWithFrame:CGRectMake(265, 20, 35, 33)];
-    [mb_menu addTarget:self action:@selector(goToMenu:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:mb_menu];
+    // MGMenuButton *mb_menu = [[MGMenuButton alloc] initWithFrame:CGRectMake(265, 20, 35, 33)];
+    // [mb_menu addTarget:self action:@selector(goToMenu:) forControlEvents:UIControlEventTouchUpInside];
+    // [self.view addSubview:mb_menu];
     
     UILabel *l_message = [[UILabel alloc] initWithFrame:CGRectMake(35, 96, 250, 55)];
     l_message.backgroundColor = [UIColor clearColor];
     l_message.font            = [UIFont fontWithName:@"VerbBlack" size:22];
     l_message.textColor       = [UIColor colorWithRed:0.459 green:0.459 blue:0.459 alpha:1.0];
-    l_message.textAlignment   = UITextAlignmentCenter;
+    l_message.textAlignment   = NSTextAlignmentCenter;
     l_message.text            = (didWin) ? @"You won!" : @"You lost!";
     [self.view addSubview:l_message];
 }

@@ -11,6 +11,8 @@
 
 @implementation MGSquare
 
+#pragma mark - Init
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -34,6 +36,8 @@
 - (CGRect)makeRect:(int)column withRow:(int)row {
     return CGRectMake(2*(row+1)+sq_SIZE*row, 2*(column+1) +sq_SIZE*column, sq_SIZE, sq_SIZE);
 }
+
+#pragma mark - Drawing
 
 - (void)drawSquareAtRow:(int)row atColumn:(int)column {
 
@@ -103,6 +107,8 @@
     [self drawSquareAtRow:row atColumn:column];
 }
 
+#pragma mark - Touch Event
+
 -(void)handleTouch:(NSSet *)touches withEvent:(UIEvent *)event {
     
     if (_canPlay) {
@@ -114,8 +120,8 @@
                 CGRect ceRect = [self makeRect:col withRow:row];
                 
                 // TODO : User feedback not working
-                [self setSquareWithColor:COLOR_TWO forRow:row andColumn:col];
-                status[row][col].color = COLOR_TWO;
+                //[self setSquareWithColor:COLOR_TWO forRow:row andColumn:col];
+                //status[row][col].color = COLOR_TWO;
                 
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
@@ -213,7 +219,8 @@
 }
 
 
-// Game functions
+#pragma mark - Game Functions
+
 
 - (NSArray *)setGameWithDifficulty:(int)n {
     
@@ -224,9 +231,9 @@
     NSMutableArray *a_row = [NSMutableArray array];
     NSMutableArray *a_col = [NSMutableArray array];
     
-    for (int i = 0; i < ROWS; i++) {
-        [a_row addObject:[NSString stringWithFormat:@"%i", i]];
-        [a_col addObject:[NSString stringWithFormat:@"%i", i]];
+    for (int i = 0; i < n; i++) {
+        [a_row addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
+        [a_col addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
     }
     
     a_row = [self shuffleArray:a_row];
@@ -253,6 +260,11 @@
 
     return game_values;
 
+}
+
+-(int)getRandomNumber:(int)from to:(int)to {
+    
+    return (int)from + arc4random() % (to-from+1);
 }
 
 - (NSMutableArray *)shuffleArray:(NSArray *)array {

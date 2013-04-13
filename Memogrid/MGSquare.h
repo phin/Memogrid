@@ -13,9 +13,9 @@
 #define sq_SIZE ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 86 : 43)
 
 enum colors {
-    COLOR_ONE,
-    COLOR_TWO,
-    COLOR_THREE,
+    COLOR_DEFAULT,
+    COLOR_RED,
+    COLOR_ANSWER,
     COLOR_MAX
 };
 

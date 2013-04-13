@@ -23,7 +23,7 @@
     // Levels
     PagedFlowView *pv_levels;
     IBOutlet UIPageControl *pc_levels;
-    IBOutlet UILabel       *l_mode;
+    IBOutlet UILabel       *l_title;
 }
 
 @property (nonatomic, strong) id<MenuLevelDelegate> delegate;

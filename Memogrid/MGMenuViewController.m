@@ -57,7 +57,9 @@
 
 - (void) initLevels {
     
-    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, 75, 320, 300)];
+    [l_title setHidden:!IS_IPHONE_5];
+    
+    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5) ? 52 : 5, 320, 345)];
     pv_levels.delegate         = self;
     pv_levels.dataSource       = self;
     pv_levels.minimumPageAlpha = 1.0;
@@ -87,27 +89,11 @@
 #pragma mark - PagedFlowView Delegate
 
 - (CGSize)sizeForPageInFlowView:(PagedFlowView *)flowView {
-    return CGSizeMake(320, (IS_IPHONE_5) ? 300 : 150);
+    return CGSizeMake(320, 345);
 }
 
 - (void)didChangePageToIndex:(int)index forFlowView:(PagedFlowView *)flowView {
-
-    [UIView animateWithDuration:0.2 animations:^{
-        l_mode.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        // Update the Play button
-        if (index == 0) {
-            l_mode.text = @"CLASSIC";
-        } else if (index == 1) {
-            l_mode.text = @"BICOLOR";
-        } else if (index == 2) {
-            l_mode.text = @"SEQUENCE";
-        }
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            l_mode.alpha = 1.0;
-        }];
-    }];
+    
 }
 
 
@@ -140,21 +126,36 @@
 - (UIView *)levelsViewForMode:(NSString *)mode {
     UIView *v = [[UIView alloc] init];
     
+    // Add a Label as Mode title
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 25)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor       = [UIColor lightGrayColor];
+    label.font            = [UIFont fontWithName:@"Futura-CondensedMedium" size:20];
+    label.textAlignment   = NSTextAlignmentCenter;
+    label.text            = mode; // Default
+    [v addSubview:label];
+    
+    // Show the levels
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(50, 50)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    cv_classic = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 320, 320) collectionViewLayout:flowLayout];
+    cv_classic = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 25, 320, 320) collectionViewLayout:flowLayout];
     cv_classic.dataSource = self;
     cv_classic.delegate   = self;
     cv_classic.backgroundColor = [UIColor clearColor];
     
     if ([mode isEqualToString:@"Classic"]) {
         cv_classic.tag = 111;
+        label.text     = @"CLASSIC";
     } else if ([mode isEqualToString:@"Bicolor"]) {
         cv_classic.tag = 222;
+        label.text     = @"BICOLOR";
     } else if ([mode isEqualToString:@"Sequence"]) {
         cv_classic.tag = 333;
+        label.text     = @"SEQUENCE";
     }
     
     [cv_classic registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
@@ -190,9 +191,16 @@
         [cell setMode:@"Sequence"];
     }
     
-    // TODO : Check if we succeeded at that level
-    if ([MGLevelManager userFinishedLevel:indexPath.row+1 forMode:Classic]) {
+    // Check if that level is accessible
+    
+    if ([MGLevelManager userFinishedLevel:indexPath.row forMode:Classic]) {
+        [cell setCanBePlayed:YES];
         [cell setCompleted:YES];
+    } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:Classic]) {
+        // Next level that the user needs to do
+        [cell setCanBePlayed:YES];
+    } else {
+        [cell setCanBePlayed:NO];
     }
     
     return cell;
@@ -212,28 +220,35 @@
 - (void) collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Change background color
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed: 0.714 green: 0.016 blue: 0 alpha: 1];
+    CVCell *cell = (CVCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (cell.canBePlayed) {
+        cell.backgroundColor = [UIColor colorWithRed: 0.714 green: 0.016 blue: 0 alpha: 1];
+    } else {
+        NSLog(@"User cannot access this level.");
+    }
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Check if the user can access that level
-    id dlg = self.delegate;
-    [self dismissModalViewControllerAnimated:YES];
-    
-    NSString *s_mode = @"Classic";
-    
-    if (collectionView.tag == 222) {
-        s_mode = @"Bicolor";
-    } else if (collectionView.tag == 333) {
-        s_mode = @"Sequence";
-    }
-    
-    if ([dlg respondsToSelector:@selector(startLevel:forMode:)]) {
-        [dlg startLevel:indexPath.row+1 forMode:s_mode];
-    } else {
-        NSLog(@"Unable to start Level");
+    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:Classic]) {
+        // Check if the user can access that level
+        id dlg = self.delegate;
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        NSString *s_mode = @"Classic";
+        
+        if (collectionView.tag == 222) {
+            s_mode = @"Bicolor";
+        } else if (collectionView.tag == 333) {
+            s_mode = @"Sequence";
+        }
+        
+        if ([dlg respondsToSelector:@selector(startLevel:forMode:)]) {
+            [dlg startLevel:indexPath.row forMode:s_mode];
+        } else {
+            NSLog(@"Unable to start Level");
+        }
     }
 }
 

@@ -85,7 +85,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG" customClass="MGButton">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="9v9-v5-nRn"/>
+                                    <constraint firstAttribute="width" constant="250" id="Wnn-GD-60h"/>
                                     <constraint firstAttribute="height" constant="54" id="mxo-MJ-PWF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -103,7 +103,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MEMOGRID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izp-k1-RCD">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="177" id="0dG-We-wjc"/>
-                                    <constraint firstAttribute="height" constant="37" id="LKQ-wC-SRG"/>
+                                    <constraint firstAttribute="height" constant="37" id="okN-Q8-YaS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <color key="textColor" red="0.45882356169999999" green="0.45882356169999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
@@ -111,34 +111,23 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-vH-RgB"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CLASSIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0B-PO-NSS">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="5yj-TK-Duf"/>
-                                    <constraint firstAttribute="width" constant="148" id="7tq-IJ-8ua"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="20"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="27" id="7eo-ma-vys"/>
+                            <constraint firstAttribute="bottom" secondItem="EW7-oz-p49" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="75y-xj-eOR"/>
+                            <constraint firstItem="izp-k1-RCD" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="19" id="7al-Mn-JbA"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="top" secondItem="2jm-q3-0IG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="85V-oi-UM3"/>
-                            <constraint firstItem="2jm-q3-0IG" firstAttribute="top" secondItem="HrH-vH-RgB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ayy-on-nDa"/>
-                            <constraint firstItem="HrH-vH-RgB" firstAttribute="centerX" secondItem="2jm-q3-0IG" secondAttribute="centerX" type="default" id="EIC-n1-zJe"/>
-                            <constraint firstItem="EW7-oz-p49" firstAttribute="centerX" secondItem="uNV-kC-ZtC" secondAttribute="centerX" type="default" id="PKg-cm-WjI"/>
-                            <constraint firstItem="f0B-PO-NSS" firstAttribute="centerX" secondItem="izp-k1-RCD" secondAttribute="centerX" type="default" id="QzW-YE-hrP"/>
-                            <constraint firstItem="f0B-PO-NSS" firstAttribute="centerX" secondItem="HrH-vH-RgB" secondAttribute="centerX" type="default" id="Ycc-fU-z8y"/>
-                            <constraint firstItem="izp-k1-RCD" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="20" symbolic="YES" type="default" id="iRZ-yN-6Wg"/>
+                            <constraint firstAttribute="trailing" secondItem="HrH-vH-RgB" secondAttribute="trailing" constant="12" id="Kmq-T6-sE8"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="leading" secondItem="2jm-q3-0IG" secondAttribute="leading" type="default" id="jmk-pd-aZ6"/>
                             <constraint firstItem="EW7-oz-p49" firstAttribute="trailing" secondItem="2jm-q3-0IG" secondAttribute="trailing" type="default" id="jrE-w1-NLL"/>
-                            <constraint firstItem="f0B-PO-NSS" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" constant="48" id="nS1-4E-EGM"/>
+                            <constraint firstItem="izp-k1-RCD" firstAttribute="centerX" secondItem="uNV-kC-ZtC" secondAttribute="centerX" type="default" id="oGt-Z4-Jbj"/>
+                            <constraint firstItem="HrH-vH-RgB" firstAttribute="top" secondItem="uNV-kC-ZtC" secondAttribute="top" type="default" id="vpz-7P-zpM"/>
+                            <constraint firstItem="2jm-q3-0IG" firstAttribute="centerX" secondItem="izp-k1-RCD" secondAttribute="centerX" type="default" id="zZs-IV-7VH"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="l_mode" destination="f0B-PO-NSS" id="V72-D6-HxQ"/>
+                        <outlet property="l_title" destination="izp-k1-RCD" id="3g6-O0-89U"/>
                         <outlet property="pc_levels" destination="HrH-vH-RgB" id="hsg-gt-qkK"/>
                     </connections>
                 </viewController>
@@ -322,9 +311,6 @@
     <classes>
         <class className="MGAboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGAboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToMenu:"/>
-            </relationships>
         </class>
         <class className="MGButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGButton.h"/>
@@ -339,7 +325,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backToGame:"/>
-                <relationship kind="outlet" name="l_mode" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="l_title" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pc_levels" candidateClass="UIPageControl"/>
             </relationships>
         </class>

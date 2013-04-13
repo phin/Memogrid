@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Memogrid/MGSquare.m"
-         timestampString = "386454141.464965"
+         timestampString = "387567629.538881"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
          landmarkName = "-handleTouch:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Memogrid/MGSquare.m"
-         timestampString = "386454141.464965"
+         timestampString = "387567629.538881"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "-handleTouch:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Memogrid/MGSquare.m"
-         timestampString = "386454141.464965"
+         timestampString = "387567629.538881"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "-handleTouch:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +47,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Memogrid/MGSquare.m"
-         timestampString = "386454141.464965"
+         timestampString = "387567629.538881"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
          landmarkName = "-handleTouch:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Memogrid/MGMenuViewController.m"
+         timestampString = "387064998.522821"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "195"
+         endingLineNumber = "195"
+         landmarkName = "-collectionView:cellForItemAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

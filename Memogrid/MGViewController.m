@@ -39,6 +39,9 @@ static int i_current;
     
     if (!forceLevel) {
         // Start a the current game on that view
+        
+        // TODO : Fix the bug where if you force a level, it works, then switches back to the current user's level.
+        
         [self startGame];
     } else {
         // User chose a level
@@ -53,7 +56,7 @@ static int i_current;
 {
     canPlay        = NO;
     multipleColors = NO;
-    debugMode      = YES;
+    debugMode      = NO;
 }
 
 - (void) initGame
@@ -142,12 +145,11 @@ static int i_current;
     if ([MGLevelManager finishedGameMode:gm_current]) {
         //Go back to the main menu
         [self performSegueWithIdentifier:@"gameToMenu" sender:self];
-        
     } else {
-        // TODO : Set the level.
-        int current    = 1;
-        int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
 
+        // Next level
+        int current    = 0;
+        int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
         
         if (i_current) {
             // Keep going with the level the user chose
@@ -169,7 +171,7 @@ static int i_current;
 {    
     difficulty = (debugMode) ? 1 : difficulty;
     
-    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level];
+    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level+1];
     [mg_square setGameWithDifficulty:difficulty];
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
 }
@@ -188,6 +190,9 @@ static int i_current;
 
 - (void) failedGame
 {
+    // 1. TODO : Show what the user should have tapped.
+    
+    // 2. Then go to the Lost page.
     [self endedLevelWithSuccess:NO];
 }
 
