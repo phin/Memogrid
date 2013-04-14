@@ -129,7 +129,7 @@ static int i_current;
     }
 
     int difficulty = [MGLevelManager getDifficultyFromLevel:level andMode:gm_mode];
-    [self startGameWithLevel:level andDifficulty:difficulty];
+    [self startGameWithLevel:level andDifficulty:difficulty andMode:gm_mode];
 }
 
 - (IBAction) startGame
@@ -137,47 +137,39 @@ static int i_current;
     // Start Level Automatically
     
     // Current mode
-    GameMode gm_current = Classic;
+    GameMode gm_current = Simon;
     
     // Set user/view interactions
     [self stopGuessing];
     
-//    if ([MGLevelManager finishedGameMode:gm_current]) {
-//        //Go back to the main menu
-//        [self performSegueWithIdentifier:@"gameToMenu" sender:self];
-//    } else {
-
-        // Next level
-        int current    = 0;
-        int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
-        
-        if (i_current) {
-            // Keep going with the level the user chose
-            i_current++;
-            NSLog(@"Chosen by user: %i", i_current);
-            current = i_current;
-        } else {
-            // Go to the next level from the user's current achievements
-            current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
-        }
-
-        [self startGameWithLevel:current andDifficulty:difficulty];
-   // }
+    // Next level
+    int current = 0;
+    
+    if (i_current) {
+        // Keep going with the level the user chose
+        i_current++;
+        NSLog(@"Chosen by user: %i", i_current);
+        current = i_current;
+    } else {
+        // Go to the next level from the user's current achievements
+        current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+    }
+    
+    int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
+    [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
 }
 
 #pragma mark - GAME FLOW FUNCTIONS
 
-- (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty
+- (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty andMode:(GameMode)mode
 {
-    // TEMPORARY
-    if (level > 25) {
-        level = 25;
-    }
-    
+    level = (level > 25) ? 25 : level;
     difficulty = (debugMode) ? 3 : difficulty;
     
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", level+1];
-    [mg_square setGameWithDifficulty:difficulty andMode:Classic];
+    
+    [mg_square setGameWithDifficulty:difficulty andMode:mode];
+    
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
 }
 
@@ -201,7 +193,6 @@ static int i_current;
     
     // 2. Then go to the Lost page.
     [self performSelector:@selector(endedLevelWithSuccess:) withObject:NO afterDelay:1.0];
-    //[self endedLevelWithSuccess:NO];
 }
 
 - (void) succeededGame

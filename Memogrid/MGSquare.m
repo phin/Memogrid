@@ -234,7 +234,7 @@
     }
 }
 
-- (NSArray *)setGameWithDifficulty:(int)n andMode:(NSString *)mode {
+- (NSArray *)setGameWithDifficulty:(int)n andMode:(GameMode)mode {
     
     // Clear what's existing
     [self clear];
@@ -242,7 +242,7 @@
     // Generate n different numbers that can be in the table
     NSMutableArray *a_row = [NSMutableArray array];
     NSMutableArray *a_col = [NSMutableArray array];
-    
+        
     for (int i = 0; i < n; i++) {
         [a_row addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
         [a_col addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
@@ -265,8 +265,9 @@
         [a_game_row addObject:[NSString stringWithFormat:@"%i", rand_row]];
         [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
         
+        
         [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
-
+        
         NSLog(@"row:%i col:%i", rand_row, rand_col);
     }
 
