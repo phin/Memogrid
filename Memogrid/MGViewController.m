@@ -34,18 +34,8 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    if (!forceLevel) {
-        // Start a the current game on that view
-        
-        // TODO : Fix the bug where if you force a level, it works, then switches back to the current user's level.
-        
-        [self startGame];
-    } else {
-        // User chose a level
-        // Reset the trigger
-        forceLevel = NO;
-    }
+
+    [self startGame];
 }
 
 #pragma mark - INITIALIZATION
@@ -110,24 +100,6 @@
 
 
 #pragma mark - GAME INIT
-
-- (void) startLevel:(int)level forMode:(NSString *)mode
-{
-    // Start Level Manually
-    
-    forceLevel = TRUE;
-    
-    // Set the level that the user chose.
-    GameMode gm_mode = Classic;
-    if ([mode isEqualToString:@"Bicolor"]) {
-        gm_mode = Bicolor;
-    } else if ([mode isEqualToString:@"Sequence"]) {
-        gm_mode = Simon;
-    }
-
-    int difficulty = [MGLevelManager getDifficultyFromLevel:level andMode:gm_mode];
-    [self startGameWithLevel:level andDifficulty:difficulty andMode:gm_mode];
-}
 
 - (IBAction) startGame
 {    
@@ -230,8 +202,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
-        MGMenuViewController *vc_menu = [segue destinationViewController];
-        vc_menu.delegate = (id)self;
         [self animationPushBackScaleDown];
     }
 }

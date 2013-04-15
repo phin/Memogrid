@@ -248,15 +248,10 @@
     }
     
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current]) {
-        // Check if the user can access that level
-        id dlg = self.delegate;
-        [self dismissViewControllerAnimated:YES completion:nil];
         
-        if ([dlg respondsToSelector:@selector(startLevel:forMode:)]) {
-            [dlg startLevel:indexPath.row forMode:s_mode];
-        } else {
-            NSLog(@"Unable to start Level");
-        }
+        // TODO : Tell the Singleton what level we want.
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

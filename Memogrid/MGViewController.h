@@ -16,14 +16,13 @@
     BOOL canPlay;
     BOOL multipleColors;
     BOOL debugMode;
-    BOOL forceLevel;
     
     NSMutableArray *a_currentGame;
     
-    MGLevelManager * mg_level;
+    MGLevelManager *mg_level;
     
     // UI Elements
-    MGSquare * mg_square;
+    MGSquare *mg_square;
     KGNoiseLinearGradientView *noiseBackView;
     
     // Storyboard
@@ -33,6 +32,5 @@
 
 - (void) failedGame;
 - (void) succeededGame;
-- (void) startLevel:(int)level forMode:(NSString *)mode;
 
 @end
