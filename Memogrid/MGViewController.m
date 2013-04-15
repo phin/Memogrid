@@ -16,8 +16,6 @@
 
 @implementation MGViewController
 
-static int i_current;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -117,7 +115,6 @@ static int i_current;
 {
     // Start Level Manually
     
-    i_current  = level;
     forceLevel = TRUE;
     
     // Set the level that the user chose.
@@ -145,15 +142,8 @@ static int i_current;
     // Next level
     int current = 0;
     
-    if (i_current) {
-        // Keep going with the level the user chose
-        i_current++;
-        NSLog(@"Chosen by user: %i", i_current);
-        current = i_current;
-    } else {
-        // Go to the next level from the user's current achievements
-        current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
-    }
+    // Go to the next level from the user's current achievements
+    current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
     
     int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
     [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
@@ -206,12 +196,6 @@ static int i_current;
         
     if (didWin) {
         int current = [MGLevelManager getUserCurrentLevelForMode:Classic];
-
-        if (i_current) {
-            // User is playing with another level
-            current = i_current;
-        }
-        
         [MGLevelManager setUserFinishedLevel:current forMode:Classic];
     }
     
@@ -248,7 +232,6 @@ static int i_current;
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
         MGMenuViewController *vc_menu = [segue destinationViewController];
         vc_menu.delegate = (id)self;
-        i_current = 0;
         [self animationPushBackScaleDown];
     }
 }

@@ -28,6 +28,7 @@
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
 		425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc -w"; }; };
+		42A4D8D3171B77B5001DB069 /* MGUserLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A4D8D2171B77B5001DB069 /* MGUserLevel.m */; };
 		42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681D16D1A076009FAFD5 /* UIKit.framework */; };
 		42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8681F16D1A076009FAFD5 /* Foundation.framework */; };
 		42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A8682116D1A076009FAFD5 /* CoreGraphics.framework */; };
@@ -97,6 +98,8 @@
 		4249398316E05277002FBBDE /* MGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAboutViewController.m; sourceTree = "<group>"; };
 		425C83D116ED920A0069FB73 /* PagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedFlowView.h; sourceTree = "<group>"; };
 		425C83D216ED920A0069FB73 /* PagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedFlowView.m; sourceTree = "<group>"; };
+		42A4D8D1171B77B5001DB069 /* MGUserLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGUserLevel.h; sourceTree = "<group>"; };
+		42A4D8D2171B77B5001DB069 /* MGUserLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGUserLevel.m; sourceTree = "<group>"; };
 		42A8681A16D1A076009FAFD5 /* Memogrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memogrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A8681D16D1A076009FAFD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A8681F16D1A076009FAFD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,6 +165,8 @@
 				4216370416E28FEA00627743 /* MGLevelManager.h */,
 				4216370516E28FEA00627743 /* MGLevelManager.m */,
 				4216370116E28CCD00627743 /* Levels.plist */,
+				42A4D8D1171B77B5001DB069 /* MGUserLevel.h */,
+				42A4D8D2171B77B5001DB069 /* MGUserLevel.m */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
 				4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */,
 				4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */,
+				42A4D8D3171B77B5001DB069 /* MGUserLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
