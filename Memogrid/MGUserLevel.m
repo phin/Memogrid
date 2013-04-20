@@ -26,7 +26,7 @@
 {    
     if (self = [super init])
     {
-        self.current_mode  = Classic;
+        self.current_mode  = Classic; // TODO Get from last played.
         self.current_level = [MGLevelManager getUserCurrentLevelForMode:self.current_mode];
     }
     

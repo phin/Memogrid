@@ -9,6 +9,7 @@
 #import "MGMenuViewController.h"
 #import "MGViewController.h"
 #import "CVCell.h"
+#import "MGUserLevel.h"
 
 @interface MGMenuViewController ()
 
@@ -247,10 +248,9 @@
         s_mode = @"Bicolor";
     }
     
-    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current]) {
-        
-        // TODO : Tell the Singleton what level we want.
-        
+    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
+    {
+        [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

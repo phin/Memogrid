@@ -9,6 +9,7 @@
 #import "MGViewController.h"
 #import "MGNextLevelViewController.h"
 #import "MGMenuViewController.h"
+#import "MGUserLevel.h"
 
 @interface MGViewController ()
 
@@ -34,8 +35,18 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
     [self startGame];
+    [UIView animateWithDuration:0.4 animations:^{
+        l_currentlvl.alpha = 1;
+    }];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [UIView animateWithDuration:0.3 animations:^{
+        l_currentlvl.alpha = 0;
+    }];
 }
 
 #pragma mark - INITIALIZATION
@@ -105,17 +116,12 @@
 {    
     // Start Level Automatically
     
-    // Current mode
-    GameMode gm_current = Simon;
-    
     // Set user/view interactions
     [self stopGuessing];
-    
-    // Next level
-    int current = 0;
-    
-    // Go to the next level from the user's current achievements
-    current = [MGLevelManager getUserCurrentLevelForMode:gm_current];
+        
+    // Go to the next level from the UserLevel Singleton
+    GameMode gm_current = [[MGUserLevel sharedInstance] current_mode];
+    int current         = [[MGUserLevel sharedInstance] current_level];
     
     int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
     [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
@@ -159,7 +165,11 @@
 
 - (void) succeededGame
 {
-    [self endedLevelWithSuccess:YES];
+    [self userCanPlay:NO];
+    // Call the end function with a delay so we can have time to show user's feedback
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self endedLevelWithSuccess:YES];
+    });
 }
 
 - (void) endedLevelWithSuccess:(BOOL)didWin
@@ -167,8 +177,10 @@
     [self stopGuessing];
         
     if (didWin) {
-        int current = [MGLevelManager getUserCurrentLevelForMode:Classic];
-        [MGLevelManager setUserFinishedLevel:current forMode:Classic];
+        int current = [[MGUserLevel sharedInstance] current_level];
+        [MGLevelManager setUserFinishedLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
+        current++;
+        [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
     }
     
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];

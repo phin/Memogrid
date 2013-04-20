@@ -12,6 +12,7 @@
 @interface MGUserLevel : NSObject
 
 + (id)sharedInstance;
+- (void)setCurrentLevel:(int)level forMode:(GameMode)mode;
 
 @property (nonatomic, assign) int current_level;
 @property (nonatomic, assign) GameMode current_mode;
