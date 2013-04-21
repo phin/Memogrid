@@ -30,20 +30,19 @@
 {
 	[super viewWillAppear:animated];
     [self animationPopFrontScaleUp];
+    [self stopGuessing];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self startGame];
-    [UIView animateWithDuration:0.4 animations:^{
-        l_currentlvl.alpha = 1;
-    }];
+    [self initPreGame];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [b_ready setHidden:YES];
     [UIView animateWithDuration:0.3 animations:^{
         l_currentlvl.alpha = 0;
     }];
@@ -58,6 +57,18 @@
     debugMode      = YES;
 }
 
+- (void) initPreGame
+{
+    int current = [[MGUserLevel sharedInstance] current_level];
+    // Display Level starts at index 1, whereas real level starts at 0
+    l_currentlvl.text = [NSString stringWithFormat:@"%02d", current+1];
+    b_ready.userInteractionEnabled = YES;
+    [b_ready setHidden:NO];
+    [UIView animateWithDuration:0.4 animations:^{
+        l_currentlvl.alpha = 1;
+    }];
+}
+
 - (void) initGame
 {    
     // Init rectangle de jeu
@@ -68,6 +79,18 @@
     
     mg_level = [[MGLevelManager alloc] init];
     [MGLevelManager init];
+}
+
+- (void) initUI
+{    
+    // Background
+    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
+    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
+    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
+    noiseBackView.noiseOpacity = 0.05;
+    [self.view insertSubview:noiseBackView atIndex:0];
+    
+    [self blinkAnimation:@"blink" finished:YES target:b_ready];
 }
 
 - (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation
@@ -82,16 +105,6 @@
     CGRect rect_game = CGRectMake(pos_x, pos_y, (sq_SIZE+2) * ROWS, (sq_SIZE+2) * COLS);
     
     return rect_game;
-}
-
-- (void) initUI
-{    
-    // Background
-    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
-    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
-    noiseBackView.noiseOpacity = 0.05;
-    [self.view insertSubview:noiseBackView atIndex:0];
 }
 
 #pragma mark - INTERFACE FUNCTIONS
@@ -109,22 +122,41 @@
     [super viewWillLayoutSubviews];
 }
 
+- (void)blinkAnimation:(NSString *)animationId finished:(BOOL)finished target:(UIView *)target
+{
+    [UIView beginAnimations:animationId context:(__bridge void *)target];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(blinkAnimation:finished:target:)];
+    if ([target alpha] == 1.0f)
+        [target setAlpha:0.7f];
+    else
+        [target setAlpha:1.0f];
+    [UIView commitAnimations];
+}
+
 
 #pragma mark - GAME INIT
 
 - (IBAction) startGame
 {    
-    // Start Level Automatically
+    // Start Level
     
-    // Set user/view interactions
-    [self stopGuessing];
+    [UIView animateWithDuration:0.3 animations:^{
+        l_currentlvl.alpha = 0;
+        [b_ready setHidden:YES];
+    } completion:^(BOOL finished) {
+        // Set user/view interactions
+        b_ready.userInteractionEnabled = NO;
+        [self stopGuessing];
         
-    // Go to the next level from the UserLevel Singleton
-    GameMode gm_current = [[MGUserLevel sharedInstance] current_mode];
-    int current         = [[MGUserLevel sharedInstance] current_level];
-    
-    int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
-    [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
+        // Go to the next level from the UserLevel Singleton
+        GameMode gm_current = [[MGUserLevel sharedInstance] current_mode];
+        int current         = [[MGUserLevel sharedInstance] current_level];
+        
+        int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
+        [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
+    }];
 }
 
 #pragma mark - GAME FLOW FUNCTIONS
@@ -134,10 +166,7 @@
     level = (level > 25) ? 25 : level;
     difficulty = (debugMode) ? 3 : difficulty;
     
-    l_currentlvl.text = [NSString stringWithFormat:@"%02d", level+1];
-    
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
-    
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
 }
 

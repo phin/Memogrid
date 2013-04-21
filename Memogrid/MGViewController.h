@@ -28,6 +28,7 @@
     // Storyboard
     IBOutlet UIButton *b_newgame; // Debug
     IBOutlet UILabel  *l_currentlvl;
+    IBOutlet MGButton *b_ready;
 }
 
 - (void) failedGame;

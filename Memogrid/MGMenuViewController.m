@@ -178,11 +178,11 @@
     
     // Check if that level is accessible
     if ([MGLevelManager userFinishedLevel:indexPath.row forMode:gm_current]) {
-        [cell setCanBePlayed:YES];
-        [cell setCompleted:YES];
+       [cell setCanBePlayed:YES];
+       [cell setCompleted:YES];
     } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:gm_current]) {
         // Next level that the user needs to do
-        [cell setCanBePlayed:YES];
+       [cell setCanBePlayed:YES];
     } else {
         [cell setCanBePlayed:NO];
     }
@@ -201,18 +201,6 @@
 
 #pragma mark - UICollectionViewDelegate
 
-- (void) collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Change background color
-    CVCell *cell = (CVCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    if (cell.canBePlayed) {
-        cell.backgroundColor = [UIColor colorWithRed: 0.714 green: 0.016 blue: 0 alpha: 1];
-    } else {
-        NSLog(@"User cannot access this level.");
-    }
-    
-}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GameMode gm_current = Classic;
@@ -228,6 +216,8 @@
     {
         [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
         [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        NSLog(@"User cannot access this level.");
     }
 }
 
