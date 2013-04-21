@@ -20,15 +20,6 @@
 @synthesize cv_classic;
 @synthesize a_classic;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 
 #pragma mark - INIT
 
@@ -101,7 +92,7 @@
 #pragma mark - PagedFlowView Datasource
 
 - (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView {
-    return 3;
+    return 2;
 }
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
@@ -116,9 +107,6 @@
 
     } else if (index == 1) {
         v_tutoriel = [self levelViewForMode:@"Sequence"];
-    } else {
-        // Sequence
-        v_tutoriel = [self levelViewForMode:@"Bicolor"];
     }
     
     return v_tutoriel;
@@ -154,9 +142,6 @@
     } else if ([mode isEqualToString:@"Sequence"]) {
         cv_classic.tag = 222;
         label.text     = @"SEQUENCE";
-    } else if ([mode isEqualToString:@"Bicolor"]) {
-        cv_classic.tag = 333;
-        label.text     = @"BICOLOR";
     }
     
     [cv_classic registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
@@ -184,16 +169,11 @@
     [cell setLevel:indexPath.row+1];
     
     GameMode gm_current = Classic;
+    [cell setMode:@"Classic"];
     
-    // Set the right color
-    if (collectionView.tag == 111) {
-        [cell setMode:@"Classic"];
-    } else if (collectionView.tag == 222) {
+    if (collectionView.tag == 222) {
         [cell setMode:@"Sequence"];
         gm_current = Simon;
-    } else if (collectionView.tag == 333) {
-        [cell setMode:@"Bicolor"];
-        gm_current = Bicolor;
     }
     
     // Check if that level is accessible
@@ -238,14 +218,10 @@
     GameMode gm_current = Classic;
     NSString *s_mode    = @"Classic";
     
-    // Set the right color
-    if (collectionView.tag == 111) {
-    } else if (collectionView.tag == 222) {
+    if (collectionView.tag == 222)
+    {
         gm_current = Simon;
         s_mode     = @"Sequence";
-    } else if (collectionView.tag == 333) {
-        gm_current = Bicolor;
-        s_mode = @"Bicolor";
     }
     
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
@@ -255,13 +231,5 @@
     }
 }
 
-
-#pragma mark - UNLOAD
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
