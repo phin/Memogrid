@@ -178,11 +178,11 @@
     
     // Check if that level is accessible
     if ([MGLevelManager userFinishedLevel:indexPath.row forMode:gm_current]) {
-       [cell setCanBePlayed:YES];
-       [cell setCompleted:YES];
+        [cell setCanBePlayed:YES];
+        [cell setCompleted:YES];
     } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:gm_current]) {
         // Next level that the user needs to do
-       [cell setCanBePlayed:YES];
+        [cell setCanBePlayed:YES];
     } else {
         [cell setCanBePlayed:NO];
     }

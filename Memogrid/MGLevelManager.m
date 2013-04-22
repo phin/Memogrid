@@ -78,7 +78,7 @@
 + (BOOL)canPlayLevelAtIndex:(int)index forMode:(GameMode)mode {
     if ([self userFinishedLevel:index forMode:mode]) {
         return YES;
-    } else if (([self getUserCurrentLevelForMode:Classic]) == index) {
+    } else if (([self getUserCurrentLevelForMode:mode]) == index) {
         // Current level the user is trying to achieve.
         return YES;
     } else {

@@ -167,7 +167,7 @@
     difficulty = (debugMode) ? 3 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
-    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
+    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.6];
 }
 
 - (void) startGuessing

@@ -8,6 +8,7 @@
 
 #import "MGSquare.h"
 #import "MGViewController.h"
+#import "MGUserLevel.h"
 
 @implementation MGSquare
 
@@ -119,8 +120,6 @@
             for (col = 0; col < COLS; col++) {
                 CGRect ceRect = [self makeRect:col withRow:row];
                 
-                // TODO : User feedback when tap on tile
-                
                 // Check current touched tile
                 if (CGRectContainsPoint(ceRect, touchPoint)) {
                     
@@ -132,12 +131,40 @@
                     // Check if we are at least in a good row
                     NSArray *a_row = [a_currentGame objectAtIndex:0];
                     NSArray *a_col = [a_currentGame objectAtIndex:1];
+                    
                     for (int r = 0; r < [a_row count]; r++) {
                         if ([[a_row objectAtIndex:r] intValue] == row) {
                             if ([[a_col objectAtIndex:r] intValue] == col) {
                                 
-                                // Since we use a string if the object has been used, it return 0 for the first row/col where the value is "Used".
-                                // Easy fix would be to add 99.
+                                // Tapped Square is a part of the current game
+                                
+                                if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
+                                    // SEQUENCE MODE
+                                    // Is it the next one in the list that we need to type
+                                    
+                                    // TODO : Will bug if there is two tiles in the array that are equal
+                                    
+                                    // 1. Loop to the next wanted value.
+                                    int i_vals[2]; // To store the row and col.
+                                    int i = 0;
+                                    while (i < [[a_remainingTiles objectAtIndex:0] count] && ![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
+                                        i++;
+                                    }
+                                    
+                                    if (i != [[a_remainingTiles objectAtIndex:0] count]-1) {
+                                        i_vals[0] = [[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue];
+                                        i_vals[1] = [[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue];
+                                    }
+                                    
+                                    // 2. Compare the current values with the ones we need for this try.
+                                    if ((i_vals[0] == row) && (i_vals[1] == col)) {
+                                        NSLog(@"Sequence mode : Right Tile!");
+                                    } else {
+                                        NSLog(@"Sequence mode : Wrong tile.");
+                                        [[self viewController] failedGame];
+                                    }
+                                }
+                                
                                 
                                 NSLog(@"Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
                                       [[a_remainingTiles objectAtIndex:1] objectAtIndex:r]);
@@ -265,8 +292,13 @@
         [a_game_row addObject:[NSString stringWithFormat:@"%i", rand_row]];
         [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
         
-        
-        [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
+        if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
+            [UIView animateWithDuration:0 delay:i*0.2 options:UIViewAnimationOptionCurveLinear animations:^{
+                [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
+            } completion:nil];
+        } else {
+            [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
+        }
         
         NSLog(@"row:%i col:%i", rand_row, rand_col);
     }
