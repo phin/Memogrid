@@ -136,24 +136,28 @@
                         if ([[a_row objectAtIndex:r] intValue] == row) {
                             if ([[a_col objectAtIndex:r] intValue] == col) {
                                 
-                                // Tapped Square is a part of the current game
+                                
+                                // SIMON / SEQUENCE MODE
                                 
                                 if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
-                                    // SEQUENCE MODE
                                     // Is it the next one in the list that we need to type
                                     
                                     // TODO : Will bug if there is two tiles in the array that are equal
                                     
                                     // 1. Loop to the next wanted value.
                                     int i_vals[2]; // To store the row and col.
-                                    int i = 0;
-                                    while (i < [[a_remainingTiles objectAtIndex:0] count] && ![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
-                                        i++;
-                                    }
                                     
-                                    if (i != [[a_remainingTiles objectAtIndex:0] count]-1) {
-                                        i_vals[0] = [[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue];
-                                        i_vals[1] = [[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue];
+                                    // Let's do a for loop (while had bugs) since it's usually a small array.
+                                    
+                                    // TODO : Make sure this works.
+                                    for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
+                                        if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
+                                            // Keep going;
+                                        } else {
+                                            i_vals[0] = [[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue];
+                                            i_vals[1] = [[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue];
+                                            break;
+                                        }
                                     }
                                     
                                     // 2. Compare the current values with the ones we need for this try.
@@ -161,10 +165,12 @@
                                         NSLog(@"Sequence mode : Right Tile!");
                                     } else {
                                         NSLog(@"Sequence mode : Wrong tile.");
+                                        goodTile = NO;
                                         [[self viewController] failedGame];
                                     }
                                 }
                                 
+                                // CLASSIC
                                 
                                 NSLog(@"Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
                                       [[a_remainingTiles objectAtIndex:1] objectAtIndex:r]);
@@ -293,9 +299,9 @@
         [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
         
         if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
-            [UIView animateWithDuration:0 delay:i*0.2 options:UIViewAnimationOptionCurveLinear animations:^{
+            [self performBlock:^{
                 [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
-            } completion:nil];
+            } afterDelay:0.4*i];
         } else {
             [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
         }
@@ -326,5 +332,19 @@
     }
     return ma_array;
 }
+
+- (void)performBlock:(void (^)(void))block
+          afterDelay:(NSTimeInterval)delay
+{
+    block = [block copy];
+    [self performSelector:@selector(fireBlockAfterDelay:)
+               withObject:block
+               afterDelay:delay];
+}
+
+- (void)fireBlockAfterDelay:(void (^)(void))block {
+    block();
+}
+
 
 @end

@@ -60,10 +60,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10588236153125763" green="0.10588236153125763" blue="0.10588236153125763" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="Q7R-0b-Jk2" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="CL3-6d-dDs"/>
                             <constraint firstAttribute="trailing" secondItem="nsC-0U-uYQ" secondAttribute="trailing" constant="15" id="JOY-p6-SXW"/>
                             <constraint firstItem="vrw-ZW-sqP" firstAttribute="top" secondItem="3" secondAttribute="top" constant="17" id="WAH-WD-9xp"/>
                             <constraint firstItem="vrw-ZW-sqP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="15" id="XzY-Xk-sNf"/>
-                            <constraint firstAttribute="bottom" secondItem="Q7R-0b-Jk2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ad1-Da-87g"/>
                             <constraint firstItem="nsC-0U-uYQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mfz-kC-cK6"/>
                             <constraint firstItem="Q7R-0b-Jk2" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="z9G-jO-ilc"/>
                         </constraints>
@@ -355,6 +355,7 @@
         <class className="MGTutorialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
             <relationships>
+                <relationship kind="action" name="goBackToGame:"/>
                 <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
             </relationships>

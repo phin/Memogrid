@@ -45,6 +45,8 @@
     [b_ready setHidden:YES];
     [UIView animateWithDuration:0.3 animations:^{
         l_currentlvl.alpha = 0;
+        mg_square.alpha = 0;
+        b_ready.alpha = 0;
     }];
 }
 
@@ -62,10 +64,18 @@
     int current = [[MGUserLevel sharedInstance] current_level];
     // Display Level starts at index 1, whereas real level starts at 0
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", current+1];
+    
+    // Set views
+    [mg_square setHidden:YES];
     b_ready.userInteractionEnabled = YES;
     [b_ready setHidden:NO];
+    b_ready.alpha = 0;
+    [b_ready.layer removeAllAnimations];
+
     [UIView animateWithDuration:0.4 animations:^{
+        mg_square.alpha = 0;
         l_currentlvl.alpha = 1;
+        b_ready.alpha = 1;
     }];
 }
 
@@ -76,6 +86,7 @@
     mg_square.backgroundColor = [UIColor clearColor];
     mg_square.canPlay = canPlay;
     [self.view addSubview:mg_square];
+    [self.view bringSubviewToFront:b_ready];
     
     mg_level = [[MGLevelManager alloc] init];
     [MGLevelManager init];
@@ -145,6 +156,9 @@
     [UIView animateWithDuration:0.3 animations:^{
         l_currentlvl.alpha = 0;
         [b_ready setHidden:YES];
+        [mg_square setHidden:NO];
+        b_ready.alpha   = 0;
+        mg_square.alpha = 1;
     } completion:^(BOOL finished) {
         // Set user/view interactions
         b_ready.userInteractionEnabled = NO;
@@ -164,7 +178,7 @@
 - (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty andMode:(GameMode)mode
 {
     level = (level > 25) ? 25 : level;
-    difficulty = (debugMode) ? 3 : difficulty;
+    difficulty = (debugMode) ? 4 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.6];
