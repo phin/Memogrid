@@ -10,6 +10,7 @@
 #import "MGNextLevelViewController.h"
 #import "MGMenuViewController.h"
 #import "MGUserLevel.h"
+#import <AudioToolbox/AudioServices.h>
 
 @interface MGViewController ()
 
@@ -54,6 +55,7 @@
 
 - (void) initVars
 {
+    [self becomeFirstResponder];
     canPlay        = NO;
     multipleColors = NO;
     debugMode      = YES;
@@ -198,7 +200,8 @@
 
 - (void) failedGame
 {
-    // 1. Show what the user should have tapped.
+    // 1. Show what the user should have tapped & vibrate
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     [self userCanPlay:NO];
     [mg_square showAnswer];
     
@@ -259,6 +262,36 @@
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
         [self animationPushBackScaleDown];
     }
+}
+
+#pragma mark - SHAKE MOTION
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event { //RESTART NEW GAME WHEN iPHONE IS SHAKED
+	if (event.subtype == UIEventSubtypeMotionShake)
+	{
+		UIAlertView * shakeAns = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"l_shakeTitle", @"")
+                                  message:NSLocalizedString(@"l_shakeMessage", @"")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"l_shakeAnswer1", @"")
+                                  otherButtonTitles:NSLocalizedString(@"l_shakeAnswer2", @""),nil];
+		[shakeAns show];
+	}
+}
+
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Shaking alert
+    if (buttonIndex == 1) {
+        [self startGame];
+        NSLog(@"Reset");
+    } else {
+        NSLog(@"cancel");
+    }
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
 }
 
 

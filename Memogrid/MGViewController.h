@@ -10,7 +10,7 @@
 #import "MGSquare.h"
 #import "MGLevelManager.h"
 
-@interface MGViewController : UIViewController {
+@interface MGViewController : UIViewController <UIAlertViewDelegate> {
     
     // Logic elements
     BOOL canPlay;

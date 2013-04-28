@@ -48,6 +48,7 @@
 		42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685116D1A076009FAFD5 /* MemogridTests.m */; };
 		42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685C16D1AAB2009FAFD5 /* MGSquare.m */; };
 		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
+		42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C303F0172DD76100E51178 /* AudioToolbox.framework */; };
 		42D1D1C416EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
 		42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
@@ -126,6 +127,7 @@
 		42A8685B16D1AAB2009FAFD5 /* MGSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSquare.h; sourceTree = "<group>"; };
 		42A8685C16D1AAB2009FAFD5 /* MGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSquare.m; sourceTree = "<group>"; };
 		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
+		42C303F0172DD76100E51178 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		42D1D1C216EB9C9E004262BF /* UIViewController+HCPushBackAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HCPushBackAnimation.h"; sourceTree = "<group>"; };
 		42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HCPushBackAnimation.m"; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */,
 				42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */,
 				42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */,
 				42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */,
@@ -229,6 +232,7 @@
 		42A8681C16D1A076009FAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42C303F0172DD76100E51178 /* AudioToolbox.framework */,
 				42D1D1C816EBA2E8004262BF /* QuartzCore.framework */,
 				42A8681D16D1A076009FAFD5 /* UIKit.framework */,
 				42A8681F16D1A076009FAFD5 /* Foundation.framework */,
