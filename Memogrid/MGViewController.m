@@ -58,7 +58,7 @@
     [self becomeFirstResponder];
     canPlay        = NO;
     multipleColors = NO;
-    debugMode      = YES;
+    debugMode      = NO;
 }
 
 - (void) initPreGame
@@ -169,6 +169,8 @@
         // Go to the next level from the UserLevel Singleton
         GameMode gm_current = [[MGUserLevel sharedInstance] current_mode];
         int current         = [[MGUserLevel sharedInstance] current_level];
+        
+        
         
         int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
         [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
