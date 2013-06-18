@@ -19,7 +19,6 @@
 		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
-		4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49316FE9DE800C6A494 /* MGButtonSquare.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
 		4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49616FEA01D00C6A494 /* Memogrid@2x.png */; };
 		4247F49B16FEA7BA00C6A494 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49916FEA7BA00C6A494 /* back.png */; };
@@ -56,6 +55,7 @@
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
 		42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
+		KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +87,6 @@
 		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
 		4247F48F16FE8B7300C6A494 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButton.h; sourceTree = "<group>"; };
 		4247F49016FE8B7300C6A494 /* MGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButton.m; sourceTree = "<group>"; };
-		4247F49216FE9DE700C6A494 /* MGButtonSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButtonSquare.h; sourceTree = "<group>"; };
-		4247F49316FE9DE800C6A494 /* MGButtonSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButtonSquare.m; sourceTree = "<group>"; };
 		4247F49516FEA01D00C6A494 /* Memogrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Memogrid.png; sourceTree = "<group>"; };
 		4247F49616FEA01D00C6A494 /* Memogrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Memogrid@2x.png"; sourceTree = "<group>"; };
 		4247F49916FEA7BA00C6A494 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -134,6 +132,7 @@
 		42DC61DE16DB0A5D008A41E1 /* test@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test@114.png"; sourceTree = "<group>"; };
 		42ED9BE116D1C7620040C951 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
 		42ED9BE216D1C7620040C951 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
+		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +145,7 @@
 				42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */,
 				42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */,
 				42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */,
+				KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +183,6 @@
 				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
 				4247F48F16FE8B7300C6A494 /* MGButton.h */,
 				4247F49016FE8B7300C6A494 /* MGButton.m */,
-				4247F49216FE9DE700C6A494 /* MGButtonSquare.h */,
-				4247F49316FE9DE800C6A494 /* MGButtonSquare.m */,
 				4200AD861708E6E800B8B9B2 /* CVCell.h */,
 				4200AD871708E6E800B8B9B2 /* CVCell.m */,
 				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
@@ -238,6 +236,7 @@
 				42A8681F16D1A076009FAFD5 /* Foundation.framework */,
 				42A8682116D1A076009FAFD5 /* CoreGraphics.framework */,
 				42A8684416D1A076009FAFD5 /* SenTestingKit.framework */,
+				HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -466,7 +465,6 @@
 				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
 				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
 				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
-				4247F49416FE9DE800C6A494 /* MGButtonSquare.m in Sources */,
 				4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */,
 				42A4D8D3171B77B5001DB069 /* MGUserLevel.m in Sources */,
 			);
@@ -545,6 +543,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"/Users/seraphin/Library/Application Support/Spark Inspector\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -558,6 +559,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -592,10 +594,15 @@
 		42A8685616D1A076009FAFD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"/Users/seraphin/Library/Application Support/Spark Inspector\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -605,6 +612,10 @@
 		42A8685716D1A076009FAFD5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
@@ -622,10 +633,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"/Users/seraphin/Library/Application Support/Spark Inspector\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "MemogridTests/MemogridTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

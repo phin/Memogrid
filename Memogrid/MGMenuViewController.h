@@ -20,7 +20,6 @@
     IBOutlet UILabel       *l_title;
 }
 
-@property (nonatomic, strong) UICollectionView *cv_classic;
 @property (nonatomic, strong) NSArray *a_classic;
 
 - (IBAction)backToGame:(id)sender;

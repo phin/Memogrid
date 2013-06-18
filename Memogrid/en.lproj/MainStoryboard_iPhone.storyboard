@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="height" constant="54" id="mxo-MJ-PWF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play!">
+                                <state key="normal" title="Play">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -217,13 +217,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4" customClass="MGButtonSquare">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4" customClass="MGButton">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="1ws-D5-Hp0"/>
-                                    <constraint firstAttribute="height" constant="52" id="IAA-UX-9Nf"/>
+                                    <constraint firstAttribute="height" constant="55" id="9nL-rl-Qau"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="back.png">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -277,7 +276,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MEMOGRID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-zb-56a">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MEMOGRID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-zb-56a">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="177" id="60D-UT-dpg"/>
                                     <constraint firstAttribute="height" constant="37" id="baR-7G-HpD"/>
@@ -291,8 +290,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart memogrid@phin.fr" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="KbH-6a-gnT"/>
-                                    <constraint firstAttribute="width" constant="255" id="O0H-f1-3Dl"/>
+                                    <constraint firstAttribute="width" constant="255" id="Dli-2D-5fk"/>
+                                    <constraint firstAttribute="height" constant="55" id="eYb-RY-OiB"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -301,20 +300,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="leading" secondItem="u3G-ti-b0n" secondAttribute="leading" type="default" id="0GX-mo-6Bf"/>
+                            <constraint firstItem="5OP-zb-56a" firstAttribute="centerX" secondItem="7IF-8j-Vm9" secondAttribute="centerX" type="default" id="4p4-vG-hhs"/>
                             <constraint firstAttribute="bottom" secondItem="6Lh-O2-Ti0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6xH-R7-EAN"/>
-                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="leading" secondItem="4HY-i3-jD4" secondAttribute="leading" type="default" id="9AV-mV-UyK"/>
-                            <constraint firstItem="u3G-ti-b0n" firstAttribute="centerX" secondItem="6Lh-O2-Ti0" secondAttribute="centerX" type="default" id="C0g-tR-Ggo"/>
+                            <constraint firstItem="u3G-ti-b0n" firstAttribute="trailing" secondItem="4HY-i3-jD4" secondAttribute="trailing" type="default" id="Aqd-kZ-iBW"/>
                             <constraint firstItem="pQN-JG-dwg" firstAttribute="leading" secondItem="7IF-8j-Vm9" secondAttribute="leading" type="default" id="JFp-jy-8k2"/>
-                            <constraint firstItem="5OP-zb-56a" firstAttribute="trailing" secondItem="7IF-8j-Vm9" secondAttribute="trailing" type="default" id="LO9-hR-uLR"/>
-                            <constraint firstItem="5OP-zb-56a" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="27" id="SJn-Y9-8Mf"/>
                             <constraint firstItem="pQN-JG-dwg" firstAttribute="trailing" secondItem="7IF-8j-Vm9" secondAttribute="trailing" type="default" id="X1f-i6-9be"/>
-                            <constraint firstItem="4HY-i3-jD4" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YHg-EM-wpI"/>
+                            <constraint firstItem="5OP-zb-56a" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="19" id="Xo0-25-iIH"/>
                             <constraint firstItem="u3G-ti-b0n" firstAttribute="trailing" secondItem="pQN-JG-dwg" secondAttribute="trailing" type="default" id="cpQ-7J-0NN"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="163" id="dYx-z2-u9H"/>
                             <constraint firstItem="u3G-ti-b0n" firstAttribute="top" secondItem="pQN-JG-dwg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gPK-1t-vqK"/>
-                            <constraint firstItem="pQN-JG-dwg" firstAttribute="centerX" secondItem="AwF-nn-eim" secondAttribute="centerX" type="default" id="gTk-Gy-PGp"/>
                             <constraint firstItem="pQN-JG-dwg" firstAttribute="top" secondItem="7IF-8j-Vm9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="i99-hw-06E"/>
-                            <constraint firstItem="pQN-JG-dwg" firstAttribute="centerY" secondItem="AwF-nn-eim" secondAttribute="centerY" type="default" id="qJ2-Yx-3ah"/>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="centerX" secondItem="AwF-nn-eim" secondAttribute="centerX" type="default" id="moD-2O-94m"/>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="centerX" secondItem="6Lh-O2-Ti0" secondAttribute="centerX" type="default" id="phJ-mR-76V"/>
                             <constraint firstItem="u3G-ti-b0n" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" type="default" id="uza-gz-qYn"/>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="top" secondItem="u3G-ti-b0n" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vvJ-iH-Qnn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CpC-38-4dw"/>
@@ -325,9 +325,6 @@
             <point key="canvasLocation" x="714" y="-365"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="back.png" width="22" height="29"/>
-    </resources>
     <classes>
         <class className="MGAboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGAboutViewController.h"/>
@@ -337,9 +334,6 @@
         </class>
         <class className="MGButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGButton.h"/>
-        </class>
-        <class className="MGButtonSquare" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGButtonSquare.h"/>
         </class>
         <class className="MGMenuButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuButton.h"/>
@@ -355,7 +349,6 @@
         <class className="MGTutorialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
             <relationships>
-                <relationship kind="action" name="goBackToGame:"/>
                 <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
             </relationships>
@@ -381,6 +374,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Wlg-hS-LoV"/>
+        <segue reference="uPg-Dz-PIc"/>
     </inferredMetricsTieBreakers>
 </document>

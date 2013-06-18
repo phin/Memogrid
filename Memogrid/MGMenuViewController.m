@@ -17,7 +17,6 @@
 
 @implementation MGMenuViewController
 
-@synthesize cv_classic;
 @synthesize a_classic;
 
 
@@ -84,11 +83,6 @@
     return CGSizeMake(320, 345);
 }
 
-- (void)didChangePageToIndex:(int)index forFlowView:(PagedFlowView *)flowView {
-    
-}
-
-
 #pragma mark - PagedFlowView Datasource
 
 - (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView {
@@ -131,21 +125,21 @@
     [flowLayout setItemSize:CGSizeMake(50, 50)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    cv_classic = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 25, 320, 320) collectionViewLayout:flowLayout];
-    cv_classic.dataSource = self;
-    cv_classic.delegate   = self;
-    cv_classic.backgroundColor = [UIColor clearColor];
+    UICollectionView *cv_levels = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 25, 320, 320) collectionViewLayout:flowLayout];
+    cv_levels.dataSource = self;
+    cv_levels.delegate   = self;
+    cv_levels.backgroundColor = [UIColor clearColor];
     
     if ([mode isEqualToString:@"Classic"]) {
-        cv_classic.tag = 111;
+        cv_levels.tag = 111;
         label.text     = @"CLASSIC";
     } else if ([mode isEqualToString:@"Sequence"]) {
-        cv_classic.tag = 222;
+        cv_levels.tag = 222;
         label.text     = @"SEQUENCE";
     }
     
-    [cv_classic registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
-    [v addSubview:cv_classic];
+    [cv_levels registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];
+    [v addSubview:cv_levels];
     
     return v;
 }
