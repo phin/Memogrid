@@ -27,17 +27,11 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self animationPopFrontScaleUp];
+	//[self animationPopFrontScaleUp];
 }
 
 - (void) initUI {
-    self.view.backgroundColor = [UIColor darkGrayColor];
-    // Background
-    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
-    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
-    noiseBackView.noiseOpacity = 0.05;
-    [self.view insertSubview:noiseBackView atIndex:0];
+    self.view.backgroundColor = C_BACK;
     
     NSString *s_next = (didWin) ? @"Next Level" : @"Try again!";
     
@@ -68,7 +62,7 @@
     UILabel *l_message = [[UILabel alloc] initWithFrame:CGRectMake(35, 96, 250, 55)];
     l_message.backgroundColor = [UIColor clearColor];
     l_message.font            = [UIFont fontWithName:@"VerbBlack" size:22];
-    l_message.textColor       = [UIColor colorWithRed:0.459 green:0.459 blue:0.459 alpha:1.0];
+    l_message.textColor       = C_LIGHT;
     l_message.textAlignment   = NSTextAlignmentCenter;
     l_message.text            = (didWin) ? @"You won!" : @"You lost!";
     [self.view addSubview:l_message];

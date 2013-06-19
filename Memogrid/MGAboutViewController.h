@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MGAboutViewController : UIViewController {
-    KGNoiseLinearGradientView *noiseBackView;
 }
 
 @end

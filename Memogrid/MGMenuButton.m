@@ -48,20 +48,12 @@
     
     //// Color Declarations
     UIColor* r_first;
-    UIColor* r_firstDropShadowColor;
     if ([self isHighlighted]) {
         //// Color Declarations Highlighted
-        r_first = [UIColor colorWithRed: 0.714 green: 0.016 blue: 0 alpha: 1];
-        r_firstDropShadowColor = [UIColor colorWithRed: 0.424 green: 0.039 blue: 0.031 alpha: 1];
+        r_first = [UIColor lightGrayColor];
     } else {
-        r_first = [UIColor colorWithRed: 0.459 green: 0.459 blue: 0.459 alpha: 1];
-        r_firstDropShadowColor = [UIColor colorWithRed: 0.278 green: 0.278 blue: 0.278 alpha: 1];
+        r_first = [UIColor whiteColor];
     }
-    
-    //// Shadow Declarations
-    UIColor* r_firstDropShadow = r_firstDropShadowColor;
-    CGSize r_firstDropShadowOffset = CGSizeMake(0, 3);
-    CGFloat r_firstDropShadowBlurRadius = 0;
     
     //// Menu
     {
@@ -74,7 +66,6 @@
         [r_first2Path addLineToPoint: CGPointMake(0, 0)];
         [r_first2Path closePath];
         CGContextSaveGState(context);
-        CGContextSetShadowWithColor(context, r_firstDropShadowOffset, r_firstDropShadowBlurRadius, r_firstDropShadow.CGColor);
         [r_first setFill];
         [r_first2Path fill];
         CGContextRestoreGState(context);
@@ -88,7 +79,6 @@
         [r_secondPath addLineToPoint: CGPointMake(0, 11)];
         [r_secondPath closePath];
         CGContextSaveGState(context);
-        CGContextSetShadowWithColor(context, r_firstDropShadowOffset, r_firstDropShadowBlurRadius, r_firstDropShadow.CGColor);
         [r_first setFill];
         [r_secondPath fill];
         CGContextRestoreGState(context);
@@ -102,7 +92,6 @@
         [r_thirdPath addLineToPoint: CGPointMake(0, 22)];
         [r_thirdPath closePath];
         CGContextSaveGState(context);
-        CGContextSetShadowWithColor(context, r_firstDropShadowOffset, r_firstDropShadowBlurRadius, r_firstDropShadow.CGColor);
         [r_first setFill];
         [r_thirdPath fill];
         CGContextRestoreGState(context);

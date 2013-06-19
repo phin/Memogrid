@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MGNextLevelViewController : UIViewController {
-    KGNoiseLinearGradientView *noiseBackView;
 }
 
 @property (nonatomic) BOOL didWin;

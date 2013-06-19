@@ -23,7 +23,6 @@
     
     // UI Elements
     MGSquare *mg_square;
-    KGNoiseLinearGradientView *noiseBackView;
     
     // Storyboard
     IBOutlet UIButton *b_newgame; // Debug

@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
 		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
+		420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
-		4216370F16E301C600627743 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370C16E301C600627743 /* MJPopupBackgroundView.m */; };
-		4216371016E301C600627743 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370C16E301C600627743 /* MJPopupBackgroundView.m */; };
-		4216371116E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
-		4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */; };
 		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
@@ -48,13 +45,9 @@
 		42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8685C16D1AAB2009FAFD5 /* MGSquare.m */; };
 		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C303F0172DD76100E51178 /* AudioToolbox.framework */; };
-		42D1D1C416EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
-		42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */; };
 		42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DC61DE16DB0A5D008A41E1 /* test@114.png */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
-		42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
-		42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ED9BE216D1C7620040C951 /* KGNoise.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */; };
 /* End PBXBuildFile section */
 
@@ -72,15 +65,13 @@
 		4200AD861708E6E800B8B9B2 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
 		4200AD871708E6E800B8B9B2 /* CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCell.m; sourceTree = "<group>"; };
 		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
+		420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
+		420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		4216370416E28FEA00627743 /* MGLevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLevelManager.h; sourceTree = "<group>"; };
 		4216370516E28FEA00627743 /* MGLevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLevelManager.m; sourceTree = "<group>"; };
-		4216370B16E301C600627743 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
-		4216370C16E301C600627743 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
-		4216370D16E301C600627743 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
-		4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNextLevelViewController.h; sourceTree = "<group>"; };
 		421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNextLevelViewController.m; sourceTree = "<group>"; };
 		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
@@ -126,12 +117,8 @@
 		42A8685C16D1AAB2009FAFD5 /* MGSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSquare.m; sourceTree = "<group>"; };
 		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
 		42C303F0172DD76100E51178 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		42D1D1C216EB9C9E004262BF /* UIViewController+HCPushBackAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HCPushBackAnimation.h"; sourceTree = "<group>"; };
-		42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HCPushBackAnimation.m"; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		42DC61DE16DB0A5D008A41E1 /* test@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test@114.png"; sourceTree = "<group>"; };
-		42ED9BE116D1C7620040C951 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
-		42ED9BE216D1C7620040C951 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -179,10 +166,10 @@
 			children = (
 				42A8685B16D1AAB2009FAFD5 /* MGSquare.h */,
 				42A8685C16D1AAB2009FAFD5 /* MGSquare.m */,
-				4247F48C16FE7A8100C6A494 /* MGMenuButton.h */,
-				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
 				4247F48F16FE8B7300C6A494 /* MGButton.h */,
 				4247F49016FE8B7300C6A494 /* MGButton.m */,
+				4247F48C16FE7A8100C6A494 /* MGMenuButton.h */,
+				4247F48D16FE7A8100C6A494 /* MGMenuButton.m */,
 				4200AD861708E6E800B8B9B2 /* CVCell.h */,
 				4200AD871708E6E800B8B9B2 /* CVCell.m */,
 				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
@@ -291,16 +278,10 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */,
+				420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */,
 				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
 				425C83D216ED920A0069FB73 /* PagedFlowView.m */,
-				42D1D1C216EB9C9E004262BF /* UIViewController+HCPushBackAnimation.h */,
-				42D1D1C316EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m */,
-				4216370B16E301C600627743 /* MJPopupBackgroundView.h */,
-				4216370C16E301C600627743 /* MJPopupBackgroundView.m */,
-				4216370D16E301C600627743 /* UIViewController+MJPopupViewController.h */,
-				4216370E16E301C600627743 /* UIViewController+MJPopupViewController.m */,
-				42ED9BE116D1C7620040C951 /* KGNoise.h */,
-				42ED9BE216D1C7620040C951 /* KGNoise.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -449,18 +430,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42ED9BE816D1C8400040C951 /* KGNoise.m in Sources */,
 				42A8682A16D1A076009FAFD5 /* main.m in Sources */,
 				42A8682E16D1A076009FAFD5 /* MGAppDelegate.m in Sources */,
 				42A8683D16D1A076009FAFD5 /* MGViewController.m in Sources */,
 				42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */,
 				4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */,
+				420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */,
 				4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */,
 				421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */,
 				4216370616E28FEA00627743 /* MGLevelManager.m in Sources */,
-				4216370F16E301C600627743 /* MJPopupBackgroundView.m in Sources */,
-				4216371116E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */,
-				42D1D1CA16EBA2FD004262BF /* UIViewController+HCPushBackAnimation.m in Sources */,
 				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
 				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
 				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
@@ -475,10 +453,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A8685216D1A076009FAFD5 /* MemogridTests.m in Sources */,
-				42ED9BE316D1C7620040C951 /* KGNoise.m in Sources */,
-				4216371016E301C600627743 /* MJPopupBackgroundView.m in Sources */,
-				4216371216E301C600627743 /* UIViewController+MJPopupViewController.m in Sources */,
-				42D1D1C416EB9C9E004262BF /* UIViewController+HCPushBackAnimation.m in Sources */,
 				425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,9 +517,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"/Users/seraphin/Library/Application Support/Spark Inspector\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"/Users/seraphin/Library/Application Support/Spark Inspector\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -601,7 +573,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,7 +591,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

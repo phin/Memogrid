@@ -11,9 +11,7 @@
 
 
 @interface MGMenuViewController : UIViewController <PagedFlowViewDataSource, PagedFlowViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
-    
-    KGNoiseLinearGradientView *noiseBackView;
-    
+        
     // Levels
     PagedFlowView *pv_levels;
     IBOutlet UIPageControl *pc_levels;

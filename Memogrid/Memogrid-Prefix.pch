@@ -12,10 +12,12 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
-    #import "KGNoise.h"
-    #import "UIViewController+HCPushBackAnimation.h"
     #import "MGButton.h"
 
     #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
     #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+    #define C_BACK [UIColor colorWithRed:37./255. green:37./255. blue:37./255. alpha:1.0] // Deep black
+    #define C_LIGHT [UIColor whiteColor] // White
+    #define C_DARK [UIColor colorWithRed:182./255. green:4./255. blue:0/255. alpha:1.0] // Red
 #endif

@@ -39,13 +39,7 @@
 
 
 - (void) initUI {
-    self.view.backgroundColor = [UIColor darkGrayColor];
-    // Background
-    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
-    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
-    noiseBackView.noiseOpacity = 0.05;
-    [self.view insertSubview:noiseBackView atIndex:0];
+    self.view.backgroundColor = C_BACK;
 }
 
 - (void) initTutorial {

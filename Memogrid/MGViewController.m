@@ -30,7 +30,7 @@
 -(void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    [self animationPopFrontScaleUp];
+    //[self animationPopFrontScaleUp];
     [self stopGuessing];
 }
 
@@ -95,14 +95,8 @@
 }
 
 - (void) initUI
-{    
-    // Background
-    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
-    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
-    noiseBackView.noiseOpacity = 0.05;
-    [self.view insertSubview:noiseBackView atIndex:0];
-    
+{
+    self.view.backgroundColor = C_BACK;
     [self blinkAnimation:@"blink" finished:YES target:b_ready];
 }
 
@@ -131,7 +125,6 @@
 
 - (void)viewWillLayoutSubviews
 {
-    noiseBackView.frame = self.view.bounds;
     [super viewWillLayoutSubviews];
 }
 
@@ -234,7 +227,7 @@
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
     vc_next.didWin = didWin;
     [self presentViewController:vc_next animated:YES completion:nil];
-    [self animationPushBackScaleDown];
+    //[self animationPushBackScaleDown];
 }
 
 #pragma mark - GAME FUNCTIONS
@@ -262,7 +255,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"gameToMenu"]) {
-        [self animationPushBackScaleDown];
+        //[self animationPushBackScaleDown];
+        
     }
 }
 

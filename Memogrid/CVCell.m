@@ -37,7 +37,7 @@
     self.titleLabel.textColor    = [UIColor whiteColor];
     
     self.layer.cornerRadius = 2.0;
-    self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    self.backgroundColor = C_LIGHT;
     
     self.canBePlayed = NO;
     
@@ -47,41 +47,20 @@
 - (void) setMode:(NSString *)mode {
     
     if (!self.completed) {
-        if ([mode isEqualToString:@"Classic"]) {
-            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2];
-        } else if ([mode isEqualToString:@"Bicolor"]) {
-            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.5];
-        } else { // Sequence
-            self.backgroundColor = [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
-        }
+        self.backgroundColor = C_LIGHT;
     }
 }
 
 - (void) setCompleted:(BOOL)completed {
-    self.backgroundColor = (completed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+    self.backgroundColor = (completed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : C_LIGHT;
 }
 
 - (void) setCanBePlayed:(BOOL)canBePlayed {
     if (!self.completed) {
-        if ([self.mode isEqualToString:@"Classic"]) {
-            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
-        } else if ([self.mode isEqualToString:@"Bicolor"]) {
-            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.5] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
-        } else { // Sequence
-            self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
-        }
+        self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
     } else {
         self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

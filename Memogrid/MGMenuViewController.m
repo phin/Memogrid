@@ -32,18 +32,12 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self animationPopFrontScaleUp];
+	//[self animationPopFrontScaleUp];
 }
 
 - (void) initUI {
     
-    self.view.backgroundColor = [UIColor darkGrayColor];
-    // Background
-    noiseBackView = [[KGNoiseLinearGradientView alloc] initWithFrame:self.view.bounds];
-    noiseBackView.backgroundColor = [UIColor colorWithRed:237./255. green:231./255. blue:224./255. alpha:1.000];
-    noiseBackView.noiseBlendMode = kCGBlendModeMultiply;
-    noiseBackView.noiseOpacity = 0.05;
-    [self.view insertSubview:noiseBackView atIndex:0];
+    self.view.backgroundColor = C_BACK;
 }
 
 - (void) initLevels {
@@ -113,7 +107,7 @@
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 25)];
     label.backgroundColor = [UIColor clearColor];
-    label.textColor       = [UIColor lightGrayColor];
+    label.textColor       = C_LIGHT;
     label.font            = [UIFont fontWithName:@"Futura-CondensedMedium" size:20];
     label.textAlignment   = NSTextAlignmentCenter;
     label.text            = mode; // Default
