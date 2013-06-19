@@ -120,13 +120,13 @@
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     mg_square.frame = [self getMainSquareFrameForOrientation:toInterfaceOrientation];
-    [self viewWillLayoutSubviews];
+   // [self viewWillLayoutSubviews];
 }
 
-- (void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-}
+//- (void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//}
 
 - (void)blinkAnimation:(NSString *)animationId finished:(BOOL)finished target:(UIView *)target
 {
@@ -226,7 +226,8 @@
     
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
     vc_next.didWin = didWin;
-    [self presentViewController:vc_next animated:YES completion:nil];
+    //[self presentViewController:vc_next animated:YES completion:nil];
+    [self presentNatGeoViewController:vc_next];
     //[self animationPushBackScaleDown];
 }
 

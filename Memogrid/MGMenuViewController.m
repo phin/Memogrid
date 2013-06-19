@@ -68,7 +68,8 @@
     id p;
     for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
     /* Empty for body */
-    [p dismissModalViewControllerAnimated:NO];
+    //[p dismissModalViewControllerAnimated:NO];
+    [p dismissNatGeoViewController];
 }
 
 #pragma mark - PagedFlowView Delegate

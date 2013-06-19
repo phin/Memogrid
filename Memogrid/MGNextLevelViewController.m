@@ -76,7 +76,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     MGMenuViewController *vc_menu = [storyboard instantiateViewControllerWithIdentifier:@"MGMenuViewController"];
     vc_menu.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:vc_menu animated:YES completion:nil];
+    //[self presentViewController:vc_menu animated:YES completion:nil];
+    [self presentNatGeoViewController:vc_menu];
 }
 
 

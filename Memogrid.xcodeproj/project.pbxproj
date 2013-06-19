@@ -10,6 +10,7 @@
 		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
 		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
 		420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */; };
+		420E8C7117715C2300570E49 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C7017715C2300570E49 /* MHNatGeoSegue.m */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
@@ -67,6 +68,8 @@
 		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
 		420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
 		420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
+		420E8C6F17715C2300570E49 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoSegue.h; sourceTree = "<group>"; };
+		420E8C7017715C2300570E49 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoSegue.m; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				420E8C6F17715C2300570E49 /* MHNatGeoSegue.h */,
+				420E8C7017715C2300570E49 /* MHNatGeoSegue.m */,
 				420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */,
 				420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */,
 				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
@@ -436,6 +441,7 @@
 				42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */,
 				4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */,
 				420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */,
+				420E8C7117715C2300570E49 /* MHNatGeoSegue.m in Sources */,
 				4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */,
 				421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */,
 				4216370616E28FEA00627743 /* MGLevelManager.m in Sources */,

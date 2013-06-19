@@ -12,6 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
+    #import "MHNatGeoViewControllerTransition.h"
     #import "MGButton.h"
 
     #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )

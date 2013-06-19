@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
@@ -29,7 +29,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ODS-0l-u9R" kind="modal" identifier="gameToMenu" id="2cD-6f-Xg7"/>
+                                    <segue destination="ODS-0l-u9R" kind="custom" identifier="gameToMenu" customClass="MHNatGeoSegue" id="kTU-Vo-iPF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrw-ZW-sqP">
@@ -78,7 +78,7 @@
                     <connections>
                         <outlet property="b_ready" destination="Q7R-0b-Jk2" id="5Hb-mk-Y9d"/>
                         <outlet property="l_currentlvl" destination="vrw-ZW-sqP" id="yQz-wm-Cj3"/>
-                        <segue destination="ups-tO-mGT" kind="modal" identifier="gameToTutorial" modalTransitionStyle="crossDissolve" id="Wlg-hS-LoV"/>
+                        <segue destination="ups-tO-mGT" kind="custom" identifier="gameToTutorial" customClass="MHNatGeoSegue" id="pEF-Cu-QJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -107,7 +107,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TTb-Am-F2S" kind="modal" identifier="menuToAbout" modalTransitionStyle="crossDissolve" id="C1d-5a-rYp"/>
+                                    <segue destination="TTb-Am-F2S" kind="custom" identifier="menuToAbout" customClass="MHNatGeoSegue" id="Dla-M4-pHJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG" customClass="MGButton">
@@ -266,7 +266,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ups-tO-mGT" kind="modal" identifier="aboutToTutorial" modalTransitionStyle="crossDissolve" id="uPg-Dz-PIc"/>
+                                    <segue destination="ups-tO-mGT" kind="custom" identifier="aboutToTutorial" customClass="MHNatGeoSegue" id="rZb-tJ-AOm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-JG-dwg" customClass="MGButton">
@@ -349,56 +349,12 @@
             <point key="canvasLocation" x="714" y="-365"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MGAboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGAboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToMenu:"/>
-            </relationships>
-        </class>
-        <class className="MGButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGButton.h"/>
-        </class>
-        <class className="MGMenuButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuButton.h"/>
-        </class>
-        <class className="MGMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToGame:"/>
-                <relationship kind="outlet" name="l_title" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pc_levels" candidateClass="UIPageControl"/>
-            </relationships>
-        </class>
-        <class className="MGTutorialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGTutorialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goBackToGame:"/>
-                <relationship kind="outlet" name="pc_tutorial" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="pv_tutorial" candidateClass="PagedFlowView"/>
-            </relationships>
-        </class>
-        <class className="MGViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MGViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="b_newgame" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="b_ready" candidateClass="MGButton"/>
-                <relationship kind="outlet" name="l_currentlvl" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PagedFlowView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagedFlowView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uPg-Dz-PIc"/>
+        <segue reference="rZb-tJ-AOm"/>
     </inferredMetricsTieBreakers>
 </document>
