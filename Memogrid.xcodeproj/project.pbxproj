@@ -12,7 +12,6 @@
 		420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */; };
 		420E8C7117715C2300570E49 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C7017715C2300570E49 /* MHNatGeoSegue.m */; };
 		420E8C73177161F600570E49 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E8C72177161F600570E49 /* test.png */; };
-		420E8C77177162D400570E49 /* testios7.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E8C76177162D400570E49 /* testios7.png */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
@@ -21,8 +20,6 @@
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
 		4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49616FEA01D00C6A494 /* Memogrid@2x.png */; };
-		4247F49B16FEA7BA00C6A494 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49916FEA7BA00C6A494 /* back.png */; };
-		4247F49C16FEA7BA00C6A494 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49A16FEA7BA00C6A494 /* back@2x.png */; };
 		4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398016E05233002FBBDE /* MGMenuViewController.m */; };
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
@@ -73,7 +70,6 @@
 		420E8C6F17715C2300570E49 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoSegue.h; sourceTree = "<group>"; };
 		420E8C7017715C2300570E49 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoSegue.m; sourceTree = "<group>"; };
 		420E8C72177161F600570E49 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
-		420E8C76177162D400570E49 /* testios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testios7.png; path = ../../../Desktop/testios7.png; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -87,8 +83,6 @@
 		4247F49016FE8B7300C6A494 /* MGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGButton.m; sourceTree = "<group>"; };
 		4247F49516FEA01D00C6A494 /* Memogrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Memogrid.png; sourceTree = "<group>"; };
 		4247F49616FEA01D00C6A494 /* Memogrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Memogrid@2x.png"; sourceTree = "<group>"; };
-		4247F49916FEA7BA00C6A494 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		4247F49A16FEA7BA00C6A494 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		4249397F16E05233002FBBDE /* MGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuViewController.h; sourceTree = "<group>"; };
 		4249398016E05233002FBBDE /* MGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuViewController.m; sourceTree = "<group>"; };
 		4249398216E05277002FBBDE /* MGAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAboutViewController.h; sourceTree = "<group>"; };
@@ -204,7 +198,6 @@
 		42A8681116D1A076009FAFD5 = {
 			isa = PBXGroup;
 			children = (
-				420E8C76177162D400570E49 /* testios7.png */,
 				42DC61DE16DB0A5D008A41E1 /* test@114.png */,
 				420E8C72177161F600570E49 /* test.png */,
 				42A8682316D1A076009FAFD5 /* Memogrid */,
@@ -300,8 +293,6 @@
 		42ED9BE516D1C7700040C951 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4247F49916FEA7BA00C6A494 /* back.png */,
-				4247F49A16FEA7BA00C6A494 /* back@2x.png */,
 				42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */,
 				4247F49516FEA01D00C6A494 /* Memogrid.png */,
 				4247F49616FEA01D00C6A494 /* Memogrid@2x.png */,
@@ -393,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */,
-				420E8C77177162D400570E49 /* testios7.png in Resources */,
 				42A8682816D1A076009FAFD5 /* InfoPlist.strings in Resources */,
 				42A8683016D1A076009FAFD5 /* Default.png in Resources */,
 				42A8683216D1A076009FAFD5 /* Default@2x.png in Resources */,
@@ -405,8 +395,6 @@
 				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
 				420E8C73177161F600570E49 /* test.png in Resources */,
-				4247F49B16FEA7BA00C6A494 /* back.png in Resources */,
-				4247F49C16FEA7BA00C6A494 /* back@2x.png in Resources */,
 				4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

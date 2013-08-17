@@ -33,18 +33,16 @@
     self.backgroundColor = [UIColor clearColor];
         
     // Label
-    self.titleLabel.font = [UIFont fontWithName:@"VerbBlack" size:24];
+    self.titleLabel.font = [UIFont fontWithName:@"VerbBlack" size:22];
     self.titleEdgeInsets = UIEdgeInsetsMake(2, 0, 0, 0);
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-//    [self setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [self setTitleShadowColor:[UIColor blackColor] forState:UIControlStateSelected];
-//    [self setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-//    self.titleLabel.shadowOffset = CGSizeMake(0.0, 0.0);
+    [self setTitleColor:C_LIGHT forState:UIControlStateNormal];
+    [self setTitleColor:C_LIGHT forState:UIControlStateSelected];
+    [self setTitleColor:C_LIGHT forState:UIControlStateHighlighted];
+    [self setTitle:[NSString stringWithFormat:@"%@", self.titleLabel.text] forState:UIControlStateSelected]; // Hack to keep the color on iOS7
+    [self setTitle:[NSString stringWithFormat:@"%@", self.titleLabel.text] forState:UIControlStateHighlighted]; // Hack to keep the color on iOS7
     
     // Border
-    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.layer.borderColor = C_RED.CGColor;
     self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 2.0f;
 }
@@ -60,7 +58,7 @@
         fadeOutAnimation.fromValue = [NSNumber numberWithFloat:1.0f];
         fadeOutAnimation.fillMode = kCAFillModeForwards;
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:6.0f];
-        [self.layer addAnimation:fadeOutAnimation forKey:@"animateOpacity"];
+        [self.layer addAnimation:fadeOutAnimation forKey:nil];
     } else {
         CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
         fadeOutAnimation.duration = 0.1f;
@@ -68,7 +66,7 @@
         fadeOutAnimation.fromValue = [NSNumber numberWithFloat:6.0f];
         fadeOutAnimation.fillMode = kCAFillModeForwards;
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-        [self.layer addAnimation:fadeOutAnimation forKey:@"animateOpacity"];
+        [self.layer addAnimation:fadeOutAnimation forKey:nil];
 
     }
 }

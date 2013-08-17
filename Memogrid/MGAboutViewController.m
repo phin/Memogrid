@@ -35,7 +35,8 @@
 }
 
 - (IBAction)backToMenu:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissNatGeoViewController];
 }
 
 - (void)didReceiveMemoryWarning

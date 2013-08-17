@@ -30,7 +30,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    //[self animationPopFrontScaleUp];
     [self stopGuessing];
 }
 
@@ -72,7 +71,7 @@
     b_ready.userInteractionEnabled = YES;
     [b_ready setHidden:NO];
     b_ready.alpha = 0;
-    [b_ready.layer removeAllAnimations];
+    //[b_ready.layer removeAllAnimations];
 
     [UIView animateWithDuration:0.4 animations:^{
         mg_square.alpha = 0;
@@ -97,7 +96,7 @@
 - (void) initUI
 {
     self.view.backgroundColor = C_BACK;
-    [self blinkAnimation:@"blink" finished:YES target:b_ready];
+    //[self blinkAnimation:@"blink" finished:YES target:b_ready];
 }
 
 - (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation

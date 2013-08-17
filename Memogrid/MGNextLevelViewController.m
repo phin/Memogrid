@@ -27,7 +27,6 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	//[self animationPopFrontScaleUp];
 }
 
 - (void) initUI {
@@ -69,7 +68,8 @@
 }
 
 - (IBAction)nextLevel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissNatGeoViewController];
 }
 
 - (IBAction)goToMenu:(id)sender {

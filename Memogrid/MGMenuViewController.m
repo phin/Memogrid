@@ -204,7 +204,8 @@
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
     {
         [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        //[self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissNatGeoViewController];
     } else {
         NSLog(@"User cannot access this level.");
     }

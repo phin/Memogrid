@@ -50,9 +50,9 @@
     UIColor* r_first;
     if ([self isHighlighted]) {
         //// Color Declarations Highlighted
-        r_first = [UIColor lightGrayColor];
+        r_first = C_RED;
     } else {
-        r_first = [UIColor whiteColor];
+        r_first = C_LIGHT;
     }
     
     //// Menu
