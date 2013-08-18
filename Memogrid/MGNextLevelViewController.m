@@ -17,7 +17,6 @@
 
 @implementation MGNextLevelViewController
 
-@synthesize didWin;
 
 - (void)viewDidLoad
 {
@@ -30,9 +29,9 @@
 }
 
 - (void) initUI {
-    self.view.backgroundColor = C_BACK;
+    self.view.backgroundColor = C_GREEN;
     
-    NSString *s_next = (didWin) ? @"Next Level" : @"Try again!";
+    NSString *s_next = @"Next Level";
     
     MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, 220, 250, 55)];
     [b_next setTitle:s_next forState:UIControlStateNormal];
@@ -63,7 +62,7 @@
     l_message.font            = [UIFont fontWithName:@"VerbBlack" size:22];
     l_message.textColor       = C_LIGHT;
     l_message.textAlignment   = NSTextAlignmentCenter;
-    l_message.text            = (didWin) ? @"You won!" : @"You lost!";
+    l_message.text            = @"You won!";
     [self.view addSubview:l_message];
 }
 

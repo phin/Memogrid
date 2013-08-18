@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MGNextLevelViewController : UIViewController {
-}
-
-@property (nonatomic) BOOL didWin;
+@interface MGNextLevelViewController : UIViewController
 
 @end

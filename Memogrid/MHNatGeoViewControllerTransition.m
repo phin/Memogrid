@@ -56,17 +56,21 @@
         sourceLastTransform([_sourceView layer]);
         destinationLastTransform([_destinationView layer]);
         
-         //Perform animation
+        
+        //Perform animation
         [UIView animateWithDuration:0.8f*_duration delay:0.2f*_duration options:UIViewAnimationOptionCurveLinear animations:^{
             destinationFirstTransform([_destinationView layer]);
         } completion:^(BOOL finished) {
             completion(YES);
+            
         }];
         
         [UIView animateWithDuration:_duration delay:0.0f options:0 animations:^{
             sourceFirstTransform([_sourceView layer]);
         } completion:^(BOOL finished) {
-        
+            CGRect oldFrame = [[_sourceView layer]frame];
+            [[_sourceView layer]setAnchorPoint:CGPointMake(0.5,0.5f)];
+            [[_sourceView layer] setFrame:oldFrame];
         }];
     }else {
         // Change anchor point and reposition it.
@@ -82,7 +86,7 @@
         [UIView animateWithDuration:_duration delay:0.0f options:0 animations:^{
             destinationLastTransform([_destinationView layer]);
         } completion:^(BOOL finished) {
- 
+            
         }];
         
         [UIView animateWithDuration:0.8*_duration delay:0.2*_duration options:0 animations:^{

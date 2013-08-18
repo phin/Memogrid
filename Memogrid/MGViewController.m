@@ -96,7 +96,6 @@
 - (void) initUI
 {
     self.view.backgroundColor = C_BACK;
-    //[self blinkAnimation:@"blink" finished:YES target:b_ready];
 }
 
 - (CGRect) getMainSquareFrameForOrientation:(UIInterfaceOrientation)orientation
@@ -119,13 +118,7 @@
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     mg_square.frame = [self getMainSquareFrameForOrientation:toInterfaceOrientation];
-   // [self viewWillLayoutSubviews];
 }
-
-//- (void)viewWillLayoutSubviews
-//{
-//    [super viewWillLayoutSubviews];
-//}
 
 - (void)blinkAnimation:(NSString *)animationId finished:(BOOL)finished target:(UIView *)target
 {
@@ -133,10 +126,10 @@
     [UIView setAnimationDuration:0.5f];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(blinkAnimation:finished:target:)];
-    if ([target alpha] == 1.0f)
-        [target setAlpha:0.7f];
-    else
+    if ([target.layer borderWidth ] == 6.0f)
         [target setAlpha:1.0f];
+    else
+        [target setAlpha:6.0f];
     [UIView commitAnimations];
 }
 
@@ -161,9 +154,7 @@
         // Go to the next level from the UserLevel Singleton
         GameMode gm_current = [[MGUserLevel sharedInstance] current_mode];
         int current         = [[MGUserLevel sharedInstance] current_level];
-        
-        
-        
+
         int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
         [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
     }];
@@ -177,7 +168,7 @@
     difficulty = (debugMode) ? 4 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
-    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2.6];
+    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
 }
 
 - (void) startGuessing
@@ -224,10 +215,9 @@
     }
     
     MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
-    vc_next.didWin = didWin;
-    //[self presentViewController:vc_next animated:YES completion:nil];
     [self presentNatGeoViewController:vc_next];
-    //[self animationPushBackScaleDown];
+    
+    // TODO : Try again with a word : "Try again".
 }
 
 #pragma mark - GAME FUNCTIONS

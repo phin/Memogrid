@@ -42,9 +42,25 @@
     [self setTitle:[NSString stringWithFormat:@"%@", self.titleLabel.text] forState:UIControlStateHighlighted]; // Hack to keep the color on iOS7
     
     // Border
-    self.layer.borderColor = C_RED.CGColor;
+    self.layer.borderColor = C_LIGHT_BACK.CGColor;
     self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 2.0f;
+    
+    // Animate border
+    [self animateBorder];
+}
+
+- (void) animateBorder {
+    
+    CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
+    fadeOutAnimation.duration               = 0.8f;
+    fadeOutAnimation.removedOnCompletion    = NO;
+    fadeOutAnimation.fromValue              = [NSNumber numberWithFloat:1.0f];
+    fadeOutAnimation.fillMode               = kCAFillModeForwards;
+    fadeOutAnimation.toValue                = [NSNumber numberWithFloat:4.0f];
+    fadeOutAnimation.repeatCount            = HUGE_VALF;
+    fadeOutAnimation.autoreverses           = YES;
+    [self.layer addAnimation:fadeOutAnimation forKey:nil];
 }
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -59,6 +75,8 @@
         fadeOutAnimation.fillMode = kCAFillModeForwards;
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:6.0f];
         [self.layer addAnimation:fadeOutAnimation forKey:nil];
+        
+        self.alpha = 1.0f;
     } else {
         CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
         fadeOutAnimation.duration = 0.1f;

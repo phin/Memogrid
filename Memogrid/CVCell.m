@@ -52,14 +52,14 @@
 }
 
 - (void) setCompleted:(BOOL)completed {
-    self.backgroundColor = (completed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : C_LIGHT;
+    self.backgroundColor = (completed) ? C_GREEN : C_LIGHT;
 }
 
 - (void) setCanBePlayed:(BOOL)canBePlayed {
     if (!self.completed) {
         self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
     } else {
-        self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.349 green: 0.522 blue: 0.153 alpha: 1] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 1];
+        self.backgroundColor = C_GREEN;
     }
 }
 
