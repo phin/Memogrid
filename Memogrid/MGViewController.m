@@ -206,11 +206,7 @@
         [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
         
         MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
-        if (FANCY_TRANSITION) {
-            [self presentNatGeoViewController:vc_next];
-        } else {
-            [self presentViewController:vc_next animated:YES completion:nil];
-        }
+        [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];
 
     } else {
         [self initPreGame];

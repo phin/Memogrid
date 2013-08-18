@@ -27,11 +27,7 @@
 
 - (IBAction)backToMenu:(id)sender
 {
-    if (FANCY_TRANSITION) {
-        [self dismissNatGeoViewController];
-    } else  {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    [self dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
 }
 
 

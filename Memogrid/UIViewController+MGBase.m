@@ -43,4 +43,44 @@
     }
 }
 
+#pragma mark - TRANSITIONS
+
+- (void) presentModalViewController:(UIViewController *)modalViewController withPushDirection: (NSString *) direction {
+    
+    [CATransaction begin];
+    
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionPush;
+    transition.subtype = direction;
+    transition.duration = 0.3f;
+    transition.fillMode = kCAFillModeForwards;
+    transition.removedOnCompletion = YES;
+    
+    [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:@"transition"];
+    [self presentViewController:modalViewController animated:NO completion:nil];
+    
+    [CATransaction commit];
+    
+}
+
+- (void) dismissModalViewControllerWithPushDirection:(NSString *) direction {
+    
+    [CATransaction begin];
+    
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionPush;
+    transition.subtype = direction;
+    transition.duration = 0.3f;
+    transition.fillMode = kCAFillModeForwards;
+    transition.removedOnCompletion = YES;
+    
+    [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:@"transition"];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [CATransaction commit];
+    
+}
+
+
 @end

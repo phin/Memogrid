@@ -29,7 +29,7 @@
 }
 
 - (void) initUI {
-    self.view.backgroundColor = C_GREEN;
+    self.view.backgroundColor = C_BACK;
     
     NSString *s_next = @"Next Level";
     
@@ -66,18 +66,14 @@
 }
 
 - (IBAction)nextLevel:(id)sender {
-    if (FANCY_TRANSITION) {[self dismissNatGeoViewController];} else {[self dismissViewControllerAnimated:YES completion:nil];};
+    [self dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
 }
 
 - (IBAction)goToMenu:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     MGMenuViewController *vc_menu = [storyboard instantiateViewControllerWithIdentifier:@"MGMenuViewController"];
     vc_menu.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    if (FANCY_TRANSITION) {
-        [self presentNatGeoViewController:vc_menu];
-    } else {
-        [self presentViewController:vc_menu animated:YES completion:nil];
-    }
+    [self presentModalViewController:vc_menu withPushDirection:kCATransitionFromTop];
 }
 
 

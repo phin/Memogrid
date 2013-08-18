@@ -49,12 +49,7 @@
     id p;
     for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
     /* Empty for body */
-    
-    if (FANCY_TRANSITION) {
-        [p dismissModalViewControllerAnimated:NO];
-    } else {
-        [p dismissNatGeoViewController];
-    }
+    [p dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
 }
 
 #pragma mark -

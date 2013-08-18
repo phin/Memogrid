@@ -68,11 +68,7 @@
     id p;
     for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
     /* Empty for body */
-    if (FANCY_TRANSITION) {
-        [p dismissNatGeoViewController];
-    } else {
-        [p dismissModalViewControllerAnimated:NO];
-    }
+    [p dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
 }
 
 #pragma mark - PagedFlowView Delegate
@@ -209,11 +205,7 @@
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
     {
         [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
-        if (FANCY_TRANSITION) {
-            [self dismissNatGeoViewController];
-        } else {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
+        [self dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
     } else {
         NSLog(@"User cannot access this level.");
     }

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
 		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
-		420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */; };
-		420E8C7117715C2300570E49 /* MHNatGeoSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E8C7017715C2300570E49 /* MHNatGeoSegue.m */; };
 		420E8C73177161F600570E49 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E8C72177161F600570E49 /* test.png */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
@@ -22,6 +20,7 @@
 		4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E517C06F65002FE638 /* MessageUI.framework */; };
 		4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E717C06F70002FE638 /* Accounts.framework */; };
 		4242F4EA17C07E55002FE638 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 4242F4E917C07E55002FE638 /* check.png */; };
+		4242F4F017C15847002FE638 /* MGTransitionSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4242F4EF17C15847002FE638 /* MGTransitionSegue.m */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
@@ -71,10 +70,6 @@
 		4200AD861708E6E800B8B9B2 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
 		4200AD871708E6E800B8B9B2 /* CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCell.m; sourceTree = "<group>"; };
 		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
-		420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoViewControllerTransition.h; sourceTree = "<group>"; };
-		420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoViewControllerTransition.m; sourceTree = "<group>"; };
-		420E8C6F17715C2300570E49 /* MHNatGeoSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNatGeoSegue.h; sourceTree = "<group>"; };
-		420E8C7017715C2300570E49 /* MHNatGeoSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNatGeoSegue.m; sourceTree = "<group>"; };
 		420E8C72177161F600570E49 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
@@ -90,6 +85,8 @@
 		4242F4E517C06F65002FE638 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4242F4E717C06F70002FE638 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4242F4E917C07E55002FE638 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		4242F4EE17C15847002FE638 /* MGTransitionSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransitionSegue.h; sourceTree = "<group>"; };
+		4242F4EF17C15847002FE638 /* MGTransitionSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTransitionSegue.m; sourceTree = "<group>"; };
 		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
 		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
 		4247F48F16FE8B7300C6A494 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButton.h; sourceTree = "<group>"; };
@@ -191,6 +188,10 @@
 				4200AD861708E6E800B8B9B2 /* CVCell.h */,
 				4200AD871708E6E800B8B9B2 /* CVCell.m */,
 				4200AD891708E74F00B8B9B2 /* CVCell.xib */,
+				4242F4DE17C06EFB002FE638 /* UIViewController+MGBase.h */,
+				4242F4DF17C06EFB002FE638 /* UIViewController+MGBase.m */,
+				4242F4EE17C15847002FE638 /* MGTransitionSegue.h */,
+				4242F4EF17C15847002FE638 /* MGTransitionSegue.m */,
 			);
 			name = "Custom Elements";
 			sourceTree = "<group>";
@@ -208,8 +209,6 @@
 				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
 				421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */,
 				421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */,
-				4242F4DE17C06EFB002FE638 /* UIViewController+MGBase.h */,
-				4242F4DF17C06EFB002FE638 /* UIViewController+MGBase.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -303,10 +302,6 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				420E8C6F17715C2300570E49 /* MHNatGeoSegue.h */,
-				420E8C7017715C2300570E49 /* MHNatGeoSegue.m */,
-				420E8C6C177156FD00570E49 /* MHNatGeoViewControllerTransition.h */,
-				420E8C6D177156FD00570E49 /* MHNatGeoViewControllerTransition.m */,
 				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
 				425C83D216ED920A0069FB73 /* PagedFlowView.m */,
 			);
@@ -461,9 +456,8 @@
 				42A8683D16D1A076009FAFD5 /* MGViewController.m in Sources */,
 				42A8685D16D1AAB2009FAFD5 /* MGSquare.m in Sources */,
 				4249398116E05233002FBBDE /* MGMenuViewController.m in Sources */,
-				420E8C6E177156FD00570E49 /* MHNatGeoViewControllerTransition.m in Sources */,
-				420E8C7117715C2300570E49 /* MHNatGeoSegue.m in Sources */,
 				4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */,
+				4242F4F017C15847002FE638 /* MGTransitionSegue.m in Sources */,
 				421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */,
 				4216370616E28FEA00627743 /* MGLevelManager.m in Sources */,
 				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
