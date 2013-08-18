@@ -13,6 +13,8 @@
 
 @implementation MGButton
 
+#pragma mark - Init
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -23,12 +25,13 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [self initialize];
 }
 
-- (void)initialize {
-    
+- (void)initialize
+{
     // Frame
     self.backgroundColor = [UIColor clearColor];
         
@@ -43,14 +46,17 @@
     
     // Border
     self.layer.borderColor = C_LIGHT_BACK.CGColor;
-    self.layer.borderWidth = 1.0f;
+    self.layer.borderWidth = 2.0f;
     self.layer.cornerRadius = 2.0f;
     
-    // Animate border
-    [self animateBorder];
 }
 
-- (void) animateBorder {
+#pragma mark - Animation
+
+- (void) startBlinking
+{
+    // In case we call it twice by accident
+    [self.layer removeAllAnimations];
     
     CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
     fadeOutAnimation.duration               = 0.8f;
@@ -62,6 +68,13 @@
     fadeOutAnimation.autoreverses           = YES;
     [self.layer addAnimation:fadeOutAnimation forKey:nil];
 }
+- (void) stopBlinking
+{
+    [self.layer removeAllAnimations];
+}
+
+
+#pragma mark - Touch Events
 
 - (void)setHighlighted:(BOOL)highlighted
 {

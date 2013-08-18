@@ -36,6 +36,7 @@
     MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, 220, 250, 55)];
     [b_next setTitle:s_next forState:UIControlStateNormal];
     [b_next addTarget:self action:@selector(nextLevel:) forControlEvents:UIControlEventTouchUpInside];
+    [b_next startBlinking];
     [self.view addSubview:b_next];
     
     MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-200, 250, 55)];

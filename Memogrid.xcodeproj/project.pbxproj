@@ -16,6 +16,11 @@
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
 		421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */; };
+		4242F4E017C06EFB002FE638 /* UIViewController+MGBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4242F4DF17C06EFB002FE638 /* UIViewController+MGBase.m */; };
+		4242F4E217C06F57002FE638 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E117C06F57002FE638 /* Social.framework */; };
+		4242F4E417C06F5E002FE638 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E317C06F5E002FE638 /* Twitter.framework */; };
+		4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E517C06F65002FE638 /* MessageUI.framework */; };
+		4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E717C06F70002FE638 /* Accounts.framework */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
@@ -77,6 +82,12 @@
 		4216370516E28FEA00627743 /* MGLevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGLevelManager.m; sourceTree = "<group>"; };
 		421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNextLevelViewController.h; sourceTree = "<group>"; };
 		421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGNextLevelViewController.m; sourceTree = "<group>"; };
+		4242F4DE17C06EFB002FE638 /* UIViewController+MGBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MGBase.h"; sourceTree = "<group>"; };
+		4242F4DF17C06EFB002FE638 /* UIViewController+MGBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MGBase.m"; sourceTree = "<group>"; };
+		4242F4E117C06F57002FE638 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4242F4E317C06F5E002FE638 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		4242F4E517C06F65002FE638 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4242F4E717C06F70002FE638 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
 		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
 		4247F48F16FE8B7300C6A494 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButton.h; sourceTree = "<group>"; };
@@ -129,6 +140,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */,
+				4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */,
+				4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */,
+				4242F4E417C06F5E002FE638 /* Twitter.framework in Frameworks */,
+				4242F4E217C06F57002FE638 /* Social.framework in Frameworks */,
 				42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */,
 				42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */,
 				42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */,
@@ -191,6 +206,8 @@
 				421636FE16E26C4600627743 /* MGTutorialViewController.m */,
 				421D599516EBA86E00399DF1 /* MGNextLevelViewController.h */,
 				421D599616EBA86E00399DF1 /* MGNextLevelViewController.m */,
+				4242F4DE17C06EFB002FE638 /* UIViewController+MGBase.h */,
+				4242F4DF17C06EFB002FE638 /* UIViewController+MGBase.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -219,6 +236,10 @@
 		42A8681C16D1A076009FAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4242F4E717C06F70002FE638 /* Accounts.framework */,
+				4242F4E517C06F65002FE638 /* MessageUI.framework */,
+				4242F4E317C06F5E002FE638 /* Twitter.framework */,
+				4242F4E117C06F57002FE638 /* Social.framework */,
 				42C303F0172DD76100E51178 /* AudioToolbox.framework */,
 				42D1D1C816EBA2E8004262BF /* QuartzCore.framework */,
 				42A8681D16D1A076009FAFD5 /* UIKit.framework */,
@@ -444,6 +465,7 @@
 				421D599716EBA86E00399DF1 /* MGNextLevelViewController.m in Sources */,
 				425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */,
 				4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */,
+				4242F4E017C06EFB002FE638 /* UIViewController+MGBase.m in Sources */,
 				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
 				4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */,
 				42A4D8D3171B77B5001DB069 /* MGUserLevel.m in Sources */,

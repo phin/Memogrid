@@ -68,10 +68,11 @@
     
     // Set views
     [mg_square setHidden:YES];
-    b_ready.userInteractionEnabled = YES;
     [b_ready setHidden:NO];
+    [b_ready startBlinking];
+    b_ready.userInteractionEnabled = YES;
     b_ready.alpha = 0;
-    //[b_ready.layer removeAllAnimations];
+    
 
     [UIView animateWithDuration:0.4 animations:^{
         mg_square.alpha = 0;
@@ -118,19 +119,6 @@
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     mg_square.frame = [self getMainSquareFrameForOrientation:toInterfaceOrientation];
-}
-
-- (void)blinkAnimation:(NSString *)animationId finished:(BOOL)finished target:(UIView *)target
-{
-    [UIView beginAnimations:animationId context:(__bridge void *)target];
-    [UIView setAnimationDuration:0.5f];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(blinkAnimation:finished:target:)];
-    if ([target.layer borderWidth ] == 6.0f)
-        [target setAlpha:1.0f];
-    else
-        [target setAlpha:6.0f];
-    [UIView commitAnimations];
 }
 
 
@@ -212,12 +200,15 @@
         [MGLevelManager setUserFinishedLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
         current++;
         [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
+        
+        MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
+        [self presentNatGeoViewController:vc_next];
+
+    } else {
+        [self initPreGame];
+        // TODO : Try again with a word : "Try again".
     }
     
-    MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
-    [self presentNatGeoViewController:vc_next];
-    
-    // TODO : Try again with a word : "Try again".
 }
 
 #pragma mark - GAME FUNCTIONS

@@ -10,4 +10,7 @@
 
 @interface MGButton : UIButton
 
+- (void) startBlinking;
+- (void) stopBlinking;
+
 @end
