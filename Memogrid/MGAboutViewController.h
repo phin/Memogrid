@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MGAboutViewController : UIViewController {
-}
+@interface MGAboutViewController : UIViewController
 
 @end

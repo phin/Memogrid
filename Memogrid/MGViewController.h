@@ -14,11 +14,8 @@
     
     // Logic elements
     BOOL canPlay;
-    BOOL multipleColors;
     BOOL debugMode;
-    
     NSMutableArray *a_currentGame;
-    
     MGLevelManager *mg_level;
     
     // UI Elements

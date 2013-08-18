@@ -21,6 +21,7 @@
 		4242F4E417C06F5E002FE638 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E317C06F5E002FE638 /* Twitter.framework */; };
 		4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E517C06F65002FE638 /* MessageUI.framework */; };
 		4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4242F4E717C06F70002FE638 /* Accounts.framework */; };
+		4242F4EA17C07E55002FE638 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 4242F4E917C07E55002FE638 /* check.png */; };
 		4247F48E16FE7A8100C6A494 /* MGMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F48D16FE7A8100C6A494 /* MGMenuButton.m */; };
 		4247F49116FE8B7300C6A494 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4247F49016FE8B7300C6A494 /* MGButton.m */; };
 		4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4247F49516FEA01D00C6A494 /* Memogrid.png */; };
@@ -88,6 +89,7 @@
 		4242F4E317C06F5E002FE638 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4242F4E517C06F65002FE638 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4242F4E717C06F70002FE638 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		4242F4E917C07E55002FE638 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		4247F48C16FE7A8100C6A494 /* MGMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGMenuButton.h; sourceTree = "<group>"; };
 		4247F48D16FE7A8100C6A494 /* MGMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGMenuButton.m; sourceTree = "<group>"; };
 		4247F48F16FE8B7300C6A494 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGButton.h; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		42ED9BE516D1C7700040C951 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4242F4E917C07E55002FE638 /* check.png */,
 				42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */,
 				4247F49516FEA01D00C6A494 /* Memogrid.png */,
 				4247F49616FEA01D00C6A494 /* Memogrid@2x.png */,
@@ -406,6 +409,7 @@
 			files = (
 				42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */,
 				42A8682816D1A076009FAFD5 /* InfoPlist.strings in Resources */,
+				4242F4EA17C07E55002FE638 /* check.png in Resources */,
 				42A8683016D1A076009FAFD5 /* Default.png in Resources */,
 				42A8683216D1A076009FAFD5 /* Default@2x.png in Resources */,
 				42A8683416D1A076009FAFD5 /* Default-568h@2x.png in Resources */,

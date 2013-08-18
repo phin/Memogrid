@@ -28,7 +28,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ODS-0l-u9R" kind="custom" identifier="gameToMenu" customClass="MHNatGeoSegue" id="kTU-Vo-iPF"/>
+                                    <segue destination="ODS-0l-u9R" kind="modal" identifier="gameToMenu" customClass="MHNatGeoSegue" modalTransitionStyle="crossDissolve" id="kTU-Vo-iPF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrw-ZW-sqP">
@@ -73,7 +73,7 @@
                     <connections>
                         <outlet property="b_ready" destination="Q7R-0b-Jk2" id="5Hb-mk-Y9d"/>
                         <outlet property="l_currentlvl" destination="vrw-ZW-sqP" id="yQz-wm-Cj3"/>
-                        <segue destination="ups-tO-mGT" kind="custom" identifier="gameToTutorial" customClass="MHNatGeoSegue" id="pEF-Cu-QJj"/>
+                        <segue destination="ups-tO-mGT" kind="modal" identifier="gameToTutorial" customClass="MHNatGeoSegue" modalTransitionStyle="crossDissolve" id="pEF-Cu-QJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -102,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TTb-Am-F2S" kind="custom" identifier="menuToAbout" customClass="MHNatGeoSegue" id="Dla-M4-pHJ"/>
+                                    <segue destination="TTb-Am-F2S" kind="modal" identifier="menuToAbout" customClass="MHNatGeoSegue" modalTransitionStyle="crossDissolve" id="Dla-M4-pHJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG" customClass="MGButton">
@@ -253,7 +253,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ups-tO-mGT" kind="custom" identifier="aboutToTutorial" customClass="MHNatGeoSegue" id="rZb-tJ-AOm"/>
+                                    <segue destination="ups-tO-mGT" kind="modal" identifier="aboutToTutorial" customClass="MHNatGeoSegue" modalTransitionStyle="crossDissolve" id="rZb-tJ-AOm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-JG-dwg" customClass="MGButton">
@@ -334,6 +334,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pEF-Cu-QJj"/>
+        <segue reference="rZb-tJ-AOm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,8 @@
     #define C_RED           [UIColor colorWithRed:182./255. green:4./255. blue:0/255. alpha:1.0] // Intense Red
     #define C_GREEN         [UIColor colorWithRed:0.349 green:0.522 blue:0.153 alpha:1.0] // Winning green.
 
+    #define FANCY_TRANSITION FALSE
+
     //#define C_RED [UIColor colorWithRed:204./255. green:91./255. blue:73./255. alpha:1.0] // Pink-ish
     //#define C_GREEN [UIColor colorWithRed:138./255. green:186./255. blue:174./255. alpha:1.0] // Turquoise
 

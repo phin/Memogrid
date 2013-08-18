@@ -46,7 +46,7 @@
     // TODO : Stop asking all the time for plist;
     
     NSMutableDictionary *d_all_levels = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getPlistPath]];
-    NSMutableArray *a_mode_levels = [NSArray arrayWithArray:[d_all_levels objectForKey:[self modeToString:mode]]];
+    NSMutableArray *a_mode_levels = [NSMutableArray arrayWithArray:[d_all_levels objectForKey:[self modeToString:mode]]];
     return a_mode_levels;
 }
 

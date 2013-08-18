@@ -33,24 +33,26 @@
     
     NSString *s_next = @"Next Level";
     
-    MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, 220, 250, 55)];
+    // Next Level, centré dans l'écran
+    MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, (self.view.frame.size.height/2)-(55/2), 250, 55)];
     [b_next setTitle:s_next forState:UIControlStateNormal];
     [b_next addTarget:self action:@selector(nextLevel:) forControlEvents:UIControlEventTouchUpInside];
     [b_next startBlinking];
     [self.view addSubview:b_next];
     
-    MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-200, 250, 55)];
-    [b_level setTitle:@"Choose Level" forState:UIControlStateNormal];
+    // TODO : A mettre en pictos
+    MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
+    [b_level setTitle:@"Replay Level" forState:UIControlStateNormal];
     [b_level addTarget:self action:@selector(goToMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_level];
 
-    MGButton *b_fb = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
-    [b_fb setTitle:@"Share on Facebook" forState:UIControlStateNormal];
+    MGButton *b_fb = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-80, 122.5, 55)];
+    [b_fb setTitle:@"Facebook" forState:UIControlStateNormal];
     [b_fb addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_fb];
     
-    MGButton *b_tw = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-80, 250, 55)];
-    [b_tw setTitle:@"Share on Twitter" forState:UIControlStateNormal];
+    MGButton *b_tw = [[MGButton alloc] initWithFrame:CGRectMake(35+122.5+5, self.view.frame.size.height-80, 122.5, 55)];
+    [b_tw setTitle:@"Twitter" forState:UIControlStateNormal];
     [b_tw addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_tw];
     
@@ -58,26 +60,24 @@
     [mb_menu addTarget:self action:@selector(goToMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:mb_menu];
     
-    UILabel *l_message = [[UILabel alloc] initWithFrame:CGRectMake(35, 96, 250, 55)];
-    l_message.backgroundColor = [UIColor clearColor];
-    l_message.font            = [UIFont fontWithName:@"VerbBlack" size:22];
-    l_message.textColor       = C_LIGHT;
-    l_message.textAlignment   = NSTextAlignmentCenter;
-    l_message.text            = @"You won!";
-    [self.view addSubview:l_message];
+    UIImageView *iv_check = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
+    iv_check.frame = CGRectMake(87, 80, 146, 159);
+    [self.view addSubview:iv_check];
 }
 
 - (IBAction)nextLevel:(id)sender {
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    [self dismissNatGeoViewController];
+    if (FANCY_TRANSITION) {[self dismissNatGeoViewController];} else {[self dismissViewControllerAnimated:YES completion:nil];};
 }
 
 - (IBAction)goToMenu:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     MGMenuViewController *vc_menu = [storyboard instantiateViewControllerWithIdentifier:@"MGMenuViewController"];
     vc_menu.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    //[self presentViewController:vc_menu animated:YES completion:nil];
-    [self presentNatGeoViewController:vc_menu];
+    if (FANCY_TRANSITION) {
+        [self presentNatGeoViewController:vc_menu];
+    } else {
+        [self presentViewController:vc_menu animated:YES completion:nil];
+    }
 }
 
 

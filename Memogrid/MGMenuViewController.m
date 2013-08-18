@@ -68,14 +68,19 @@
     id p;
     for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
     /* Empty for body */
-    //[p dismissModalViewControllerAnimated:NO];
-    [p dismissNatGeoViewController];
+    if (FANCY_TRANSITION) {
+        [p dismissNatGeoViewController];
+    } else {
+        [p dismissModalViewControllerAnimated:NO];
+    }
 }
 
 #pragma mark - PagedFlowView Delegate
 
 - (CGSize)sizeForPageInFlowView:(PagedFlowView *)flowView {
     return CGSizeMake(320, 345);
+}
+- (void)didChangePageToIndex:(int)index forFlowView:(PagedFlowView *)flowView {
 }
 
 #pragma mark - PagedFlowView Datasource
@@ -204,8 +209,11 @@
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
     {
         [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
-        //[self dismissViewControllerAnimated:YES completion:nil];
-        [self dismissNatGeoViewController];
+        if (FANCY_TRANSITION) {
+            [self dismissNatGeoViewController];
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     } else {
         NSLog(@"User cannot access this level.");
     }

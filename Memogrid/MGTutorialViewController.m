@@ -17,21 +17,12 @@
 
 @synthesize pv_tutorial, pc_tutorial;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 #pragma mark - Init
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
     [self initUI];
     [self initTutorial];
@@ -58,8 +49,12 @@
     id p;
     for (p = [self presentingViewController]; p && [p class] != [MGViewController class]; p = [p presentingViewController]);
     /* Empty for body */
-    //[p dismissModalViewControllerAnimated:NO];
-    [p dismissNatGeoViewController];
+    
+    if (FANCY_TRANSITION) {
+        [p dismissModalViewControllerAnimated:NO];
+    } else {
+        [p dismissNatGeoViewController];
+    }
 }
 
 #pragma mark -
@@ -93,12 +88,5 @@
     return v_tutoriel;
 }
 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

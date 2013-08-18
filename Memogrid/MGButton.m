@@ -41,8 +41,6 @@
     [self setTitleColor:C_LIGHT forState:UIControlStateNormal];
     [self setTitleColor:C_LIGHT forState:UIControlStateSelected];
     [self setTitleColor:C_LIGHT forState:UIControlStateHighlighted];
-    [self setTitle:[NSString stringWithFormat:@"%@", self.titleLabel.text] forState:UIControlStateSelected]; // Hack to keep the color on iOS7
-    [self setTitle:[NSString stringWithFormat:@"%@", self.titleLabel.text] forState:UIControlStateHighlighted]; // Hack to keep the color on iOS7
     
     // Border
     self.layer.borderColor = C_LIGHT_BACK.CGColor;
@@ -84,7 +82,7 @@
         CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
         fadeOutAnimation.duration = 0.1f;
         fadeOutAnimation.removedOnCompletion = NO;
-        fadeOutAnimation.fromValue = [NSNumber numberWithFloat:1.0f];
+        fadeOutAnimation.fromValue = [NSNumber numberWithFloat:2.0f];
         fadeOutAnimation.fillMode = kCAFillModeForwards;
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:6.0f];
         [self.layer addAnimation:fadeOutAnimation forKey:nil];
@@ -96,9 +94,19 @@
         fadeOutAnimation.removedOnCompletion = NO;
         fadeOutAnimation.fromValue = [NSNumber numberWithFloat:6.0f];
         fadeOutAnimation.fillMode = kCAFillModeForwards;
-        fadeOutAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+        fadeOutAnimation.toValue = [NSNumber numberWithFloat:2.0f];
         [self.layer addAnimation:fadeOutAnimation forKey:nil];
 
+    }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    // Avoid the title label not responding to setHighlighted color changed
+    if (self.state == UIControlStateHighlighted) {
+        self.titleLabel.textColor = C_LIGHT;
     }
 }
 

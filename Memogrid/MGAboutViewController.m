@@ -14,35 +14,25 @@
 
 @implementation MGAboutViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     [self initUI];
 }
 
-- (void) initUI {
+- (void) initUI
+{
     self.view.backgroundColor = C_BACK;
 }
 
-- (IBAction)backToMenu:(id)sender {
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    [self dismissNatGeoViewController];
+- (IBAction)backToMenu:(id)sender
+{
+    if (FANCY_TRANSITION) {
+        [self dismissNatGeoViewController];
+    } else  {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
