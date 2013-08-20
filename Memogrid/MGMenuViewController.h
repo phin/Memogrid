@@ -14,6 +14,9 @@
         
     // Levels
     PagedFlowView *pv_levels;
+    UIView *v_classic;
+    UIView *v_sequence;
+    
     IBOutlet UIPageControl *pc_levels;
     IBOutlet UILabel       *l_title;
 }

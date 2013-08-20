@@ -87,22 +87,26 @@
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
-    UIView *v_tutoriel = (UIView *)[flowView dequeueReusableCell];
-    if (!v_tutoriel) {
-        v_tutoriel = [[UIView alloc] init];
-    }
-
+    UIView *v_tutoriel = [[UIView alloc] init];
+    
+    // TODO : Probably not the best method
     if (index == 0) {
-        v_tutoriel = [self levelViewForMode:@"Classic"];
-
-    } else if (index == 1) {
-        v_tutoriel = [self levelViewForMode:@"Sequence"];
+        if (!v_classic) {
+            v_classic = [self levelViewForMode:@"Classic"];
+        }
+        return v_classic;
+    } else {
+        if (!v_sequence) {
+            v_sequence = [self levelViewForMode:@"Sequence"];
+        }
+        return v_sequence;
     }
     
-    return v_tutoriel;
+    return v_tutoriel; // will never be accessed.
 }
 
 - (UIView *)levelViewForMode:(NSString *)mode {
+    
     UIView *v = [[UIView alloc] init];
     
     // Add a Label as Mode title
