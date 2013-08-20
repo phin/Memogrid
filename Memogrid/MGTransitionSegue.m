@@ -10,11 +10,10 @@
 
 @implementation MGTransitionSegue
 
--(void)perform {
-    
+-(void)perform
+{
     UIViewController *sourceViewController = (UIViewController*)[self sourceViewController];
     UIViewController *destinationController = (UIViewController*)[self destinationViewController];
-    
     [sourceViewController presentModalViewController:destinationController withPushDirection:kCATransitionFromTop];
 }
 

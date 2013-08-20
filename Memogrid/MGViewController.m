@@ -43,12 +43,12 @@
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    [b_ready setHidden:YES];
-//    [UIView animateWithDuration:0.3 animations:^{
-//        l_currentlvl.alpha = 0;
-//        mg_square.alpha = 0;
-//        b_ready.alpha = 0;
-//    }];
+    [b_ready setHidden:YES];
+    [UIView animateWithDuration:0.3 animations:^{
+        l_currentlvl.alpha = 0;
+        mg_square.alpha = 0;
+        b_ready.alpha = 0;
+    }];
 }
 
 #pragma mark - INITIALIZATION
@@ -62,8 +62,8 @@
 
 - (void) initPreGame
 {
-    int current = [[MGUserLevel sharedInstance] current_level];
     // Display Level starts at index 1, whereas real level starts at 0
+    int current = [[MGUserLevel sharedInstance] current_level];
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", current+1];
     
     // Set views
@@ -72,11 +72,6 @@
     [b_ready startBlinking];
     b_ready.userInteractionEnabled = YES;
     b_ready.alpha = 0;
-    
-    // Refresh button layouts (bug with transition Animation.)
-    // Center the b_ready button
-   // b_ready.frame = CGRectMake(self.view.frame.size.width/2-b_ready.frame.size.width/2, self.view.frame.size.height/2-b_ready.frame.size.height/2, b_ready.frame.size.width, b_ready.frame.size.height);
-    
 
     [UIView animateWithDuration:0.4 animations:^{
         mg_square.alpha = 0;
