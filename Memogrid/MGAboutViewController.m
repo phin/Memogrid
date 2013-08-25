@@ -57,10 +57,15 @@
 
 -(void)displayComposerSheet
 {
+    // Get some info on the Device
+    NSString *s_infos = [NSString stringWithFormat:@"<br/><br/>Device: %@ Version: %@", [UIDevice currentDevice].model, [UIDevice currentDevice].systemVersion];
+    
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
     [picker setToRecipients:[NSArray arrayWithObject:@"memogrid@phin.fr"]];
 	[picker setSubject:@"Feedback Memogrid 1.0"];
+    [picker setMessageBody:s_infos isHTML:YES];
+    
 	[self presentViewController:picker animated:YES completion:nil];
 }
 
