@@ -12,7 +12,13 @@
 
 @interface UIViewController (MGBase)
 
+- (void) actionShareOnFacebook:(NSString *)fb_string;
+- (void) actionShareOnTwitter:(NSString *)tw_string;
+
+- (void)playSound:(NSString *)fName ofType:(NSString *)ext;
+
 - (void) presentModalViewController:(UIViewController *)modalViewController withPushDirection: (NSString *) direction;
 - (void) dismissModalViewControllerWithPushDirection:(NSString *) direction;
+
 
 @end

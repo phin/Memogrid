@@ -17,6 +17,7 @@ enum colors {
     COLOR_DEFAULT,
     COLOR_RED,
     COLOR_ANSWER,
+    COLOR_WHITE,
     COLOR_MAX
 };
 
@@ -31,7 +32,8 @@ struct color_def
 static struct color_def color_values[COLOR_MAX] = {
     { 48./255., 70./255., 92./255., 1 },
     { 182./255., 4./255., 0/255., 1 },
-    { 0.349, 0.522, 0.153, 1 }
+    { 0.349, 0.522, 0.153, 1 },
+    { 1, 1, 1, 1 }
 };
 
 struct square {

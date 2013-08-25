@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGLevelManager.h"
+#import "MGUserLevel.h"
 
 @interface MGNextLevelViewController : UIViewController
 

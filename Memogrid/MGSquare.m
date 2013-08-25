@@ -93,8 +93,6 @@
             [self drawSquareAtRow:row atColumn:column];
         }
     }
-    
-    //[KGNoise drawNoiseWithOpacity:0.05 andBlendMode:kCGBlendModeNormal];
 }
 
 - (void) setSquareWithColor:(enum colors)color forRow:(int)row andColumn:(int)column {
@@ -142,14 +140,11 @@
                                 if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
                                     // Is it the next one in the list that we need to type
                                     
-                                    // TODO : Will bug if there is two tiles in the array that are equal
-                                    
                                     // 1. Loop to the next wanted value.
                                     int i_vals[2]; // To store the row and col.
                                     
-                                    // Let's do a for loop (while had bugs) since it's usually a small array.
+                                    // Let's do a for loop since it's usually a small array.
                                     
-                                    // TODO : Make sure this works.
                                     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
                                         if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
                                             // Keep going;
@@ -193,7 +188,10 @@
                     }
                     
                     if (!goodTile) {
-                        // Failed Game
+                        // Show what we actually pressed
+                        [self setSquareWithColor:COLOR_WHITE forRow:row andColumn:col];
+                        
+                        // Failed Game, show answers
                         [[self viewController] failedGame];
                         return;
                     }
@@ -237,7 +235,6 @@
     for (row = 0; row < ROWS; row++) {
         for (col = 0; col < COLS; col++) {
             [self setSquareWithColor:COLOR_DEFAULT forRow:row andColumn:col];
-            // TODO Following is not working.
             status[row][col].color = COLOR_DEFAULT;
             status[row][col].dirty = true;
         }
@@ -258,7 +255,6 @@
 - (void) showAnswer
 {
     // Put all the tiles that are remaining in the remaing_tiles array.
-    // NSLog(@"Remaining Tiles : %@", a_remainingTiles);
     
     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
         if (![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
@@ -281,12 +277,14 @@
         [a_col addObject:[NSString stringWithFormat:@"%i", [self getRandomNumber:0 to:(ROWS-1)]]];
     }
     
-    // Not working.
-    
-    // TODO : Check that we have unique values.
-    
     a_row = [self shuffleArray:a_row];
     a_col = [self shuffleArray:a_col];
+    
+    // Check if there is already an occurence of the pair
+    if ([self similarPairsWithArray:a_row andArray:a_col]) {
+        // Init new values. // IMPROVE, is not efficient
+        return [self setGameWithDifficulty:n andMode:mode];
+    }
     
     NSMutableArray *a_game_row = [NSMutableArray array];
     NSMutableArray *a_game_col = [NSMutableArray array];
@@ -316,9 +314,49 @@
     return game_values;
 }
 
+#pragma mark - Game Helpers
+
 -(int)getRandomNumber:(int)from to:(int)to {
     
     return (int)from + arc4random() % (to-from+1);
+}
+
+-(int)getRandomNumber:(int)from to:(int)to excepted:(int)exception {
+    int try = [self getRandomNumber:from to:to];
+    if (try == exception) {
+        return [self getRandomNumber:from to:to excepted:exception];
+    } else {
+        return try;
+    }
+}
+
+- (BOOL) similarPairsWithArray:(NSArray *)array1 andArray:(NSArray*)array2
+{
+    // Ghetto but works.
+    // Both need to be of equal length
+    if ([array1 count] != [array2 count]) {
+        return FALSE;
+    }
+    
+    // Put the two arrays into strings
+    // ex: 4 (array1), 2 array(2) would be 42, which cannot be found twice
+    
+    // 1. Create the strings array
+    NSMutableArray *ma_pair_strings = [NSMutableArray array];
+    for (int i = 0; i < [array1 count]; i++) {
+        [ma_pair_strings addObject:[NSString stringWithFormat:@"%@%@", [array1 objectAtIndex:i], [array2 objectAtIndex:i]]];
+    }
+    
+    // 2. Check if there is multiple occurences
+ 
+    NSCountedSet *bag = [[NSCountedSet alloc] initWithArray:ma_pair_strings];
+    for (NSString *s in bag) {
+        if ([bag countForObject:s] > 1) {
+            return FALSE; // there is more than one
+        }
+    }
+    
+    return TRUE;
 }
 
 - (NSMutableArray *)shuffleArray:(NSArray *)array {

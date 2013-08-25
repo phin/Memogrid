@@ -40,7 +40,7 @@
     self.titleEdgeInsets = UIEdgeInsetsMake(2, 0, 0, 0);
     [self setTitleColor:C_LIGHT forState:UIControlStateNormal];
     [self setTitleColor:C_LIGHT forState:UIControlStateSelected];
-    [self setTitleColor:C_LIGHT forState:UIControlStateHighlighted];
+    [self setTitleColor:C_LIGHT_BACK forState:UIControlStateHighlighted];
     
     // Border
     self.layer.borderColor = C_LIGHT_BACK.CGColor;
@@ -87,6 +87,9 @@
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:6.0f];
         [self.layer addAnimation:fadeOutAnimation forKey:nil];
         
+        [self.titleLabel setAlpha:1.0];
+        [self.titleLabel setTextColor:C_LIGHT_BACK];
+        
         self.alpha = 1.0f;
     } else {
         CABasicAnimation *fadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
@@ -96,17 +99,6 @@
         fadeOutAnimation.fillMode = kCAFillModeForwards;
         fadeOutAnimation.toValue = [NSNumber numberWithFloat:2.0f];
         [self.layer addAnimation:fadeOutAnimation forKey:nil];
-
-    }
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    // Avoid the title label not responding to setHighlighted color changed
-    if (self.state == UIControlStateHighlighted) {
-        self.titleLabel.textColor = C_LIGHT;
     }
 }
 

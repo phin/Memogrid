@@ -26,7 +26,7 @@
 
 #pragma mark - SOUND
 
--(void)playSound:(NSString *)fName ofType:(NSString *)ext
+- (void)playSound:(NSString *)fName ofType:(NSString *)ext
 {
     BOOL playSound = [[NSUserDefaults standardUserDefaults] boolForKey:@"sound"];
     SystemSoundID *audioEffect = NULL;

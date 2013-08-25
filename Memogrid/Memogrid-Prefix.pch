@@ -17,6 +17,7 @@
 
     #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
     #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    #define UNUSED(x) (void)(x)
 
     #define C_BACK          [UIColor colorWithRed:12./255. green:50./255. blue:84./255. alpha:1.0]
     #define C_LIGHT_BACK    [UIColor colorWithRed:48./255. green:70./255. blue:92./255. alpha:1.0]

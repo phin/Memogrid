@@ -230,23 +230,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4" customClass="MGButton">
-                                <rect key="frame" x="35" y="349" width="250" height="55"/>
+                                <rect key="frame" x="35" y="318" width="250" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="9nL-rl-Qau"/>
+                                    <constraint firstAttribute="height" constant="55" id="dWu-c4-KXZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Feedback">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendFeedback" destination="TTb-Am-F2S" eventType="touchUpInside" id="133-Nk-NLV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-NW-JKn" customClass="MGButton">
+                                <rect key="frame" x="35" y="381" width="250" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Ozv-d2-Qit"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backToMenu:" destination="TTb-Am-F2S" eventType="touchUpInside" id="sDe-Oa-x8u"/>
+                                    <action selector="backToMenu:" destination="TTb-Am-F2S" eventType="touchUpInside" id="GRF-AZ-8hI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-8j-Vm9" customClass="MGButton">
-                                <rect key="frame" x="35" y="163" width="250" height="54"/>
+                                <rect key="frame" x="35" y="132" width="250" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="m6n-rE-tHm"/>
-                                    <constraint firstAttribute="height" constant="54" id="xsA-t8-J1i"/>
+                                    <constraint firstAttribute="height" constant="54" id="qLa-xW-rxy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Tutorial">
@@ -257,30 +269,35 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-JG-dwg" customClass="MGButton">
-                                <rect key="frame" x="35" y="225" width="250" height="54"/>
+                                <rect key="frame" x="35" y="194" width="250" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="NNK-2B-mGU"/>
+                                    <constraint firstAttribute="height" constant="54" id="43M-9L-fjy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Share on Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareFacebook" destination="TTb-Am-F2S" eventType="touchUpInside" id="in5-pZ-b5X"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-ti-b0n" customClass="MGButton">
-                                <rect key="frame" x="35" y="287" width="250" height="54"/>
+                                <rect key="frame" x="35" y="256" width="250" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="h9Q-3j-3GD"/>
+                                    <constraint firstAttribute="height" constant="54" id="te7-Tf-5hx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Share on Twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareTwitter" destination="TTb-Am-F2S" eventType="touchUpInside" id="Iop-Cb-Oeg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MEMOGRID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-zb-56a">
-                                <rect key="frame" x="71" y="19" width="177" height="37"/>
+                                <rect key="frame" x="72" y="20" width="176" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="177" id="60D-UT-dpg"/>
-                                    <constraint firstAttribute="height" constant="37" id="baR-7G-HpD"/>
+                                    <constraint firstAttribute="height" constant="37" id="pJ1-7J-izv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,13 +305,9 @@
                                 <color key="shadowColor" red="0.27843138579999999" green="0.27843138579999999" blue="0.27843138579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart memogrid@phin.fr" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
-                                <rect key="frame" x="32" y="493" width="255" height="55"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
+                                <rect key="frame" x="33" y="444" width="255" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="Dli-2D-5fk"/>
-                                    <constraint firstAttribute="height" constant="55" id="eYb-RY-OiB"/>
-                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -302,21 +315,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="4HY-i3-jD4" firstAttribute="leading" secondItem="u3G-ti-b0n" secondAttribute="leading" id="0GX-mo-6Bf"/>
-                            <constraint firstItem="5OP-zb-56a" firstAttribute="centerX" secondItem="7IF-8j-Vm9" secondAttribute="centerX" id="4p4-vG-hhs"/>
-                            <constraint firstAttribute="bottom" secondItem="6Lh-O2-Ti0" secondAttribute="bottom" constant="20" symbolic="YES" id="6xH-R7-EAN"/>
-                            <constraint firstItem="u3G-ti-b0n" firstAttribute="trailing" secondItem="4HY-i3-jD4" secondAttribute="trailing" id="Aqd-kZ-iBW"/>
-                            <constraint firstItem="pQN-JG-dwg" firstAttribute="leading" secondItem="7IF-8j-Vm9" secondAttribute="leading" id="JFp-jy-8k2"/>
-                            <constraint firstItem="pQN-JG-dwg" firstAttribute="trailing" secondItem="7IF-8j-Vm9" secondAttribute="trailing" id="X1f-i6-9be"/>
-                            <constraint firstItem="5OP-zb-56a" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="19" id="Xo0-25-iIH"/>
-                            <constraint firstItem="u3G-ti-b0n" firstAttribute="trailing" secondItem="pQN-JG-dwg" secondAttribute="trailing" id="cpQ-7J-0NN"/>
-                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="163" id="dYx-z2-u9H"/>
-                            <constraint firstItem="u3G-ti-b0n" firstAttribute="top" secondItem="pQN-JG-dwg" secondAttribute="bottom" constant="8" symbolic="YES" id="gPK-1t-vqK"/>
-                            <constraint firstItem="pQN-JG-dwg" firstAttribute="top" secondItem="7IF-8j-Vm9" secondAttribute="bottom" constant="8" symbolic="YES" id="i99-hw-06E"/>
-                            <constraint firstItem="4HY-i3-jD4" firstAttribute="centerX" secondItem="AwF-nn-eim" secondAttribute="centerX" id="moD-2O-94m"/>
-                            <constraint firstItem="4HY-i3-jD4" firstAttribute="centerX" secondItem="6Lh-O2-Ti0" secondAttribute="centerX" id="phJ-mR-76V"/>
-                            <constraint firstItem="u3G-ti-b0n" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" id="uza-gz-qYn"/>
-                            <constraint firstItem="4HY-i3-jD4" firstAttribute="top" secondItem="u3G-ti-b0n" secondAttribute="bottom" constant="8" symbolic="YES" id="vvJ-iH-Qnn"/>
+                            <constraint firstItem="5OP-zb-56a" firstAttribute="top" secondItem="AwF-nn-eim" secondAttribute="top" constant="20" symbolic="YES" id="4Pw-Wn-lS2"/>
+                            <constraint firstItem="5OP-zb-56a" firstAttribute="leading" secondItem="AwF-nn-eim" secondAttribute="leading" constant="72" id="4Tc-TQ-Wkh"/>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="top" secondItem="u3G-ti-b0n" secondAttribute="bottom" constant="8" symbolic="YES" id="4hT-jG-i01"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="leading" secondItem="AwF-nn-eim" secondAttribute="leading" constant="35" id="8Z7-HU-ob7"/>
+                            <constraint firstItem="u3G-ti-b0n" firstAttribute="trailing" secondItem="4HY-i3-jD4" secondAttribute="trailing" id="Fuy-he-L3c"/>
+                            <constraint firstItem="u3G-ti-b0n" firstAttribute="leading" secondItem="4HY-i3-jD4" secondAttribute="leading" id="H7y-fi-CTi"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="trailing" secondItem="pQN-JG-dwg" secondAttribute="trailing" id="ILk-rL-y7x"/>
+                            <constraint firstItem="u3G-ti-b0n" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" id="InF-HI-cKS"/>
+                            <constraint firstItem="4HY-i3-jD4" firstAttribute="trailing" secondItem="gMC-NW-JKn" secondAttribute="trailing" id="NfZ-s5-apQ"/>
+                            <constraint firstItem="u3G-ti-b0n" firstAttribute="top" secondItem="pQN-JG-dwg" secondAttribute="bottom" constant="8" id="Nqv-D0-eAg"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="top" secondItem="5OP-zb-56a" secondAttribute="bottom" constant="75" id="PgA-Nx-k8J"/>
+                            <constraint firstItem="pQN-JG-dwg" firstAttribute="trailing" secondItem="u3G-ti-b0n" secondAttribute="trailing" id="Q8D-3o-oBN"/>
+                            <constraint firstItem="5OP-zb-56a" firstAttribute="centerX" secondItem="AwF-nn-eim" secondAttribute="centerX" id="XJY-J6-ACv"/>
+                            <constraint firstItem="gMC-NW-JKn" firstAttribute="top" secondItem="4HY-i3-jD4" secondAttribute="bottom" constant="8" id="aWj-FY-8dF"/>
+                            <constraint firstAttribute="bottom" secondItem="6Lh-O2-Ti0" secondAttribute="bottom" constant="94" id="avF-x8-lOD"/>
+                            <constraint firstItem="6Lh-O2-Ti0" firstAttribute="top" secondItem="gMC-NW-JKn" secondAttribute="bottom" constant="8" id="ceM-uc-Cx0"/>
+                            <constraint firstItem="gMC-NW-JKn" firstAttribute="leading" secondItem="4HY-i3-jD4" secondAttribute="leading" id="eTP-hc-vfu"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" id="gaa-Tw-q0W"/>
+                            <constraint firstItem="6Lh-O2-Ti0" firstAttribute="leading" secondItem="AwF-nn-eim" secondAttribute="leading" constant="33" id="kSb-0q-5no"/>
+                            <constraint firstItem="6Lh-O2-Ti0" firstAttribute="centerX" secondItem="gMC-NW-JKn" secondAttribute="centerX" id="oi4-1n-Opu"/>
+                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="centerX" secondItem="5OP-zb-56a" secondAttribute="centerX" id="oj2-rC-jWP"/>
+                            <constraint firstItem="pQN-JG-dwg" firstAttribute="top" secondItem="7IF-8j-Vm9" secondAttribute="bottom" constant="8" symbolic="YES" id="s72-Eg-PTX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
