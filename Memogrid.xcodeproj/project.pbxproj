@@ -51,6 +51,8 @@
 		42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C303F0172DD76100E51178 /* AudioToolbox.framework */; };
 		42C4A8DC17D050D9007D2158 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8DB17D050D9007D2158 /* Images.xcassets */; };
 		42C4A8DE17D050EB007D2158 /* Icon@120.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8DD17D050EB007D2158 /* Icon@120.png */; };
+		42C4A8E017D05374007D2158 /* Iconv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8DF17D05374007D2158 /* Iconv2.png */; };
+		42C4A8E217D0543D007D2158 /* Iconv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8E117D0543D007D2158 /* Iconv3.png */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */; };
@@ -130,6 +132,8 @@
 		42C303F0172DD76100E51178 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		42C4A8DB17D050D9007D2158 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42C4A8DD17D050EB007D2158 /* Icon@120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@120.png"; sourceTree = "<group>"; };
+		42C4A8DF17D05374007D2158 /* Iconv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Iconv2.png; sourceTree = "<group>"; };
+		42C4A8E117D0543D007D2158 /* Iconv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Iconv3.png; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -260,9 +264,9 @@
 				4249397E16E05204002FBBDE /* Views */,
 				4216370316E28FC900627743 /* Levels */,
 				42ED9BE516D1C7700040C951 /* UI */,
-				42ED9BE416D1C7680040C951 /* Libraries */,
 				42C4A8DB17D050D9007D2158 /* Images.xcassets */,
-				42C4A8DD17D050EB007D2158 /* Icon@120.png */,
+				42C4A8E317D054D3007D2158 /* Icons & Default Images */,
+				42ED9BE416D1C7680040C951 /* Libraries */,
 				42A8682416D1A076009FAFD5 /* Supporting Files */,
 			);
 			path = Memogrid;
@@ -299,6 +303,16 @@
 				42A8684D16D1A076009FAFD5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42C4A8E317D054D3007D2158 /* Icons & Default Images */ = {
+			isa = PBXGroup;
+			children = (
+				42C4A8DF17D05374007D2158 /* Iconv2.png */,
+				42C4A8DD17D050EB007D2158 /* Icon@120.png */,
+				42C4A8E117D0543D007D2158 /* Iconv3.png */,
+			);
+			name = "Icons & Default Images";
 			sourceTree = "<group>";
 		};
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
@@ -412,6 +426,7 @@
 				42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */,
 				42A8682816D1A076009FAFD5 /* InfoPlist.strings in Resources */,
 				4242F4EA17C07E55002FE638 /* check.png in Resources */,
+				42C4A8E017D05374007D2158 /* Iconv2.png in Resources */,
 				42C4A8DE17D050EB007D2158 /* Icon@120.png in Resources */,
 				42C4A8DC17D050D9007D2158 /* Images.xcassets in Resources */,
 				42A8683016D1A076009FAFD5 /* Default.png in Resources */,
@@ -423,6 +438,7 @@
 				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
 				4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */,
+				42C4A8E217D0543D007D2158 /* Iconv3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
