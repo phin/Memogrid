@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
 		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
-		420E8C73177161F600570E49 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 420E8C72177161F600570E49 /* test.png */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
@@ -51,7 +50,6 @@
 		42A8685F16D1BB00009FAFD5 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C303F0172DD76100E51178 /* AudioToolbox.framework */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
-		42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DC61DE16DB0A5D008A41E1 /* test@114.png */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -70,7 +68,6 @@
 		4200AD861708E6E800B8B9B2 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
 		4200AD871708E6E800B8B9B2 /* CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCell.m; sourceTree = "<group>"; };
 		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
-		420E8C72177161F600570E49 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -99,6 +96,7 @@
 		4249398316E05277002FBBDE /* MGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAboutViewController.m; sourceTree = "<group>"; };
 		425C83D116ED920A0069FB73 /* PagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedFlowView.h; sourceTree = "<group>"; };
 		425C83D216ED920A0069FB73 /* PagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedFlowView.m; sourceTree = "<group>"; };
+		4284488B17CC5B390011C1F6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		42A4D8D1171B77B5001DB069 /* MGUserLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGUserLevel.h; sourceTree = "<group>"; };
 		42A4D8D2171B77B5001DB069 /* MGUserLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGUserLevel.m; sourceTree = "<group>"; };
 		42A8681A16D1A076009FAFD5 /* Memogrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memogrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +127,6 @@
 		42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VerbBlack.otf; sourceTree = "<group>"; };
 		42C303F0172DD76100E51178 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		42DC61DE16DB0A5D008A41E1 /* test@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test@114.png"; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -216,8 +213,6 @@
 		42A8681116D1A076009FAFD5 = {
 			isa = PBXGroup;
 			children = (
-				42DC61DE16DB0A5D008A41E1 /* test@114.png */,
-				420E8C72177161F600570E49 /* test.png */,
 				42A8682316D1A076009FAFD5 /* Memogrid */,
 				42A8684A16D1A076009FAFD5 /* MemogridTests */,
 				42A8681C16D1A076009FAFD5 /* Frameworks */,
@@ -237,6 +232,7 @@
 		42A8681C16D1A076009FAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4284488B17CC5B390011C1F6 /* GameKit.framework */,
 				4242F4E717C06F70002FE638 /* Accounts.framework */,
 				4242F4E517C06F65002FE638 /* MessageUI.framework */,
 				4242F4E317C06F5E002FE638 /* Twitter.framework */,
@@ -410,11 +406,9 @@
 				42A8683416D1A076009FAFD5 /* Default-568h@2x.png in Resources */,
 				42A8683716D1A076009FAFD5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				42A8683A16D1A076009FAFD5 /* MainStoryboard_iPad.storyboard in Resources */,
-				42DC61DF16DB0A5D008A41E1 /* test@114.png in Resources */,
 				4216370216E28CCD00627743 /* Levels.plist in Resources */,
 				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
-				420E8C73177161F600570E49 /* test.png in Resources */,
 				4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,7 +592,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -615,7 +609,7 @@
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

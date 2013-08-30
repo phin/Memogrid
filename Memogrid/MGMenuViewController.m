@@ -52,7 +52,9 @@
     pv_levels.pageControl      = pc_levels;
     [self.view addSubview:pv_levels];
     
-    // TODO : Show the current Mode the User is playing.
+    if ([[MGUserLevel sharedInstance] current_mode] == Sequence) {
+        [pv_levels goToPageAtIndex:1];
+    }
     
     NSMutableArray *secondSection = [[NSMutableArray alloc] init];
     for (int i = 0; i < 25; i++) {
@@ -88,8 +90,6 @@
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
     UIView *v_tutoriel = [[UIView alloc] init];
-    
-    // TODO : Probably not the best method
     if (index == 0) {
         if (!v_classic) {
             v_classic = [self levelViewForMode:@"Classic"];

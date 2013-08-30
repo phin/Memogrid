@@ -42,9 +42,7 @@
 #pragma mark - Getters
 
 + (NSArray *)getLevelsForMode:(GameMode)mode {
-    
-    // TODO : Stop asking all the time for plist;
-    
+        
     NSMutableDictionary *d_all_levels = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getPlistPath]];
     NSMutableArray *a_mode_levels = [NSMutableArray arrayWithArray:[d_all_levels objectForKey:[self modeToString:mode]]];
     return a_mode_levels;
@@ -135,8 +133,8 @@
         case Classic:
             result = @"Classic";
             break;
-        case Bicolor:
-            result = @"Bicolor";
+        case Sequence:
+            result = @"Sequence";
             break;
         case Simon:
             result = @"Simon";

@@ -13,7 +13,7 @@
 // Game Modes
 typedef enum {
     Classic,
-    Bicolor,
+    Sequence,
     Simon
 } GameMode;
 

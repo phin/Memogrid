@@ -204,8 +204,8 @@
         [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];
 
     } else {
+        // Start over
         [self initPreGame];
-        // TODO : Try again with a word : "Try again".
     }
     
 }

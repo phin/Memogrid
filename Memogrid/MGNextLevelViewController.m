@@ -80,7 +80,8 @@
     [self nextLevel:nil];
 }
 
-- (IBAction)goToMenu:(id)sender {
+- (IBAction)goToMenu:(id)sender
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
     MGMenuViewController *vc_menu = [storyboard instantiateViewControllerWithIdentifier:@"MGMenuViewController"];
     vc_menu.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

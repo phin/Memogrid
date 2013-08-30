@@ -42,7 +42,6 @@
     [superViewOfScrollView setBackgroundColor:[UIColor clearColor]];
     [superViewOfScrollView addSubview:_scrollView];
     [self addSubview:superViewOfScrollView];
-    [superViewOfScrollView release];
     
 }
 
@@ -52,12 +51,7 @@
 }
 
 - (void)dealloc{
-    [_reusableCells release];
-    [_cells release];
     _scrollView.delegate = nil;
-    [_scrollView release];
-    [pageControl release];
-    [super dealloc];
 }
 
 - (void)queueReusableCell:(UIView *)cell{
@@ -142,6 +136,7 @@
 }
 
 - (void)setPageAtIndex:(NSInteger)pageIndex{
+    
     NSParameterAssert(pageIndex >= 0 && pageIndex < [_cells count]);
     
     UIView *cell = [_cells objectAtIndex:pageIndex];
@@ -258,8 +253,6 @@
 }
 
 
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Override Methods
@@ -352,13 +345,13 @@
 
 
 - (UIView *)dequeueReusableCell{
-    UIView *cell = [[_reusableCells lastObject] retain];
+    UIView *cell = [_reusableCells lastObject];
     if (cell)
     {
         [_reusableCells removeLastObject];
     }
     
-    return [cell autorelease];
+    return cell;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -390,20 +383,7 @@
     [self refreshVisibleCellAppearance];
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {  // SPECIFIC TO THE VICHY PROJECT
-    
-    // We need to hide the other view 22 when we begin to drag the view 11
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(hideCelluliteViewWhenUserStartsScrollingView:)]) {
-        
-        [_delegate hideCelluliteViewWhenUserStartsScrollingView:self];
-    }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    // Not called when it's the second FlowView but does work when it's the SecondOne (
-    
+- (void) updatePosition {
     NSInteger currentPageIndex = 0;
     
     switch (orientation) {
@@ -427,5 +407,15 @@
     }
     
 }
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self updatePosition];
+}
+
+- (void)goToPageAtIndex:(int)index {
+    
+    [_scrollView setContentOffset:CGPointMake((self.frame.size.width * index), 0) animated:YES];
+}
+
 
 @end

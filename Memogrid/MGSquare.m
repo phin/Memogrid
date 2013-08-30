@@ -125,6 +125,8 @@
                     
                     BOOL goodTile = NO;
                     
+                    // TODO: Fails if the touch gets fired twice.
+                    
                     // Check if what we selected is in the current game.
                     // Check if we are at least in a good row
                     NSArray *a_row = [a_currentGame objectAtIndex:0];
