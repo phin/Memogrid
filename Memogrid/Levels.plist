@@ -12,12 +12,6 @@
 		</dict>
 		<dict>
 			<key>difficulty</key>
-			<integer>1</integer>
-			<key>completed</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>difficulty</key>
 			<integer>2</integer>
 			<key>completed</key>
 			<false/>
@@ -37,6 +31,12 @@
 		<dict>
 			<key>difficulty</key>
 			<integer>3</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>4</integer>
 			<key>completed</key>
 			<false/>
 		</dict>

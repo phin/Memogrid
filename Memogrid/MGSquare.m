@@ -283,8 +283,9 @@
     a_col = [self shuffleArray:a_col];
     
     // Check if there is already an occurence of the pair
-    if ([self similarPairsWithArray:a_row andArray:a_col]) {
+    if ([self similarPairsWithArray:a_row andArray:a_col] && n > 2) {
         // Init new values. // IMPROVE, is not efficient
+        // Crashes, infinite loop when difficulty == 1.
         return [self setGameWithDifficulty:n andMode:mode];
     }
     
@@ -334,6 +335,8 @@
 
 - (BOOL) similarPairsWithArray:(NSArray *)array1 andArray:(NSArray*)array2
 {
+    // TODO : Not always working.
+    
     // Ghetto but works.
     // Both need to be of equal length
     if ([array1 count] != [array2 count]) {
