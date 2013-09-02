@@ -125,10 +125,7 @@
                     
                     BOOL goodTile = NO;
                     
-                    // TODO: Fails if the touch gets fired twice.
-                    
                     // Check if what we selected is in the current game.
-                    // Check if we are at least in a good row
                     NSArray *a_row = [a_currentGame objectAtIndex:0];
                     NSArray *a_col = [a_currentGame objectAtIndex:1];
                     
@@ -136,17 +133,19 @@
                         if ([[a_row objectAtIndex:r] intValue] == row) {
                             if ([[a_col objectAtIndex:r] intValue] == col) {
                                 
+                                // Check if that tile is already removed from Remaining tile
+                                if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:r] isEqualToString:@"99 Used"]) {
+                                    // We have it already, let's move on.
+                                    NSLog(@"Already typed");
+                                    return;
+                                }
                                 
                                 // SIMON / SEQUENCE MODE
-                                
-                                if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
-                                    // Is it the next one in the list that we need to type
-                                    
+                                if ([[MGUserLevel sharedInstance] current_mode] == Sequence ||
+                                    [[MGUserLevel sharedInstance] current_mode] == Simon)
+                                {
                                     // 1. Loop to the next wanted value.
                                     int i_vals[2]; // To store the row and col.
-                                    
-                                    // Let's do a for loop since it's usually a small array.
-                                    
                                     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
                                         if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
                                             // Keep going;
@@ -167,24 +166,13 @@
                                     }
                                 }
                                 
-                                // CLASSIC
-                                
-                                NSLog(@"Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
+                                NSLog(@"Good Value : %@, %@", [[a_remainingTiles objectAtIndex:0] objectAtIndex:r],
                                       [[a_remainingTiles objectAtIndex:1] objectAtIndex:r]);
                                 goodTile = YES;
-                            
-                                // Check if that tile is already removed from Remaining tile
-                                if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:r] isEqualToString:@"99 Used"]) {
-                                    // We have it already, let's move on.
-                                    NSLog(@"Already typed");
-                                    return;
-                                } else {
-                                    NSLog(@"Good tile");
-                                    
-                                    // Remove it from the remaining tiles.
-                                    [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:@"99 Used"];
-                                    [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:@"99 Used"];
-                                }
+                                
+                                // Remove it from the remaining tiles.
+                                [[a_remainingTiles objectAtIndex:0] replaceObjectAtIndex:r withObject:@"99 Used"];
+                                [[a_remainingTiles objectAtIndex:1] replaceObjectAtIndex:r withObject:@"99 Used"];
                             }
                         }
                     }
@@ -248,7 +236,8 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self handleTouch:touches withEvent:event];
+    // If activated, fires two events.
+    //[self handleTouch:touches withEvent:event];
 }
 
 
@@ -257,7 +246,6 @@
 - (void) showAnswer
 {
     // Put all the tiles that are remaining in the remaing_tiles array.
-    
     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
         if (![[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
             [self setSquareWithColor:COLOR_ANSWER forRow:[[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] intValue] andColumn:[[[a_remainingTiles objectAtIndex:1] objectAtIndex:i] intValue]];
@@ -284,8 +272,7 @@
     
     // Check if there is already an occurence of the pair
     if ([self similarPairsWithArray:a_row andArray:a_col] && n > 2) {
-        // Init new values. // IMPROVE, is not efficient
-        // Crashes, infinite loop when difficulty == 1.
+        // Init new values.
         return [self setGameWithDifficulty:n andMode:mode];
     }
     
@@ -311,8 +298,8 @@
     }
 
     NSArray * game_values = [NSArray arrayWithObjects:a_game_row, a_game_col, nil];
-    a_currentGame    = [game_values mutableCopy];
-    a_remainingTiles = [game_values mutableCopy];
+    a_currentGame    = [[[NSMutableArray alloc] initWithArray:game_values copyItems:YES] mutableCopy];
+    a_remainingTiles = [game_values mutableCopy]; // so they don't have the same adresses.
 
     return game_values;
 }
