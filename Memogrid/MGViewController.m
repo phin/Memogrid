@@ -91,6 +91,16 @@
     
     mg_level = [[MGLevelManager alloc] init];
     [MGLevelManager init];
+    
+    // Detect if it is the user's first time
+    BOOL isFirstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstTime"];
+    if (!isFirstTime) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstTime"];
+        
+        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:@"Looks like it is your first time here. Do you want a quick tutorial?" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles:@"Tutorial", nil];
+        firstTime.tag = 234;
+        [firstTime show];
+    }
 }
 
 - (void) initUI
@@ -126,7 +136,7 @@
 - (IBAction) startGame
 {    
     // Start Level
-    
+
     [UIView animateWithDuration:0.3 animations:^{
         l_currentlvl.alpha = 0;
         [b_ready setHidden:YES];
@@ -151,7 +161,7 @@
 
 - (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty andMode:(GameMode)mode
 {
-    level = (level > 25) ? 25 : level;
+    level = (level > 24) ? 24 : level;
     difficulty = (debugMode) ? 4 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
@@ -230,39 +240,40 @@
     [self clear];
 }
 
-#pragma mark - NEXT LEVEL
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"gameToMenu"]) {
-        //[self animationPushBackScaleDown];
-        
-    }
-}
-
 #pragma mark - SHAKE MOTION
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event { //RESTART NEW GAME WHEN iPHONE IS SHAKED
 	if (event.subtype == UIEventSubtypeMotionShake)
 	{
 		UIAlertView * shakeAns = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(@"l_shakeTitle", @"")
-                                  message:NSLocalizedString(@"l_shakeMessage", @"")
+                                  initWithTitle:@"Restart"
+                                  message:@"Do you want to start a new game?"
                                   delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"l_shakeAnswer1", @"")
-                                  otherButtonTitles:NSLocalizedString(@"l_shakeAnswer2", @""),nil];
+                                  cancelButtonTitle:@"NO"
+                                  otherButtonTitles:@"OK",nil];
 		[shakeAns show];
 	}
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    // Shaking alert
-    if (buttonIndex == 1) {
-        [self startGame];
-        NSLog(@"Reset");
+    if (actionSheet.tag == 234) {
+        // First time playing
+        // Shaking alert
+        if (buttonIndex == 1) {
+            [self performSegueWithIdentifier:@"goToTutorial" sender:self];
+            NSLog(@"Go to tutorial");
+        } else {
+            NSLog(@"Cancel Tutorial");
+        }
     } else {
-        NSLog(@"cancel");
+        // Shaking alert
+        if (buttonIndex == 1) {
+            [self startGame];
+            NSLog(@"Reset");
+        } else {
+            NSLog(@"cancel");
+        }
     }
 }
 

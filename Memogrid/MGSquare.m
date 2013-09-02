@@ -335,12 +335,9 @@
 
 - (BOOL) similarPairsWithArray:(NSArray *)array1 andArray:(NSArray*)array2
 {
-    // TODO : Not always working.
-    
-    // Ghetto but works.
     // Both need to be of equal length
     if ([array1 count] != [array2 count]) {
-        return FALSE;
+        return TRUE;
     }
     
     // Put the two arrays into strings
@@ -357,11 +354,12 @@
     NSCountedSet *bag = [[NSCountedSet alloc] initWithArray:ma_pair_strings];
     for (NSString *s in bag) {
         if ([bag countForObject:s] > 1) {
-            return FALSE; // there is more than one
+            NSLog(@"Two squares are the same : %@, starting over", s);
+            return TRUE; // there is more than one
         }
     }
     
-    return TRUE;
+    return FALSE;
 }
 
 - (NSMutableArray *)shuffleArray:(NSArray *)array {

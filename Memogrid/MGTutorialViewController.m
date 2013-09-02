@@ -40,6 +40,8 @@
     pv_tutorial.minimumPageAlpha = 0.6;
     pv_tutorial.minimumPageScale = 1.0;
     
+    // TODO : Bug since new version of PageView.
+    
     a_tutorials = [[NSMutableArray alloc] initWithObjects:[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor yellowColor], nil];
 }
 

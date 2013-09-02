@@ -73,7 +73,7 @@
                     <connections>
                         <outlet property="b_ready" destination="Q7R-0b-Jk2" id="5Hb-mk-Y9d"/>
                         <outlet property="l_currentlvl" destination="vrw-ZW-sqP" id="yQz-wm-Cj3"/>
-                        <segue destination="ups-tO-mGT" kind="custom" identifier="gameToTutorial" customClass="MGTransitionSegue" id="pEF-Cu-QJj"/>
+                        <segue destination="ups-tO-mGT" kind="custom" identifier="goToTutorial" customClass="MGTransitionSegue" id="pEF-Cu-QJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -354,6 +354,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rZb-tJ-AOm"/>
+        <segue reference="pEF-Cu-QJj"/>
     </inferredMetricsTieBreakers>
 </document>
