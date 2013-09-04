@@ -40,8 +40,6 @@
     pv_tutorial.minimumPageAlpha = 0.6;
     pv_tutorial.minimumPageScale = 1.0;
     
-    // TODO : Bug since new version of PageView.
-    
     a_tutorials = [[NSMutableArray alloc] initWithObjects:[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor yellowColor], nil];
 }
 
@@ -77,7 +75,9 @@
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
-    UIView *v_tutoriel = (UIView *)[flowView dequeueReusableCell];
+    //UIView *v_tutoriel = (UIView *)[flowView dequeueReusableCell]; // TOFIX makes the class crash.
+    UIView *v_tutoriel = [[UIView alloc] init];
+    // create the view
     if (!v_tutoriel) {
         v_tutoriel = [[UIView alloc] init];
     }

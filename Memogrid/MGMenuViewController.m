@@ -89,7 +89,6 @@
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
-    UIView *v_tutoriel = [[UIView alloc] init];
     if (index == 0) {
         if (!v_classic) {
             v_classic = [self levelViewForMode:@"Classic"];
@@ -102,7 +101,7 @@
         return v_sequence;
     }
     
-    return v_tutoriel; // will never be accessed.
+    return v_sequence; // will never be accessed.
 }
 
 - (UIView *)levelViewForMode:(NSString *)mode {
