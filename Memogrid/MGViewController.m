@@ -57,7 +57,7 @@
 {
     [self becomeFirstResponder];
     canPlay        = NO;
-    debugMode      = NO;
+    debugMode      = YES;
 }
 
 - (void) initPreGame
@@ -161,7 +161,7 @@
 
 - (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty andMode:(GameMode)mode
 {
-    level = (level > 24) ? 24 : level;
+    level = (level > 24) ? 24 : level; // Don't go over 25
     difficulty = (debugMode) ? 4 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
@@ -206,10 +206,28 @@
         
     if (didWin) {
         int current = [[MGUserLevel sharedInstance] current_level];
-        [MGLevelManager setUserFinishedLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
+        GameMode mode = [[MGUserLevel sharedInstance] current_mode];
+        [MGLevelManager setUserFinishedLevel:current forMode:mode];
         current++;
-        [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:[[MGUserLevel sharedInstance] current_mode]];
         
+        // Switch from Classic to Sequence
+        if (current >= 24 && mode == Classic) {
+            mode = Sequence;
+            current = 0;
+            NSLog(@"Moving from Classic to Sequence");
+            UIAlertView *al_nextMode = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You completed the Classic mode. Now onto the Sequence mode." delegate:self cancelButtonTitle:@"Next" otherButtonTitles: nil];
+            [al_nextMode show];
+        }
+        
+        // Done the game!
+        if (current >= 24 && mode == Sequence) {
+            current--; // put it back for the same level.
+            // Congratulations
+            UIAlertView *al_done = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are one of the few to finish the two games modes that Memogrid offers at the time. Stay tuned for more Game modes and levels!" delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles: nil];
+            [al_done show];
+        }
+        
+        [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:mode];
         MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
         [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];
 
@@ -251,6 +269,7 @@
                                   delegate:self
                                   cancelButtonTitle:@"NO"
                                   otherButtonTitles:@"OK",nil];
+        shakeAns.tag = 2345;
 		[shakeAns show];
 	}
 }
@@ -266,7 +285,7 @@
         } else {
             NSLog(@"Cancel Tutorial");
         }
-    } else {
+    } else if (actionSheet.tag == 2345){
         // Shaking alert
         if (buttonIndex == 1) {
             [self startGame];

@@ -159,18 +159,6 @@
 	<array>
 		<dict>
 			<key>difficulty</key>
-			<integer>1</integer>
-			<key>completed</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>difficulty</key>
-			<integer>1</integer>
-			<key>completed</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>difficulty</key>
 			<integer>2</integer>
 			<key>completed</key>
 			<false/>
@@ -250,6 +238,12 @@
 		<dict>
 			<key>difficulty</key>
 			<integer>8</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>9</integer>
 			<key>completed</key>
 			<false/>
 		</dict>
@@ -304,6 +298,12 @@
 		<dict>
 			<key>difficulty</key>
 			<integer>13</integer>
+			<key>completed</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>difficulty</key>
+			<integer>14</integer>
 			<key>completed</key>
 			<false/>
 		</dict>
