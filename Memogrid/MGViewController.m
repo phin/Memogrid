@@ -167,7 +167,11 @@
     difficulty = (debugMode) ? 2 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
-    [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
+    
+    // If we are in Simons/Sequence, provide a bigger delay.
+    float delay = (mode == Sequence || mode == Simon) ? (0.4*difficulty)+0.5 : 2.0;
+    
+    [self performSelector:@selector(startGuessing) withObject:self afterDelay:delay];
 }
 
 - (void) startGuessing
