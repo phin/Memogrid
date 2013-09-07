@@ -26,11 +26,11 @@
 }
 
 - (IBAction) shareFacebook {
-    [self actionShareOnFacebook:@"TODO: Texte Fb"];
+    [self actionShareOnFacebook:SOCIAL];
 }
 
 - (IBAction) shareTwitter {
-    [self actionShareOnTwitter:@"TODO: Texte Twitter"];
+    [self actionShareOnTwitter:SOCIAL];
 }
 
 - (IBAction) sendFeedback {

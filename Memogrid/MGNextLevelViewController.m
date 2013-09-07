@@ -40,7 +40,6 @@
     [b_next startBlinking];
     [self.view addSubview:b_next];
     
-    // TODO : A mettre en pictos
     MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
     [b_level setTitle:@"Replay Level" forState:UIControlStateNormal];
     [b_level addTarget:self action:@selector(replayLevel:) forControlEvents:UIControlEventTouchUpInside];
@@ -89,11 +88,11 @@
 }
 
 - (void)shareFacebook {
-    [self actionShareOnFacebook:@"TODO : Text needed."];
+    [self actionShareOnFacebook:SOCIAL];
 }
 
 - (void)shareTwitter {
-    [self actionShareOnTwitter:@"TODO : Text needed."];
+    [self actionShareOnTwitter:SOCIAL];
 }
 
 

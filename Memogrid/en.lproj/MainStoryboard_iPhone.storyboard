@@ -308,7 +308,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
                                 <rect key="frame" x="33" y="444" width="255" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.24705883860588074" green="0.33725491166114807" blue="0.42352944612503052" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -354,6 +354,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pEF-Cu-QJj"/>
+        <segue reference="rZb-tJ-AOm"/>
     </inferredMetricsTieBreakers>
 </document>
