@@ -60,7 +60,7 @@
     [self.view addSubview:mb_menu];
     
     UIImageView *iv_check = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
-    iv_check.frame = CGRectMake(87, 80, 146, 159);
+    iv_check.frame = CGRectMake(87, (IS_IPHONE_5) ? 80 : 40, 146, 159);
     [self.view addSubview:iv_check];
 }
 

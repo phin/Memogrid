@@ -64,6 +64,7 @@
 {
     // Display Level starts at index 1, whereas real level starts at 0
     int current = [[MGUserLevel sharedInstance] current_level];
+    GameMode mode = [[MGUserLevel sharedInstance] current_mode];
     l_currentlvl.text = [NSString stringWithFormat:@"%02d", current+1];
     
     // Set views
@@ -79,7 +80,10 @@
         b_ready.alpha = 1;
     }];
     
-    // TODO : Alert reminding that we are in Sequence mode.
+    if (current == 0 && mode == Sequence) {
+        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:@"Sequence mode!\n Don't forget, repeat the pattern in the right order." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [firstTime show];
+    }
 }
 
 - (void) initGame

@@ -306,7 +306,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
-                                <rect key="frame" x="33" y="444" width="255" height="30"/>
+                                <rect key="frame" x="33" y="444" width="255" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.24705883860588074" green="0.33725491166114807" blue="0.42352944612503052" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -325,11 +325,10 @@
                             <constraint firstItem="u3G-ti-b0n" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" id="InF-HI-cKS"/>
                             <constraint firstItem="4HY-i3-jD4" firstAttribute="trailing" secondItem="gMC-NW-JKn" secondAttribute="trailing" id="NfZ-s5-apQ"/>
                             <constraint firstItem="u3G-ti-b0n" firstAttribute="top" secondItem="pQN-JG-dwg" secondAttribute="bottom" constant="8" id="Nqv-D0-eAg"/>
-                            <constraint firstItem="7IF-8j-Vm9" firstAttribute="top" secondItem="5OP-zb-56a" secondAttribute="bottom" constant="75" id="PgA-Nx-k8J"/>
                             <constraint firstItem="pQN-JG-dwg" firstAttribute="trailing" secondItem="u3G-ti-b0n" secondAttribute="trailing" id="Q8D-3o-oBN"/>
                             <constraint firstItem="5OP-zb-56a" firstAttribute="centerX" secondItem="AwF-nn-eim" secondAttribute="centerX" id="XJY-J6-ACv"/>
                             <constraint firstItem="gMC-NW-JKn" firstAttribute="top" secondItem="4HY-i3-jD4" secondAttribute="bottom" constant="8" id="aWj-FY-8dF"/>
-                            <constraint firstAttribute="bottom" secondItem="6Lh-O2-Ti0" secondAttribute="bottom" constant="94" id="avF-x8-lOD"/>
+                            <constraint firstAttribute="bottom" secondItem="6Lh-O2-Ti0" secondAttribute="bottom" constant="89" id="avF-x8-lOD"/>
                             <constraint firstItem="6Lh-O2-Ti0" firstAttribute="top" secondItem="gMC-NW-JKn" secondAttribute="bottom" constant="8" id="ceM-uc-Cx0"/>
                             <constraint firstItem="gMC-NW-JKn" firstAttribute="leading" secondItem="4HY-i3-jD4" secondAttribute="leading" id="eTP-hc-vfu"/>
                             <constraint firstItem="7IF-8j-Vm9" firstAttribute="leading" secondItem="pQN-JG-dwg" secondAttribute="leading" id="gaa-Tw-q0W"/>
