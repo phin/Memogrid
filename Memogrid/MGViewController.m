@@ -162,7 +162,7 @@
 - (void) startGameWithLevel:(int)level andDifficulty:(int)difficulty andMode:(GameMode)mode
 {
     level = (level > 24) ? 24 : level; // Don't go over 25
-    difficulty = (debugMode) ? 4 : difficulty;
+    difficulty = (debugMode) ? 2 : difficulty;
     
     [mg_square setGameWithDifficulty:difficulty andMode:mode];
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:2];
@@ -226,7 +226,7 @@
             UIAlertView *al_done = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are one of the few to finish the two games modes that Memogrid offers at the time. Stay tuned for more Game modes and levels!" delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles: nil];
             [al_done show];
         }
-        
+
         [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:mode];
         MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
         [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];

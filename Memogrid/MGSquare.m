@@ -271,6 +271,7 @@
     a_col = [self shuffleArray:a_col];
     
     // Check if there is already an occurence of the pair
+    // TODO : still sending wrong result even if telling that the ai
     if ([self similarPairsWithArray:a_row andArray:a_col] && n > 2) {
         // Init new values.
         return [self setGameWithDifficulty:n andMode:mode];

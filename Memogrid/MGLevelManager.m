@@ -60,6 +60,9 @@
     if (!level) {
         level = [self getUserCurrentLevelForMode:mode];
     }
+    if (level >= 24) {
+        level = 24;
+    }
     int difficulty = [[[a_mode_levels objectAtIndex:level] objectForKey:@"difficulty"] intValue];
     NSLog(@"Difficulty: %i ForLevel: %i", difficulty, level);
     return difficulty;
