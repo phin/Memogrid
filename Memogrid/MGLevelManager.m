@@ -101,12 +101,14 @@
             level++;
         }
     }
+    if (level > 24) {level = 24;}
     //NSLog(@"Level %i", level);
     return level;
 }
 
 + (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode
 {
+    if (level > 24) {level = 24;}
     // Get if the user has finished a spcific level already
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
     return [[[a_mode_levels objectAtIndex:level] objectForKey:@"completed"] boolValue];
@@ -117,9 +119,7 @@
 
 + (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode
 {
-    if (level > 24) {
-        level = 24;
-    }
+    if (level > 24) {level = 24;}
     
     // Set the finished level as done
     NSString *path                 = [self getPlistPath];

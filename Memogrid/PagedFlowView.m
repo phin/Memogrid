@@ -21,6 +21,7 @@
 @synthesize minimumPageScale = _minimumPageScale;
 @synthesize orientation;
 @synthesize currentPageIndex = _currentPageIndex;
+@synthesize viewsNeedTouchEvents = _viewsNeedTouchEvents;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -39,8 +40,14 @@
 - (void)initialize{
     self.clipsToBounds = YES;
     
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-    [self addGestureRecognizer:tapRecognizer];
+    // Added Seraphin 7Sept
+    _viewsNeedTouchEvents = YES;
+    
+    if (!_viewsNeedTouchEvents) {
+        // The PageFlow itself will listen to the touch events
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+        [self addGestureRecognizer:tapRecognizer];
+    }
     
     _needsReload = YES;
     _pageSize = self.bounds.size;

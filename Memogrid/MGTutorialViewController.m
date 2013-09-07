@@ -60,11 +60,6 @@
     return CGSizeMake(320, 355);
 }
 
-- (void)didChangePageToIndex:(int)index forFlowView:(PagedFlowView *)flowView {
-    
-    NSLog(@"didChangePageToIndex: %i forFlowView:%i", index, flowView.tag);
-}
-
 
 #pragma mark -
 #pragma mark PagedFlowView Datasource

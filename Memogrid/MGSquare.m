@@ -271,8 +271,7 @@
     a_col = [self shuffleArray:a_col];
     
     // Check if there is already an occurence of the pair
-    // TODO : still sending wrong result even if telling that the ai
-    if ([self similarPairsWithArray:a_row andArray:a_col] && n > 2) {
+    if ([self similarPairsWithArray:a_row andArray:a_col] && n >= 2) {
         // Init new values.
         return [self setGameWithDifficulty:n andMode:mode];
     }
@@ -287,7 +286,7 @@
         [a_game_row addObject:[NSString stringWithFormat:@"%i", rand_row]];
         [a_game_col addObject:[NSString stringWithFormat:@"%i", rand_col]];
         
-        if ([[MGUserLevel sharedInstance] current_mode] == Simon) {
+        if ([[MGUserLevel sharedInstance] current_mode] == Sequence || [[MGUserLevel sharedInstance] current_mode] == Simon) {
             [self performBlock:^{
                 [self setSquareWithColor:COLOR_RED forRow:rand_row andColumn:rand_col];
             } afterDelay:0.4*i];

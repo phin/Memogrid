@@ -74,8 +74,6 @@
 - (CGSize)sizeForPageInFlowView:(PagedFlowView *)flowView {
     return CGSizeMake(320, 345);
 }
-- (void)didChangePageToIndex:(int)index forFlowView:(PagedFlowView *)flowView {
-}
 
 #pragma mark - PagedFlowView Datasource
 
@@ -162,7 +160,7 @@
     
     if (collectionView.tag == 222) {
         [cell setMode:@"Sequence"];
-        gm_current = Simon;
+        gm_current = Sequence;
     }
     
     // Check if that level is accessible
@@ -197,7 +195,7 @@
     
     if (collectionView.tag == 222)
     {
-        gm_current = Simon;
+        gm_current = Sequence;
         s_mode     = @"Sequence";
     }
     

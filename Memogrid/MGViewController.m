@@ -57,7 +57,7 @@
 {
     [self becomeFirstResponder];
     canPlay        = NO;
-    debugMode      = YES;
+    debugMode      = NO;
 }
 
 - (void) initPreGame
@@ -78,6 +78,8 @@
         l_currentlvl.alpha = 1;
         b_ready.alpha = 1;
     }];
+    
+    // TODO : Alert reminding that we are in Sequence mode.
 }
 
 - (void) initGame
@@ -211,7 +213,7 @@
         current++;
         
         // Switch from Classic to Sequence
-        if (current >= 24 && mode == Classic) {
+        if (current > 24 && mode == Classic) {
             mode = Sequence;
             current = 0;
             NSLog(@"Moving from Classic to Sequence");

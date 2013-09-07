@@ -35,23 +35,24 @@ typedef enum{
 
 @interface PagedFlowView : UIView<UIScrollViewDelegate>{
     
-    PagedFlowViewOrientation orientation;//默认为横向
+    PagedFlowViewOrientation orientation;
     
     UIScrollView        *_scrollView;
     BOOL                _needsReload;
-    CGSize              _pageSize; //一页的尺寸
-    NSInteger           _pageCount;  //总页数
+    CGSize              _pageSize;
+    NSInteger           _pageCount;
     NSInteger           _currentPageIndex;
     
     NSMutableArray      *_cells;
     NSRange              _visibleRange;
-    NSMutableArray      *_reusableCells;//如果以后需要支持reuseIdentifier，这边就得使用字典类型了
+    NSMutableArray      *_reusableCells;
     
-    UIPageControl       *pageControl; //可以是自己自定义的PageControl
+    UIPageControl       *pageControl;
     
-    //如果希望非当前页的大小或者透明度发生变化可以设置这两个值
     CGFloat _minimumPageAlpha;
     CGFloat _minimumPageScale;
+    
+    BOOL _viewsNeedTouchEvents;
     
     
     id <PagedFlowViewDataSource> __weak _dataSource;
@@ -63,12 +64,13 @@ typedef enum{
 @property(nonatomic,strong)    UIPageControl       *pageControl;
 @property (nonatomic, assign) CGFloat minimumPageAlpha;
 @property (nonatomic, assign) CGFloat minimumPageScale;
+@property (nonatomic, assign) BOOL viewsNeedTouchEvents;
 @property (nonatomic, assign) PagedFlowViewOrientation orientation;
 @property (nonatomic, assign, readonly) NSInteger currentPageIndex;
 
 - (void)reloadData;
 
-//获取可重复使用的Cell
+// Cell
 - (UIView *)dequeueReusableCell;
 
 - (void)scrollToPage:(NSUInteger)pageNumber;
@@ -91,10 +93,8 @@ typedef enum{
 
 @protocol PagedFlowViewDataSource <NSObject>
 
-//返回显示View的个数
-- (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView;
 
-//返回给某列使用的View
+- (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView;
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index;
 
 @end
