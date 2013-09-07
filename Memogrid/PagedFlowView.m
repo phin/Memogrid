@@ -1,6 +1,17 @@
-
+//
+//  PagedFlowView.m
+//  taobao4iphone
+//
+//  Created by Lu Kejin on 3/2/12.
+//  Copyright (c) 2012 geeklu.com. All rights reserved.
+//
 
 #import "PagedFlowView.h"
+#import <QuartzCore/QuartzCore.h>
+
+@interface PagedFlowView ()
+@property (nonatomic, assign, readwrite) NSInteger currentPageIndex;
+@end
 
 @implementation PagedFlowView
 @synthesize dataSource = _dataSource;
@@ -9,17 +20,32 @@
 @synthesize minimumPageAlpha = _minimumPageAlpha;
 @synthesize minimumPageScale = _minimumPageScale;
 @synthesize orientation;
+@synthesize currentPageIndex = _currentPageIndex;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Private Methods
+-(void)handleTapGesture:(UIGestureRecognizer*)gestureRecognizer{
+    NSInteger tappedIndex = 0;
+    CGPoint locationInScrollView = [gestureRecognizer locationInView:_scrollView];
+    if (CGRectContainsPoint(_scrollView.bounds, locationInScrollView)) {
+        tappedIndex = _currentPageIndex;
+        if ([self.delegate respondsToSelector:@selector(flowView:didTapPageAtIndex:)]) {
+            [self.delegate flowView:self didTapPageAtIndex:tappedIndex];
+        }
+    }
+}
 
 - (void)initialize{
     self.clipsToBounds = YES;
     
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    [self addGestureRecognizer:tapRecognizer];
+    
     _needsReload = YES;
     _pageSize = self.bounds.size;
     _pageCount = 0;
+    _currentPageIndex = 0;
     
     _minimumPageAlpha = 1.0;
     _minimumPageScale = 1.0;
@@ -36,7 +62,9 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     
-    
+    /*由于UIScrollView在滚动之后会调用自己的layoutSubviews以及父View的layoutSubviews
+     这里为了避免scrollview滚动带来自己layoutSubviews的调用,所以给scrollView加了一层父View
+     */
     UIView *superViewOfScrollView = [[UIView alloc] initWithFrame:self.bounds];
     [superViewOfScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [superViewOfScrollView setBackgroundColor:[UIColor clearColor]];
@@ -45,10 +73,6 @@
     
 }
 
-- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
-{
-    [_scrollView setContentOffset:contentOffset animated:animated];
-}
 
 - (void)dealloc{
     _scrollView.delegate = nil;
@@ -67,6 +91,7 @@
     [self queueReusableCell:cell];
     
     if (cell.superview) {
+        cell.layer.transform = CATransform3DIdentity;
         [cell removeFromSuperview];
     }
     
@@ -76,9 +101,8 @@
 - (void)refreshVisibleCellAppearance{
     
     if (_minimumPageAlpha == 1.0 && _minimumPageScale == 1.0) {
-        return;
+        return;//无需更新
     }
-    
     switch (orientation) {
         case PagedFlowViewOrientationHorizontal:{
             CGFloat offset = _scrollView.contentOffset.x;
@@ -88,18 +112,15 @@
                 CGFloat origin = cell.frame.origin.x;
                 CGFloat delta = fabs(origin - offset);
                 
-                CGRect originCellFrame = CGRectMake(_pageSize.width * i, 0, _pageSize.width, _pageSize.height);
-                
                 [UIView beginAnimations:@"CellAnimation" context:nil];
                 if (delta < _pageSize.width) {
                     cell.alpha = 1 - (delta / _pageSize.width) * (1 - _minimumPageAlpha);
                     
-                    CGFloat inset = (_pageSize.width * (1 - _minimumPageScale)) * (delta / _pageSize.width)/2.0;
-                    cell.frame = UIEdgeInsetsInsetRect(originCellFrame, UIEdgeInsetsMake(inset, inset, inset, inset));
+                    CGFloat pageScale = 1 - (delta / _pageSize.width) * (1 - _minimumPageScale);
+                    cell.layer.transform = CATransform3DMakeScale(pageScale, pageScale, 1);
                 } else {
                     cell.alpha = _minimumPageAlpha;
-                    CGFloat inset = _pageSize.width * (1 - _minimumPageScale) / 2.0 ;
-                    cell.frame = UIEdgeInsetsInsetRect(originCellFrame, UIEdgeInsetsMake(inset, inset, inset, inset));
+                    cell.layer.transform = CATransform3DMakeScale(_minimumPageScale, _minimumPageScale, 1);
                 }
                 [UIView commitAnimations];
             }
@@ -113,18 +134,15 @@
                 CGFloat origin = cell.frame.origin.y;
                 CGFloat delta = fabs(origin - offset);
                 
-                CGRect originCellFrame = CGRectMake(0, _pageSize.height * i, _pageSize.width, _pageSize.height);
-                
                 [UIView beginAnimations:@"CellAnimation" context:nil];
                 if (delta < _pageSize.height) {
                     cell.alpha = 1 - (delta / _pageSize.height) * (1 - _minimumPageAlpha);
                     
-                    CGFloat inset = (_pageSize.height * (1 - _minimumPageScale)) * (delta / _pageSize.height)/2.0;
-                    cell.frame = UIEdgeInsetsInsetRect(originCellFrame, UIEdgeInsetsMake(inset, inset, inset, inset));
+                    CGFloat pageScale = 1 - (delta / _pageSize.height) * (1 - _minimumPageScale);
+                    cell.layer.transform = CATransform3DMakeScale(pageScale, pageScale, 1);
                 } else {
                     cell.alpha = _minimumPageAlpha;
-                    CGFloat inset = _pageSize.height * (1 - _minimumPageScale) / 2.0 ;
-                    cell.frame = UIEdgeInsetsInsetRect(originCellFrame, UIEdgeInsetsMake(inset, inset, inset, inset));
+                    cell.layer.transform = CATransform3DMakeScale(_minimumPageScale, _minimumPageScale, 1);
                 }
                 [UIView commitAnimations];
             }
@@ -136,7 +154,6 @@
 }
 
 - (void)setPageAtIndex:(NSInteger)pageIndex{
-    
     NSParameterAssert(pageIndex >= 0 && pageIndex < [_cells count]);
     
     UIView *cell = [_cells objectAtIndex:pageIndex];
@@ -145,6 +162,7 @@
         cell = [_dataSource flowView:self cellForPageAtIndex:pageIndex];
         NSAssert(cell!=nil, @"datasource must not return nil");
         [_cells replaceObjectAtIndex:pageIndex withObject:cell];
+        
         
         switch (orientation) {
             case PagedFlowViewOrientationHorizontal:
@@ -165,9 +183,11 @@
 
 
 - (void)setPagesAtContentOffset:(CGPoint)offset{
-    
+    if ([_cells count] == 0)
+        return;
+    //计算_visibleRange
     CGPoint startPoint = CGPointMake(offset.x - _scrollView.frame.origin.x, offset.y - _scrollView.frame.origin.y);
-    CGPoint endPoint = CGPointMake(startPoint.x + self.bounds.size.width, startPoint.y + self.bounds.size.height);
+    CGPoint endPoint = CGPointMake(MAX(0, startPoint.x) + self.bounds.size.width, MAX(0, startPoint.y) + self.bounds.size.height);
     
     
     switch (orientation) {
@@ -182,13 +202,14 @@
             
             NSInteger endIndex = startIndex;
             for (int i = startIndex; i < [_cells count]; i++) {
-                
+                //如果都不超过则取最后一个
                 if ((_pageSize.width * (i + 1) < endPoint.x && _pageSize.width * (i + 2) >= endPoint.x) || i+ 2 == [_cells count]) {
-                    endIndex = i + 1;//i+2
+                    endIndex = i + 1;//i+2 是以个数，所以其index需要减去1
                     break;
                 }
             }
             
+            //可见页分别向前向后扩展一个，提高效率
             startIndex = MAX(startIndex - 1, 0);
             endIndex = MIN(endIndex + 1, [_cells count] - 1);
             
@@ -219,12 +240,14 @@
             
             NSInteger endIndex = startIndex;
             for (int i = startIndex; i < [_cells count]; i++) {
+                //如果都不超过则取最后一个
                 if ((_pageSize.height * (i + 1) < endPoint.y && _pageSize.height * (i + 2) >= endPoint.y) || i+ 2 == [_cells count]) {
-                    endIndex = i + 1;//i+2
+                    endIndex = i + 1;//i+2 是以个数，所以其index需要减去1
                     break;
                 }
             }
             
+            //可见页分别向前向后扩展一个，提高效率
             startIndex = MAX(startIndex - 1, 0);
             endIndex = MIN(endIndex + 1, [_cells count] - 1);
             
@@ -251,6 +274,8 @@
     
     
 }
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -281,8 +306,10 @@
     [super layoutSubviews];
     
     if (_needsReload) {
+        //如果需要重新加载数据，则需要清空相关数据全部重新加载
         
         
+        //重置pageCount
         if (_dataSource && [_dataSource respondsToSelector:@selector(numberOfPagesInFlowView:)]) {
             _pageCount = [_dataSource numberOfPagesInFlowView:self];
             
@@ -291,6 +318,7 @@
             }
         }
         
+        //重置pageWidth
         if (_delegate && [_delegate respondsToSelector:@selector(sizeForPageInFlowView:)]) {
             _pageSize = [_delegate sizeForPageInFlowView:self];
         }
@@ -298,16 +326,21 @@
         [_reusableCells removeAllObjects];
         _visibleRange = NSMakeRange(0, 0);
         
-        // cells
+        //从supperView上移除cell
+        for (NSInteger i=0; i<[_cells count]; i++) {
+            [self removeCellAtIndex:i];
+        }
+        
+        //填充cells数组
         [_cells removeAllObjects];
         for (NSInteger index=0; index<_pageCount; index++)
         {
             [_cells addObject:[NSNull null]];
         }
         
-        // _scrollView - contentSize
+        // 重置_scrollView的contentSize
         switch (orientation) {
-            case PagedFlowViewOrientationHorizontal:
+            case PagedFlowViewOrientationHorizontal://横向
                 _scrollView.frame = CGRectMake(0, 0, _pageSize.width, _pageSize.height);
                 _scrollView.contentSize = CGSizeMake(_pageSize.width * _pageCount,_pageSize.height);
                 CGPoint theCenter = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
@@ -326,9 +359,9 @@
     }
     
     
-    [self setPagesAtContentOffset:_scrollView.contentOffset];
+    [self setPagesAtContentOffset:_scrollView.contentOffset];//根据当前scrollView的offset设置cell
     
-    [self refreshVisibleCellAppearance];
+    [self refreshVisibleCellAppearance];//更新各个可见Cell的显示外貌
     
 }
 
@@ -352,6 +385,21 @@
     }
     
     return cell;
+}
+
+- (void)scrollToPage:(NSUInteger)pageNumber {
+    if (pageNumber < _pageCount) {
+        switch (orientation) {
+            case PagedFlowViewOrientationHorizontal:
+                [_scrollView setContentOffset:CGPointMake(_pageSize.width * pageNumber, 0) animated:YES];
+                break;
+            case PagedFlowViewOrientationVertical:
+                [_scrollView setContentOffset:CGPointMake(0, _pageSize.height * pageNumber) animated:YES];
+                break;
+        }
+        [self setPagesAtContentOffset:_scrollView.contentOffset];
+        [self refreshVisibleCellAppearance];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -383,39 +431,32 @@
     [self refreshVisibleCellAppearance];
 }
 
-- (void) updatePosition {
-    NSInteger currentPageIndex = 0;
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //如果有PageControl，计算出当前页码，并对pageControl进行更新
+    
+    NSInteger pageIndex;
     
     switch (orientation) {
         case PagedFlowViewOrientationHorizontal:
-            currentPageIndex = floor(_scrollView.contentOffset.x / _pageSize.width);
+            pageIndex = floor(_scrollView.contentOffset.x / _pageSize.width);
             break;
         case PagedFlowViewOrientationVertical:
-            currentPageIndex = floor(_scrollView.contentOffset.y / _pageSize.height);
+            pageIndex = floor(_scrollView.contentOffset.y / _pageSize.height);
             break;
         default:
             break;
     }
     
-    if (_delegate && [_delegate respondsToSelector:@selector(didChangePageToIndex:forFlowView:)]) {
-        
-        [_delegate didChangePageToIndex:currentPageIndex forFlowView:self];
-    }
-    
     if (pageControl && [pageControl respondsToSelector:@selector(setCurrentPage:)]) {
-        [pageControl setCurrentPage:currentPageIndex];
+        [pageControl setCurrentPage:pageIndex];
     }
     
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self updatePosition];
-}
-
-- (void)goToPageAtIndex:(int)index {
+    if ([_delegate respondsToSelector:@selector(flowView:didScrollToPageAtIndex:)] && _currentPageIndex != pageIndex) {
+        [_delegate flowView:self didScrollToPageAtIndex:pageIndex];
+    }
     
-    [_scrollView setContentOffset:CGPointMake((self.frame.size.width * index), 0) animated:YES];
+    _currentPageIndex = pageIndex;
 }
-
 
 @end

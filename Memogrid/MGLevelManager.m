@@ -117,6 +117,10 @@
 
 + (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode
 {
+    if (level > 24) {
+        level = 24;
+    }
+    
     // Set the finished level as done
     NSString *path                 = [self getPlistPath];
     NSMutableDictionary* d_levels  = [[NSMutableDictionary alloc] initWithContentsOfFile: path];

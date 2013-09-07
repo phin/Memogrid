@@ -51,11 +51,7 @@
     pv_levels.minimumPageScale = 1.0;
     pv_levels.pageControl      = pc_levels;
     [self.view addSubview:pv_levels];
-    
-    if ([[MGUserLevel sharedInstance] current_mode] == Sequence) {
-        [pv_levels goToPageAtIndex:1];
-    }
-    
+        
     NSMutableArray *secondSection = [[NSMutableArray alloc] init];
     for (int i = 0; i < 25; i++) {
         [secondSection addObject:[NSString stringWithFormat:@"item %d", i]];
