@@ -230,7 +230,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4" customClass="MGButton">
-                                <rect key="frame" x="35" y="303" width="250" height="55"/>
+                                <rect key="frame" x="35" y="318" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="2Kk-gK-yH8"/>
                                 </constraints>
@@ -243,7 +243,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-NW-JKn" customClass="MGButton">
-                                <rect key="frame" x="35" y="366" width="250" height="55"/>
+                                <rect key="frame" x="35" y="381" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bMH-yA-Moh"/>
                                 </constraints>
@@ -256,7 +256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-8j-Vm9" customClass="MGButton">
-                                <rect key="frame" x="35" y="117" width="250" height="54"/>
+                                <rect key="frame" x="35" y="132" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Z71-mc-26L"/>
                                 </constraints>
@@ -269,7 +269,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-JG-dwg" customClass="MGButton">
-                                <rect key="frame" x="35" y="179" width="250" height="54"/>
+                                <rect key="frame" x="35" y="194" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Ykb-VL-Vag"/>
                                 </constraints>
@@ -282,7 +282,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-ti-b0n" customClass="MGButton">
-                                <rect key="frame" x="35" y="241" width="250" height="54"/>
+                                <rect key="frame" x="35" y="256" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="alY-Oc-Xnt"/>
                                 </constraints>
@@ -306,10 +306,10 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
-                                <rect key="frame" x="33" y="429" width="255" height="50"/>
+                                <rect key="frame" x="33" y="444" width="255" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7xM-CV-W03"/>
+                                    <constraint firstAttribute="height" constant="35" id="7xM-CV-W03"/>
                                 </constraints>
                                 <color key="textColor" red="0.24705883860588074" green="0.33725491166114807" blue="0.42352944612503052" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
