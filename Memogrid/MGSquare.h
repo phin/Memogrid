@@ -34,7 +34,6 @@ struct square {
     bool dirty;
 };
 
-
 @interface MGSquare : UIView {
     struct square status[ROWS][COLS];
     NSMutableArray *a_currentGame;

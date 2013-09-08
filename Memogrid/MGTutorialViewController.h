@@ -10,7 +10,7 @@
 #import "PagedFlowView.h"
 
 @interface MGTutorialViewController : UIViewController <PagedFlowViewDelegate, PagedFlowViewDataSource> {
-    NSMutableArray *a_tutorials;
+    NSArray *a_tutorials;
 }
 
 @property (nonatomic, retain) IBOutlet PagedFlowView *pv_tutorial;

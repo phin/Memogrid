@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="iy2-vD-2ru"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-0U-uYQ" customClass="MGMenuButton">
@@ -44,7 +44,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-0b-Jk2" customClass="MGButton">
-                                <rect key="frame" x="35" y="257" width="250" height="54"/>
+                                <rect key="frame" x="35" y="213" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="cwa-H6-wrW"/>
                                     <constraint firstAttribute="width" constant="250" id="uhH-Ee-Qy1"/>
@@ -89,11 +89,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zId-Hv-Hh0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uNV-kC-ZtC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-oz-p49" customClass="MGButton">
-                                <rect key="frame" x="35" y="494" width="250" height="54"/>
+                                <rect key="frame" x="35" y="406" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="eU9-ys-ffG"/>
                                 </constraints>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-q3-0IG" customClass="MGButton">
-                                <rect key="frame" x="35" y="432" width="250" height="54"/>
+                                <rect key="frame" x="35" y="344" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Wnn-GD-60h"/>
                                     <constraint firstAttribute="height" constant="54" id="mxo-MJ-PWF"/>
@@ -167,11 +167,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Psv-XC-Cxf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uH9-da-GV3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opy-oL-kUJ" customClass="MGButton">
-                                <rect key="frame" x="35" y="494" width="250" height="54"/>
+                                <rect key="frame" x="35" y="406" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="QsQ-Pc-Fyl"/>
                                 </constraints>
@@ -183,24 +183,16 @@
                                     <action selector="goBackToGame:" destination="ups-tO-mGT" eventType="touchUpInside" id="AJb-Bn-arz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJQ-cR-81V" customClass="PagedFlowView">
-                                <rect key="frame" x="0.0" y="87" width="320" height="354"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="28r-Cz-DNy">
-                                <rect key="frame" x="20" y="449" width="280" height="37"/>
+                                <rect key="frame" x="20" y="361" width="280" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="28r-Cz-DNy" firstAttribute="leading" secondItem="uH9-da-GV3" secondAttribute="leading" constant="20" symbolic="YES" id="3UO-G5-E8P"/>
-                            <constraint firstItem="cJQ-cR-81V" firstAttribute="trailing" secondItem="uH9-da-GV3" secondAttribute="trailing" id="JTf-sd-Tar"/>
                             <constraint firstItem="Opy-oL-kUJ" firstAttribute="top" secondItem="28r-Cz-DNy" secondAttribute="bottom" constant="8" symbolic="YES" id="PHr-CE-Jvg"/>
                             <constraint firstAttribute="bottom" secondItem="Opy-oL-kUJ" secondAttribute="bottom" constant="20" symbolic="YES" id="PY9-03-fe9"/>
-                            <constraint firstItem="cJQ-cR-81V" firstAttribute="top" secondItem="uH9-da-GV3" secondAttribute="top" constant="87" id="RzE-ho-XAF"/>
-                            <constraint firstItem="28r-Cz-DNy" firstAttribute="top" secondItem="cJQ-cR-81V" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7u-GY-Fsr"/>
                             <constraint firstItem="Opy-oL-kUJ" firstAttribute="centerX" secondItem="28r-Cz-DNy" secondAttribute="centerX" id="fME-sP-2gH"/>
-                            <constraint firstItem="cJQ-cR-81V" firstAttribute="leading" secondItem="uH9-da-GV3" secondAttribute="leading" id="k5T-Xo-irS"/>
                             <constraint firstAttribute="bottom" secondItem="28r-Cz-DNy" secondAttribute="bottom" constant="82" id="lkd-Vf-nqF"/>
                             <constraint firstAttribute="trailing" secondItem="28r-Cz-DNy" secondAttribute="trailing" constant="20" symbolic="YES" id="oux-kd-amP"/>
                         </constraints>
@@ -210,7 +202,6 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="pc_tutorial" destination="28r-Cz-DNy" id="x4A-3h-xSn"/>
-                        <outlet property="pv_tutorial" destination="cJQ-cR-81V" id="PMz-9L-zjO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBX-pP-p89" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,11 +217,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4DA-aa-OB7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AwF-nn-eim">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-i3-jD4" customClass="MGButton">
-                                <rect key="frame" x="35" y="318" width="250" height="55"/>
+                                <rect key="frame" x="35" y="230" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="2Kk-gK-yH8"/>
                                 </constraints>
@@ -243,7 +234,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-NW-JKn" customClass="MGButton">
-                                <rect key="frame" x="35" y="381" width="250" height="55"/>
+                                <rect key="frame" x="35" y="293" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="bMH-yA-Moh"/>
                                 </constraints>
@@ -256,7 +247,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-8j-Vm9" customClass="MGButton">
-                                <rect key="frame" x="35" y="132" width="250" height="54"/>
+                                <rect key="frame" x="35" y="44" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Z71-mc-26L"/>
                                 </constraints>
@@ -269,7 +260,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-JG-dwg" customClass="MGButton">
-                                <rect key="frame" x="35" y="194" width="250" height="54"/>
+                                <rect key="frame" x="35" y="106" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Ykb-VL-Vag"/>
                                 </constraints>
@@ -282,7 +273,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-ti-b0n" customClass="MGButton">
-                                <rect key="frame" x="35" y="256" width="250" height="54"/>
+                                <rect key="frame" x="35" y="168" width="250" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="alY-Oc-Xnt"/>
                                 </constraints>
@@ -306,7 +297,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Memogrid 1.0 -  Séraphin Hochart" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-O2-Ti0">
-                                <rect key="frame" x="33" y="444" width="255" height="35"/>
+                                <rect key="frame" x="33" y="356" width="255" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="7xM-CV-W03"/>
@@ -354,7 +345,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="rZb-tJ-AOm"/>

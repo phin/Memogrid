@@ -36,13 +36,15 @@
 }
 
 - (void) initTutorial {
+    pv_tutorial = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5) ? 45 : 10, 320.0, 355.0)];
     pv_tutorial.delegate = self;
     pv_tutorial.dataSource = self;
     pv_tutorial.pageControl = pc_tutorial;
     pv_tutorial.minimumPageAlpha = 0.6;
     pv_tutorial.minimumPageScale = 1.0;
+    [self.view addSubview:pv_tutorial];
     
-    a_tutorials = [[NSMutableArray alloc] initWithObjects:[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor yellowColor], nil];
+    a_tutorials = @[@"Tutorial00.png", @"Tutorial01.png"];
 }
 
 #pragma mark - Flow
@@ -67,18 +69,15 @@
 #pragma mark PagedFlowView Datasource
 
 - (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView {
-    return 4;
+    return 2;
 }
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
     //UIView *v_tutoriel = (UIView *)[flowView dequeueReusableCell]; // TOFIX makes the class crash.
-    UIView *v_tutoriel = [[UIView alloc] init];
-    // create the view
-    if (!v_tutoriel) {
-        v_tutoriel = [[UIView alloc] init];
-    }
-    v_tutoriel.backgroundColor = [a_tutorials objectAtIndex:index];
+    UIImageView *v_tutoriel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[a_tutorials objectAtIndex:index]]];
+    v_tutoriel.contentMode = UIViewContentModeScaleAspectFit;
+    
     return v_tutoriel;
 }
 

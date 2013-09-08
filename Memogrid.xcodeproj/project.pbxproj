@@ -65,6 +65,8 @@
 		42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C303F0172DD76100E51178 /* AudioToolbox.framework */; };
 		42C4A8DC17D050D9007D2158 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8DB17D050D9007D2158 /* Images.xcassets */; };
 		42C4A8E217D0543D007D2158 /* Iconv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C4A8E117D0543D007D2158 /* Iconv3.png */; };
+		42D07A2017DC213600127516 /* Tutorial00.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D07A1E17DC213600127516 /* Tutorial00.png */; };
+		42D07A2117DC213600127516 /* Tutorial01.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D07A1F17DC213600127516 /* Tutorial01.png */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */; };
@@ -160,6 +162,8 @@
 		42D07A1917DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		42D07A1A17DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42D07A1B17DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42D07A1E17DC213600127516 /* Tutorial00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial00.png; sourceTree = "<group>"; };
+		42D07A1F17DC213600127516 /* Tutorial01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial01.png; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -302,8 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				42ED9BE616D1C77A0040C951 /* Delegate & Storyboards */,
-				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				4249397E16E05204002FBBDE /* Views */,
+				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				4216370316E28FC900627743 /* Levels */,
 				42ED9BE416D1C7680040C951 /* Libraries */,
 				42ED9BE516D1C7700040C951 /* UI */,
@@ -350,6 +354,8 @@
 		42C4A8E317D054D3007D2158 /* Icons & Default Images */ = {
 			isa = PBXGroup;
 			children = (
+				42D07A1E17DC213600127516 /* Tutorial00.png */,
+				42D07A1F17DC213600127516 /* Tutorial01.png */,
 				4251DC6117DBE5880020722C /* Icon-57.png */,
 				4251DC6217DBE5880020722C /* Icon-114.png */,
 				425DF71B17DBA4FB00E2201F /* Default4@2x.png */,
@@ -476,6 +482,8 @@
 				425DF72117DBA66900E2201F /* Iconv358.png in Resources */,
 				4242F4EA17C07E55002FE638 /* check.png in Resources */,
 				42C4A8DC17D050D9007D2158 /* Images.xcassets in Resources */,
+				42D07A2017DC213600127516 /* Tutorial00.png in Resources */,
+				42D07A2117DC213600127516 /* Tutorial01.png in Resources */,
 				425DF71E17DBA4FB00E2201F /* Default5@2x.png in Resources */,
 				42A8683016D1A076009FAFD5 /* Default.png in Resources */,
 				425DF72217DBA66900E2201F /* Iconv380.png in Resources */,
