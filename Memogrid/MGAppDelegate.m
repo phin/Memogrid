@@ -7,6 +7,7 @@
 //
 
 #import "MGAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation MGAppDelegate
 
@@ -15,6 +16,9 @@
 {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [Parse setApplicationId:@"zpEFVrh7vqD7PFqR5dKQ9WIghY9k0ifzodrUSCeZ"
+                  clientKey:@"5fXtGQojieVknDivZFvoko245dkPhstQvXXMwvsg"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }

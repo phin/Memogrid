@@ -12,6 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
+    #import <Parse/Parse.h>
     #import "MGButton.h"
     #import "UIViewController+MGBase.h"
 

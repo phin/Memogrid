@@ -33,4 +33,7 @@ typedef enum {
 + (void)setUserFinishedLevel:(int)level forMode:(GameMode)mode;
 + (BOOL)userFinishedLevel:(int)level forMode:(GameMode)mode;
 
+
++ (NSString*)modeToString:(GameMode)mode;
+
 @end

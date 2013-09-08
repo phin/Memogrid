@@ -199,6 +199,9 @@
         s_mode     = @"Sequence";
     }
     
+    NSDictionary *d_selected_level = @{ @"mode" : s_mode, @"level" : @(indexPath.row) };
+    [PFAnalytics trackEvent:@"Menu - Selected Level" dimensions:d_selected_level];
+    
     if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
     {
         [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];

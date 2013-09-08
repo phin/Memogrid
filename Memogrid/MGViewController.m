@@ -161,6 +161,7 @@
         int difficulty = [MGLevelManager getDifficultyFromLevel:current andMode:gm_current];
         [self startGameWithLevel:current andDifficulty:difficulty andMode:gm_current];
     }];
+    
 }
 
 #pragma mark - GAME FLOW FUNCTIONS
@@ -176,6 +177,10 @@
     float delay = (mode == Sequence || mode == Simon) ? (0.4*difficulty)+0.5 : 2.0;
     
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:delay];
+    
+    // Analytics
+    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    [PFAnalytics trackEvent:@"Game - Start" dimensions:d_analytics];
 }
 
 - (void) startGuessing
@@ -197,6 +202,12 @@
     [self userCanPlay:NO];
     [mg_square showAnswer];
     
+    // Analytics
+    GameMode mode = [[MGUserLevel sharedInstance] current_mode];
+    int level     = [[MGUserLevel sharedInstance] current_level];
+    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    [PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
+    
     // 2. Then go to the Lost page.
     [self performSelector:@selector(endedLevelWithSuccess:) withObject:NO afterDelay:1.0];
 }
@@ -204,6 +215,7 @@
 - (void) succeededGame
 {
     [self userCanPlay:NO];
+    
     // Call the end function with a delay so we can have time to show user's feedback
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self endedLevelWithSuccess:YES];
@@ -213,36 +225,42 @@
 - (void) endedLevelWithSuccess:(BOOL)didWin
 {
     [self stopGuessing];
-        
+    
+    GameMode mode = [[MGUserLevel sharedInstance] current_mode];
+    int level     = [[MGUserLevel sharedInstance] current_level];
+    
+    // Analytics
+    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    
     if (didWin) {
-        int current = [[MGUserLevel sharedInstance] current_level];
-        GameMode mode = [[MGUserLevel sharedInstance] current_mode];
-        [MGLevelManager setUserFinishedLevel:current forMode:mode];
-        current++;
+        [MGLevelManager setUserFinishedLevel:level forMode:mode];
+        level++;
         
         // Switch from Classic to Sequence
-        if (current > 24 && mode == Classic) {
+        if (level > 24 && mode == Classic) {
             mode = Sequence;
-            current = 0;
+            level = 0;
             NSLog(@"Moving from Classic to Sequence");
             UIAlertView *al_nextMode = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You completed the Classic mode. Now onto the Sequence mode." delegate:self cancelButtonTitle:@"Next" otherButtonTitles: nil];
             [al_nextMode show];
         }
         
         // Done the game!
-        if (current >= 24 && mode == Sequence) {
-            current--; // put it back for the same level.
+        if (level > 24 && mode == Sequence) {
+            level--; // put it back for the same level.
             // Congratulations
             UIAlertView *al_done = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are one of the few to finish the two games modes that Memogrid offers at the time. Stay tuned for more Game modes and levels!" delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles: nil];
             [al_done show];
         }
 
-        [[MGUserLevel sharedInstance] setCurrentLevel:current forMode:mode];
+        [PFAnalytics trackEvent:@"Game - Succeeded" dimensions:d_analytics];
+        [[MGUserLevel sharedInstance] setCurrentLevel:level forMode:mode];
         MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
         [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];
 
     } else {
         // Start over
+        [PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
         [self initPreGame];
     }
     
@@ -291,7 +309,7 @@
         // Shaking alert
         if (buttonIndex == 1) {
             [self performSegueWithIdentifier:@"goToTutorial" sender:self];
-            NSLog(@"Go to tutorial");
+            [PFAnalytics trackEvent:@"Game - First Tutorial"];
         } else {
             NSLog(@"Cancel Tutorial");
         }

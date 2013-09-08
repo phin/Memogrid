@@ -28,6 +28,14 @@
 		4249398416E05277002FBBDE /* MGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249398316E05277002FBBDE /* MGAboutViewController.m */; };
 		4251DC6317DBE5880020722C /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4251DC6117DBE5880020722C /* Icon-57.png */; };
 		4251DC6417DBE5880020722C /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4251DC6217DBE5880020722C /* Icon-114.png */; };
+		4251DC6617DBF2530020722C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6517DBF2530020722C /* Parse.framework */; };
+		4251DC6817DBF26F0020722C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6717DBF26F0020722C /* CFNetwork.framework */; };
+		4251DC6A17DBF27C0020722C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6917DBF27C0020722C /* CoreLocation.framework */; };
+		4251DC6C17DBF2860020722C /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */; };
+		4251DC6E17DBF28E0020722C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */; };
+		4251DC7017DBF2960020722C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6F17DBF2960020722C /* Security.framework */; };
+		4251DC7217DBF29D0020722C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC7117DBF29D0020722C /* StoreKit.framework */; };
+		4251DC7417DBF2A50020722C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC7317DBF2A50020722C /* SystemConfiguration.framework */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
 		425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc -w"; }; };
 		425DF71D17DBA4FB00E2201F /* Default4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425DF71B17DBA4FB00E2201F /* Default4@2x.png */; };
@@ -104,6 +112,14 @@
 		4249398316E05277002FBBDE /* MGAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAboutViewController.m; sourceTree = "<group>"; };
 		4251DC6117DBE5880020722C /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
 		4251DC6217DBE5880020722C /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		4251DC6517DBF2530020722C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4251DC6717DBF26F0020722C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4251DC6917DBF27C0020722C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4251DC6F17DBF2960020722C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4251DC7117DBF29D0020722C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4251DC7317DBF2A50020722C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		425C83D116ED920A0069FB73 /* PagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedFlowView.h; sourceTree = "<group>"; };
 		425C83D216ED920A0069FB73 /* PagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedFlowView.m; sourceTree = "<group>"; };
 		425DF71B17DBA4FB00E2201F /* Default4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default4@2x.png"; sourceTree = "<group>"; };
@@ -151,12 +167,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4251DC7417DBF2A50020722C /* SystemConfiguration.framework in Frameworks */,
+				4251DC7217DBF29D0020722C /* StoreKit.framework in Frameworks */,
+				4251DC7017DBF2960020722C /* Security.framework in Frameworks */,
+				4251DC6E17DBF28E0020722C /* MobileCoreServices.framework in Frameworks */,
+				4251DC6C17DBF2860020722C /* libz.1.1.3.dylib in Frameworks */,
+				4251DC6A17DBF27C0020722C /* CoreLocation.framework in Frameworks */,
+				4251DC6817DBF26F0020722C /* CFNetwork.framework in Frameworks */,
 				4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */,
 				42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */,
 				4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */,
 				4242F4E417C06F5E002FE638 /* Twitter.framework in Frameworks */,
 				4242F4E217C06F57002FE638 /* Social.framework in Frameworks */,
 				42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */,
+				4251DC6617DBF2530020722C /* Parse.framework in Frameworks */,
 				42A8681E16D1A076009FAFD5 /* UIKit.framework in Frameworks */,
 				42A8682016D1A076009FAFD5 /* Foundation.framework in Frameworks */,
 				42A8682216D1A076009FAFD5 /* CoreGraphics.framework in Frameworks */,
@@ -248,6 +272,14 @@
 		42A8681C16D1A076009FAFD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4251DC7317DBF2A50020722C /* SystemConfiguration.framework */,
+				4251DC7117DBF29D0020722C /* StoreKit.framework */,
+				4251DC6F17DBF2960020722C /* Security.framework */,
+				4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */,
+				4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */,
+				4251DC6917DBF27C0020722C /* CoreLocation.framework */,
+				4251DC6717DBF26F0020722C /* CFNetwork.framework */,
+				4251DC6517DBF2530020722C /* Parse.framework */,
 				4284488B17CC5B390011C1F6 /* GameKit.framework */,
 				4242F4E717C06F70002FE638 /* Accounts.framework */,
 				4242F4E517C06F65002FE638 /* MessageUI.framework */,
@@ -630,14 +662,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"/Users/seraphin/Library/Application Support/Spark Inspector\"",
-					"\"$(SRCROOT)\"",
+					"/Users/seraphin/Library/Application\\ Support/Spark\\ Inspector",
+					"$(SRCROOT)",
+					/Users/seraphin/iOS/Memogrid/Memogrid,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -652,7 +685,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/seraphin/iOS/Memogrid/Memogrid,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
