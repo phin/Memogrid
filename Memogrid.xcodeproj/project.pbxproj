@@ -142,8 +142,6 @@
 		42A8682F16D1A076009FAFD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		42A8683116D1A076009FAFD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		42A8683316D1A076009FAFD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		42A8683616D1A076009FAFD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		42A8683916D1A076009FAFD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		42A8683B16D1A076009FAFD5 /* MGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGViewController.h; sourceTree = "<group>"; };
 		42A8683C16D1A076009FAFD5 /* MGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGViewController.m; sourceTree = "<group>"; };
 		42A8684316D1A076009FAFD5 /* MemogridTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemogridTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +156,10 @@
 		42C303F0172DD76100E51178 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		42C4A8DB17D050D9007D2158 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42C4A8E117D0543D007D2158 /* Iconv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Iconv3.png; sourceTree = "<group>"; };
+		42D07A1817DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		42D07A1917DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		42D07A1A17DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42D07A1B17DBFEE000127516 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -303,10 +305,10 @@
 				4247F48B16FE7A5E00C6A494 /* Custom Elements */,
 				4249397E16E05204002FBBDE /* Views */,
 				4216370316E28FC900627743 /* Levels */,
+				42ED9BE416D1C7680040C951 /* Libraries */,
 				42ED9BE516D1C7700040C951 /* UI */,
 				42C4A8DB17D050D9007D2158 /* Images.xcassets */,
 				42C4A8E317D054D3007D2158 /* Icons & Default Images */,
-				42ED9BE416D1C7680040C951 /* Libraries */,
 				42A8682416D1A076009FAFD5 /* Supporting Files */,
 			);
 			path = Memogrid;
@@ -450,6 +452,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
+				Base,
 			);
 			mainGroup = 42A8681116D1A076009FAFD5;
 			productRefGroup = 42A8681B16D1A076009FAFD5 /* Products */;
@@ -565,6 +569,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				42A8682716D1A076009FAFD5 /* en */,
+				42D07A1A17DBFEE000127516 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -572,7 +577,7 @@
 		42A8683516D1A076009FAFD5 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42A8683616D1A076009FAFD5 /* en */,
+				42D07A1817DBFEE000127516 /* fr */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -580,7 +585,7 @@
 		42A8683816D1A076009FAFD5 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42A8683916D1A076009FAFD5 /* en */,
+				42D07A1917DBFEE000127516 /* fr */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				42A8684E16D1A076009FAFD5 /* en */,
+				42D07A1B17DBFEE000127516 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"/Users/seraphin/Library/Application Support/Spark Inspector\"";
@@ -622,11 +629,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -642,16 +649,17 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
