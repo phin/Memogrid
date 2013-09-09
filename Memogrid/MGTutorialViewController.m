@@ -44,6 +44,7 @@
     pv_tutorial.minimumPageScale = 1.0;
     [self.view addSubview:pv_tutorial];
     
+    // TOFIX : Do code instead of Images for translation...
     a_tutorials = @[@"Tutorial00.png", @"Tutorial01.png"];
 }
 

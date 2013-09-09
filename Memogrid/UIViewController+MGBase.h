@@ -20,5 +20,4 @@
 - (void) presentModalViewController:(UIViewController *)modalViewController withPushDirection: (NSString *) direction;
 - (void) dismissModalViewControllerWithPushDirection:(NSString *) direction;
 
-
 @end

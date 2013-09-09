@@ -30,11 +30,6 @@
     [self initLevels];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	//[self animationPopFrontScaleUp];
-}
-
 - (void) initUI {
     
     self.view.backgroundColor = C_BACK;
@@ -42,9 +37,9 @@
 
 - (void) initLevels {
     
-    [l_title setHidden:!IS_IPHONE_5];
+    [l_title setHidden:(!IS_IPHONE_5 && !IS_IPAD)];
     
-    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5) ? 52 : 5, 320, 345)];
+    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5 || IS_IPAD) ? 52 : 5, 320 * SCALE, 345 * SCALE)];
     pv_levels.delegate         = self;
     pv_levels.dataSource       = self;
     pv_levels.minimumPageAlpha = 1.0;
@@ -72,7 +67,7 @@
 #pragma mark - PagedFlowView Delegate
 
 - (CGSize)sizeForPageInFlowView:(PagedFlowView *)flowView {
-    return CGSizeMake(320, 345);
+    return CGSizeMake(320 * SCALE, 345 * SCALE);
 }
 
 #pragma mark - PagedFlowView Datasource

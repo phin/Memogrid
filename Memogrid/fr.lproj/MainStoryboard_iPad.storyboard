@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="91p-na-hip">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
@@ -37,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="127" id="ONQ-zU-S7J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <color key="textColor" red="0.45882356169999999" green="0.45882356169999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.27843138579999999" green="0.27843138579999999" blue="0.27843138579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -126,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="37" id="sLE-pR-8De"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                <color key="textColor" red="0.45882356169999999" green="0.45882356169999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
@@ -182,23 +183,15 @@
                                     <action selector="goBackToGame:" destination="Dch-4w-1ME" eventType="touchUpInside" id="Vaz-WX-dNU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBW-el-ddE" customClass="PagedFlowView">
-                                <rect key="frame" x="0.0" y="87" width="768" height="810"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lax-Va-VvY">
                                 <rect key="frame" x="20" y="905" width="728" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.10588236149999999" green="0.10588236149999999" blue="0.10588236149999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="GBW-el-ddE" firstAttribute="leading" secondItem="m58-vy-jri" secondAttribute="leading" id="9Uj-qi-p2c"/>
                             <constraint firstItem="BCb-Iy-UHO" firstAttribute="centerX" secondItem="Lax-Va-VvY" secondAttribute="centerX" id="9b6-vG-dEn"/>
-                            <constraint firstItem="Lax-Va-VvY" firstAttribute="top" secondItem="GBW-el-ddE" secondAttribute="bottom" constant="8" symbolic="YES" id="Jzt-67-YAK"/>
-                            <constraint firstItem="GBW-el-ddE" firstAttribute="trailing" secondItem="m58-vy-jri" secondAttribute="trailing" id="LBk-su-XGz"/>
                             <constraint firstItem="BCb-Iy-UHO" firstAttribute="top" secondItem="Lax-Va-VvY" secondAttribute="bottom" constant="8" symbolic="YES" id="SHU-XO-GeP"/>
                             <constraint firstAttribute="bottom" secondItem="BCb-Iy-UHO" secondAttribute="bottom" constant="20" symbolic="YES" id="csk-fG-cTa"/>
-                            <constraint firstItem="GBW-el-ddE" firstAttribute="top" secondItem="m58-vy-jri" secondAttribute="top" constant="87" id="f88-wI-5nh"/>
                             <constraint firstAttribute="bottom" secondItem="Lax-Va-VvY" secondAttribute="bottom" constant="82" id="nqE-0O-XGc"/>
                             <constraint firstItem="Lax-Va-VvY" firstAttribute="leading" secondItem="m58-vy-jri" secondAttribute="leading" constant="20" symbolic="YES" id="vff-Hf-4RT"/>
                             <constraint firstAttribute="trailing" secondItem="Lax-Va-VvY" secondAttribute="trailing" constant="20" symbolic="YES" id="yiP-eu-aEV"/>
@@ -208,7 +201,6 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="pc_tutorial" destination="Lax-Va-VvY" id="OOg-5C-Qhm"/>
-                        <outlet property="pv_tutorial" destination="GBW-el-ddE" id="BjZ-Vi-ioz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKL-MA-12f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,14 +253,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="MEMOGRID 1.0 -  Séraphin Hochart memogrid@phin.fr" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iq7-H0-m6r">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="MEMOGRID 1.0 -  Séraphin Hochart" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iq7-H0-m6r">
                                 <rect key="frame" x="32" y="252" width="255" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="3VS-fA-mwk"/>
                                     <constraint firstAttribute="height" constant="55" id="ofC-Dr-MrY"/>
                                 </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -298,7 +290,7 @@
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
