@@ -11,8 +11,14 @@
 #import "MGMenuButton.h"
 #import "MGLevelManager.h"
 
-@interface MGNextLevelViewController ()
-
+@interface MGNextLevelViewController () {
+    MGButton *b_next;
+    MGButton *b_level;
+    MGButton *b_fb;
+    MGButton *b_tw;
+    MGMenuButton *mb_menu;
+    UIImageView *iv_check;
+}
 @end
 
 @implementation MGNextLevelViewController
@@ -24,45 +30,64 @@
     [self initUI];
 }
 
--(void) viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-}
-
 - (void) initUI {
     self.view.backgroundColor = C_BACK;
     
     NSString *s_next = @"Next Level";
     
     // Next Level, centré dans l'écran
-    MGButton *b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, (self.view.frame.size.height/2)-(55/2), 250, 55)];
+    b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, (self.view.frame.size.height/2)-(55/2), 250, 55)];
     [b_next setTitle:s_next forState:UIControlStateNormal];
     [b_next addTarget:self action:@selector(nextLevel:) forControlEvents:UIControlEventTouchUpInside];
     [b_next startBlinking];
     [self.view addSubview:b_next];
     
-    MGButton *b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
+    b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
     [b_level setTitle:@"Replay Level" forState:UIControlStateNormal];
     [b_level addTarget:self action:@selector(replayLevel:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_level];
 
-    MGButton *b_fb = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-80, 122.5, 55)];
+    b_fb = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-80, 122.5, 55)];
     [b_fb setTitle:@"Facebook" forState:UIControlStateNormal];
     [b_fb addTarget:self action:@selector(shareFacebook) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_fb];
     
-    MGButton *b_tw = [[MGButton alloc] initWithFrame:CGRectMake(35+122.5+5, self.view.frame.size.height-80, 122.5, 55)];
+    b_tw = [[MGButton alloc] initWithFrame:CGRectMake(35+122.5+5, self.view.frame.size.height-80, 122.5, 55)];
     [b_tw setTitle:@"Twitter" forState:UIControlStateNormal];
     [b_tw addTarget:self action:@selector(shareTwitter) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_tw];
     
-    MGMenuButton *mb_menu = [[MGMenuButton alloc] initWithFrame:CGRectMake(265, 20, 35, 33)];
+    mb_menu = [[MGMenuButton alloc] initWithFrame:CGRectMake(265, 20, 35, 33)];
     [mb_menu addTarget:self action:@selector(goToMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:mb_menu];
     
-    UIImageView *iv_check = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
+    iv_check = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
     iv_check.frame = CGRectMake(87, (IS_IPHONE_5) ? 80 : 40, 146, 159);
     [self.view addSubview:iv_check];
+    
+    [self refreshPadLayout];
 }
+
+- (void)refreshPadLayout {
+    // TOFIX
+    // Since we did that part later on, do it separated so we don't touch at the iPhone's layout
+    if (IS_IPAD) {
+        b_next.frame = CGRectMake(self.view.bounds.size.height/2-b_next.frame.size.width/2, self.view.bounds.size.width/2-b_next.frame.size.height/2, b_next.frame.size.width, b_next.frame.size.height);
+        b_level.frame = CGRectMake(0, 0, b_level.frame.size.width, b_level.frame.size.height);
+        b_fb.frame = CGRectMake(0, 0, b_fb.frame.size.width, b_fb.frame.size.height);
+        b_tw.frame = CGRectMake(0, 0, b_tw.frame.size.width, b_tw.frame.size.height);
+        mb_menu.frame = CGRectMake(self.view.bounds.size.height-55, 20, mb_menu.frame.size.width, mb_menu.frame.size.height);
+        iv_check.frame = CGRectMake(self.view.bounds.size.height/2-iv_check.frame.size.width/2, 160, iv_check.frame.size.width, iv_check.frame.size.height);
+        
+        // TODO : Finish the buttons
+    }
+}
+
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self refreshPadLayout];
+}
+
 
 - (IBAction)nextLevel:(id)sender {
     [self dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];

@@ -59,7 +59,8 @@
     
     if (IS_IPAD) {
         float x = self.view.bounds.size.height/2 - pv_levels.frame.size.width/2;
-        pv_levels.frame = CGRectMake(x, pv_levels.frame.origin.y, pv_levels.frame.size.width, pv_levels.frame.size.height);
+        float y = 200.0;
+        pv_levels.frame = CGRectMake(x, y, pv_levels.frame.size.width, pv_levels.frame.size.height);
     }
 }
 
