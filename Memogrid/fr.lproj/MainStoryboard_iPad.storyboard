@@ -28,7 +28,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ida-S9-97x" kind="modal" identifier="gameToMenu" id="u3l-Iv-WjS"/>
+                                    <segue destination="ida-S9-97x" kind="custom" identifier="gameToMenu" customClass="MGTransitionSegue" id="u3l-Iv-WjS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kZ-OV-d6Q">
@@ -72,7 +72,7 @@
                     <connections>
                         <outlet property="b_ready" destination="fuY-a8-Yeo" id="au1-QI-KSp"/>
                         <outlet property="l_currentlvl" destination="6kZ-OV-d6Q" id="10k-lG-BSk"/>
-                        <segue destination="Dch-4w-1ME" kind="modal" identifier="gameToTutorial" modalTransitionStyle="crossDissolve" id="UdM-HQ-xBh"/>
+                        <segue destination="Dch-4w-1ME" kind="custom" identifier="goToTutorial" customClass="MGTransitionSegue" id="UdM-HQ-xBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxQ-B6-RfI" sceneMemberID="firstResponder"/>
@@ -230,7 +230,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dch-4w-1ME" kind="modal" identifier="aboutToTutorial" modalTransitionStyle="crossDissolve" id="5D0-Dw-Nzx"/>
+                                    <segue destination="Dch-4w-1ME" kind="custom" identifier="aboutToTutorial" customClass="MGTransitionSegue" id="5D0-Dw-Nzx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0d-AD-eIg" customClass="MGButton">

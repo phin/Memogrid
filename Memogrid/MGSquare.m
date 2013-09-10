@@ -61,7 +61,7 @@ static struct color_def color_values[COLOR_MAX] = {
     /* Check what the color for this square should be */
     struct square *sq = &status[row][column];
     struct color_def *c = &color_values[sq->color];
-    float radius = 2.0f;
+    float radius = (IS_IPAD) ? 4.0f : 2.0f;
 
     CGContextSetRGBFillColor(context, c->red, c->green, c->blue, c->alpha);
     

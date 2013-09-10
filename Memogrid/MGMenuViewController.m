@@ -38,20 +38,34 @@
 - (void) initLevels {
     
     [l_title setHidden:(!IS_IPHONE_5 && !IS_IPAD)];
-    
-    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5 || IS_IPAD) ? 52 : 5, 320 * SCALE, 345 * SCALE)];
+    pv_levels = [[PagedFlowView alloc] initWithFrame:CGRectMake(0, (IS_IPHONE_5 || IS_IPAD) ? 52 : 5, 320 * SCALE, 345)];
     pv_levels.delegate         = self;
     pv_levels.dataSource       = self;
     pv_levels.minimumPageAlpha = 1.0;
     pv_levels.minimumPageScale = 1.0;
     pv_levels.pageControl      = pc_levels;
     [self.view addSubview:pv_levels];
+    [self refreshiPadFrame];
+    [pc_levels setHidden:IS_IPAD];
         
     NSMutableArray *secondSection = [[NSMutableArray alloc] init];
     for (int i = 0; i < 25; i++) {
         [secondSection addObject:[NSString stringWithFormat:@"item %d", i]];
     }
     a_classic = secondSection;
+}
+
+- (void)refreshiPadFrame {
+    
+    if (IS_IPAD) {
+        float x = self.view.bounds.size.height/2 - pv_levels.frame.size.width/2;
+        pv_levels.frame = CGRectMake(x, pv_levels.frame.origin.y, pv_levels.frame.size.width, pv_levels.frame.size.height);
+    }
+}
+
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self refreshiPadFrame];
 }
 
 
@@ -67,27 +81,47 @@
 #pragma mark - PagedFlowView Delegate
 
 - (CGSize)sizeForPageInFlowView:(PagedFlowView *)flowView {
-    return CGSizeMake(320 * SCALE, 345 * SCALE);
+    return CGSizeMake(320 * SCALE, 345);
 }
 
 #pragma mark - PagedFlowView Datasource
 
 - (NSInteger)numberOfPagesInFlowView:(PagedFlowView *)flowView {
-    return 2;
+    return (IS_IPAD) ? 1 : 2;
 }
 
 - (UIView *)flowView:(PagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
     
-    if (index == 0) {
+    if (IS_IPAD) {
+        // Init views
         if (!v_classic) {
             v_classic = [self levelViewForMode:@"Classic"];
         }
-        return v_classic;
-    } else {
         if (!v_sequence) {
             v_sequence = [self levelViewForMode:@"Sequence"];
         }
-        return v_sequence;
+        
+        // Only one page with the two UICollectionViews side by side
+        UIView *v_levels = [[UIView alloc] init];
+        [v_levels addSubview:v_classic];
+        [v_levels addSubview:v_sequence];
+        
+        // Update frames
+        v_sequence.frame = CGRectMake(320, v_sequence.frame.origin.y, v_sequence.frame.size.width, v_sequence.frame.size.height);
+        
+        return v_levels;
+    } else {
+        if (index == 0) {
+            if (!v_classic) {
+                v_classic = [self levelViewForMode:@"Classic"];
+            }
+            return v_classic;
+        } else {
+            if (!v_sequence) {
+                v_sequence = [self levelViewForMode:@"Sequence"];
+            }
+            return v_sequence;
+        }
     }
     
     return v_sequence; // will never be accessed.
