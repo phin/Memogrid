@@ -58,7 +58,7 @@
 
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
     if (!level) {
-        level = [self getUserCurrentLevelForMode:mode];
+        //level = [self getUserCurrentLevelForMode:mode];
     }
     if (level >= 24) {
         level = 24;
