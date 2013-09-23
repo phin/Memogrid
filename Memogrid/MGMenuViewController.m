@@ -229,7 +229,6 @@
         s_mode     = @"Sequence";
     }
     
-    // TODO : Bug.
     NSDictionary *d_selected_level = @{ @"mode" : s_mode, @"level" : [NSString stringWithFormat:@"%i", indexPath.row] };
     [PFAnalytics trackEvent:@"Menu - Selected Level" dimensions:d_selected_level];
     

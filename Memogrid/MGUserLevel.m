@@ -26,7 +26,8 @@
 {    
     if (self = [super init])
     {
-        self.current_mode  = Classic; // TODO Get from last played.
+        int level_classic = [MGLevelManager getUserCurrentLevelForMode:Classic];
+        self.current_mode  = (level_classic == 24) ? Sequence : Classic;
         self.current_level = [MGLevelManager getUserCurrentLevelForMode:self.current_mode];
     }
     
