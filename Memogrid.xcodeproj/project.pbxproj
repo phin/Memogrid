@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4200AD871708E6E800B8B9B2 /* CVCell.m */; };
 		4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200AD891708E74F00B8B9B2 /* CVCell.xib */; };
+		420C038517F2650D00D8F766 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420C037F17F2650D00D8F766 /* libTestFlight.a */; };
+		420C038617F2650D00D8F766 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 420C038017F2650D00D8F766 /* README.md */; };
+		420C038717F2650D00D8F766 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 420C038117F2650D00D8F766 /* release_notes.md */; };
 		421636FF16E26C4600627743 /* MGTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421636FE16E26C4600627743 /* MGTutorialViewController.m */; };
 		4216370216E28CCD00627743 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4216370116E28CCD00627743 /* Levels.plist */; };
 		4216370616E28FEA00627743 /* MGLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4216370516E28FEA00627743 /* MGLevelManager.m */; };
@@ -37,7 +40,6 @@
 		4251DC6C17DBF2860020722C /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */; };
 		4251DC6E17DBF28E0020722C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */; };
 		4251DC7017DBF2960020722C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC6F17DBF2960020722C /* Security.framework */; };
-		4251DC7217DBF29D0020722C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC7117DBF29D0020722C /* StoreKit.framework */; };
 		4251DC7417DBF2A50020722C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4251DC7317DBF2A50020722C /* SystemConfiguration.framework */; };
 		425C83D416ED920A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; };
 		425C83D516ED9A7A0069FB73 /* PagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C83D216ED920A0069FB73 /* PagedFlowView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc -w"; }; };
@@ -88,6 +90,12 @@
 		4200AD861708E6E800B8B9B2 /* CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCell.h; sourceTree = "<group>"; };
 		4200AD871708E6E800B8B9B2 /* CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVCell.m; sourceTree = "<group>"; };
 		4200AD891708E74F00B8B9B2 /* CVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVCell.xib; sourceTree = "<group>"; };
+		420C037F17F2650D00D8F766 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		420C038017F2650D00D8F766 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		420C038117F2650D00D8F766 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		420C038217F2650D00D8F766 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		420C038317F2650D00D8F766 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		420C038417F2650D00D8F766 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		421636FD16E26C4600627743 /* MGTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTutorialViewController.h; sourceTree = "<group>"; };
 		421636FE16E26C4600627743 /* MGTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTutorialViewController.m; sourceTree = "<group>"; };
 		4216370116E28CCD00627743 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -125,7 +133,6 @@
 		4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4251DC6F17DBF2960020722C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4251DC7117DBF29D0020722C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4251DC7317DBF2A50020722C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		425C83D116ED920A0069FB73 /* PagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedFlowView.h; sourceTree = "<group>"; };
 		425C83D216ED920A0069FB73 /* PagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedFlowView.m; sourceTree = "<group>"; };
@@ -178,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4251DC7417DBF2A50020722C /* SystemConfiguration.framework in Frameworks */,
-				4251DC7217DBF29D0020722C /* StoreKit.framework in Frameworks */,
 				4251DC7017DBF2960020722C /* Security.framework in Frameworks */,
 				4251DC6E17DBF28E0020722C /* MobileCoreServices.framework in Frameworks */,
 				4251DC6C17DBF2860020722C /* libz.1.1.3.dylib in Frameworks */,
@@ -187,6 +193,7 @@
 				4242F4E617C06F65002FE638 /* MessageUI.framework in Frameworks */,
 				42C303F1172DD76100E51178 /* AudioToolbox.framework in Frameworks */,
 				4242F4E817C06F70002FE638 /* Accounts.framework in Frameworks */,
+				420C038517F2650D00D8F766 /* libTestFlight.a in Frameworks */,
 				4242F4E417C06F5E002FE638 /* Twitter.framework in Frameworks */,
 				4242F4E217C06F57002FE638 /* Social.framework in Frameworks */,
 				42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */,
@@ -211,6 +218,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420C037E17F2650D00D8F766 /* TestFlightSDK2.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				420C037F17F2650D00D8F766 /* libTestFlight.a */,
+				420C038017F2650D00D8F766 /* README.md */,
+				420C038117F2650D00D8F766 /* release_notes.md */,
+				420C038217F2650D00D8F766 /* TestFlight+AsyncLogging.h */,
+				420C038317F2650D00D8F766 /* TestFlight+ManualSessions.h */,
+				420C038417F2650D00D8F766 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.0.0;
+			sourceTree = "<group>";
+		};
 		4216370316E28FC900627743 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				4251DC7317DBF2A50020722C /* SystemConfiguration.framework */,
-				4251DC7117DBF29D0020722C /* StoreKit.framework */,
 				4251DC6F17DBF2960020722C /* Security.framework */,
 				4251DC6D17DBF28E0020722C /* MobileCoreServices.framework */,
 				4251DC6B17DBF2860020722C /* libz.1.1.3.dylib */,
@@ -376,6 +395,7 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				420C037E17F2650D00D8F766 /* TestFlightSDK2.0.0 */,
 				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
 				425C83D216ED920A0069FB73 /* PagedFlowView.m */,
 			);
@@ -455,6 +475,11 @@
 				TargetAttributes = {
 					42A8681916D1A076009FAFD5 = {
 						DevelopmentTeam = GYFA7T4L47;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -495,6 +520,7 @@
 				42D07A2017DC213600127516 /* Tutorial00.png in Resources */,
 				42D07A2117DC213600127516 /* Tutorial01.png in Resources */,
 				4276D59E17DE65BB00D30139 /* Icon-144.png in Resources */,
+				420C038617F2650D00D8F766 /* README.md in Resources */,
 				425DF72217DBA66900E2201F /* Iconv380.png in Resources */,
 				42A8683216D1A076009FAFD5 /* Default@2x.png in Resources */,
 				4251DC6417DBE5880020722C /* Icon-114.png in Resources */,
@@ -506,6 +532,7 @@
 				4247F49716FEA01D00C6A494 /* Memogrid.png in Resources */,
 				4247F49816FEA01D00C6A494 /* Memogrid@2x.png in Resources */,
 				4200AD8A1708E74F00B8B9B2 /* CVCell.xib in Resources */,
+				420C038717F2650D00D8F766 /* release_notes.md in Resources */,
 				42C4A8E217D0543D007D2158 /* Iconv3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,9 +705,13 @@
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/seraphin/iOS/Memogrid/Memogrid/Memogrid/TestFlightSDK2.0.0,
+				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "239A4228-AD04-4D1E-8F0B-5217C175F3D5";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -689,8 +720,8 @@
 		42A8685716D1A076009FAFD5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -700,8 +731,12 @@
 				GCC_PREFIX_HEADER = "Memogrid/Memogrid-Prefix.pch";
 				INFOPLIST_FILE = "Memogrid/Memogrid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/seraphin/iOS/Memogrid/Memogrid/Memogrid/TestFlightSDK2.0.0,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "82D85AEA-611C-4001-AB1E-2B0E496C4874";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

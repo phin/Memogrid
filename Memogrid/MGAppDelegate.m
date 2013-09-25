@@ -8,6 +8,7 @@
 
 #import "MGAppDelegate.h"
 #import <Parse/Parse.h>
+#import "TestFlight.h"
 
 @implementation MGAppDelegate
 
@@ -19,7 +20,8 @@
     [Parse setApplicationId:@"zpEFVrh7vqD7PFqR5dKQ9WIghY9k0ifzodrUSCeZ"
                   clientKey:@"5fXtGQojieVknDivZFvoko245dkPhstQvXXMwvsg"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    [TestFlight takeOff:@"f24c0cb3-6676-443f-a1b1-83b1613d2951"];
+
     return YES;
 }
 
