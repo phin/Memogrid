@@ -5,3 +5,36 @@
   Created by Séraphin Hochart on 2013-09-28.
   Copyright (c) 2013 Seraphin Hochart. All rights reserved.
 */
+
+/* General */
+
+"CLASSIC" = "CLASSIC";
+
+"SEQUENCE" = "SEQUENCE";
+
+"share_faceboook" = "Just did my brain a favour by playing with @Memogrid for iOS http://memogridapp.com";
+"share_twitter"   = "Just did my brain a favour by playing with @Memogrid for iOS http://memogridapp.com";
+
+"tutorial_1" = "Repeat the patterns until your brain can't keep up.";
+"tutorial_2" = "How are these patterns built? It's up to you to remember.";
+
+/* Next Level Page */
+
+"next_level"   = "Next Level";
+"replay_level" = "Replay Level";
+
+/* Transitions */
+"classic_to_sequence" = "Sequence mode!\n Don't forget, repeat the pattern in the right order.";
+"start_to_tutorial"   = "Looks like it is your first time here. Do you want a quick tutorial?";
+"notnow"              = "Not now";
+"Tutorial"            = "Tutorial";
+
+"congratulations"   = "Congratulations!";
+"finished_classic_message" = "You completed the Classic mode. Now onto the Sequence mode.";
+"finished_sequence_message" = "You are one of the few to finish the two games modes that Memogrid offers at the time. Stay tuned for more Game modes and levels!";
+
+/* Shake */
+"shake_title"   = "Restart";
+"shake_message" = "Do you want to start a new game?";
+"no" = "NO";
+

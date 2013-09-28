@@ -155,10 +155,10 @@
     
     if ([mode isEqualToString:@"Classic"]) {
         cv_levels.tag = 111;
-        label.text     = @"CLASSIC";
+        label.text     = NSLocalizedString(@"CLASSIC", nil);
     } else if ([mode isEqualToString:@"Sequence"]) {
         cv_levels.tag = 222;
-        label.text     = @"SEQUENCE";
+        label.text     = NSLocalizedString(@"SEQUENCE", nil);
     }
     
     [cv_levels registerClass:[CVCell class] forCellWithReuseIdentifier:@"cvCell"];

@@ -81,7 +81,7 @@
     }];
     
     if (current == 0 && mode == Sequence) {
-        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:@"Sequence mode!\n Don't forget, repeat the pattern in the right order." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"classic_to_sequence", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [firstTime show];
     }
 }
@@ -103,7 +103,7 @@
     if (!isFirstTime) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstTime"];
         
-        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:@"Looks like it is your first time here. Do you want a quick tutorial?" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles:@"Tutorial", nil];
+        UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"start_to_tutorial", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"notnow", nil) otherButtonTitles:NSLocalizedString(@"Tutorial", nil), nil];
         firstTime.tag = 234;
         [firstTime show];
     }
@@ -241,7 +241,7 @@
             mode = Sequence;
             level = 0;
             NSLog(@"Moving from Classic to Sequence");
-            UIAlertView *al_nextMode = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You completed the Classic mode. Now onto the Sequence mode." delegate:self cancelButtonTitle:@"Next" otherButtonTitles: nil];
+            UIAlertView *al_nextMode = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"congratulations", nil) message:NSLocalizedString(@"finished_classic_message", nil) delegate:self cancelButtonTitle:@"Next" otherButtonTitles: nil];
             [al_nextMode show];
         }
         
@@ -249,7 +249,7 @@
         if (level > 24 && mode == Sequence) {
             level--; // put it back for the same level.
             // Congratulations
-            UIAlertView *al_done = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are one of the few to finish the two games modes that Memogrid offers at the time. Stay tuned for more Game modes and levels!" delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles: nil];
+            UIAlertView *al_done = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"congratulations", nil) message:NSLocalizedString(@"finished_sequence_message", nil) delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles: nil];
             [al_done show];
         }
 
@@ -292,10 +292,10 @@
 	if (event.subtype == UIEventSubtypeMotionShake)
 	{
 		UIAlertView * shakeAns = [[UIAlertView alloc]
-                                  initWithTitle:@"Restart"
-                                  message:@"Do you want to start a new game?"
+                                  initWithTitle:NSLocalizedString(@"shake_title", nil)
+                                  message:NSLocalizedString(@"shake_message", nil)
                                   delegate:self
-                                  cancelButtonTitle:@"NO"
+                                  cancelButtonTitle:NSLocalizedString(@"no", nil)
                                   otherButtonTitles:@"OK",nil];
         shakeAns.tag = 2345;
 		[shakeAns show];

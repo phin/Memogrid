@@ -30,10 +30,10 @@
 "izp-k1-RCD.text" = "MEMOGRID";
 
 /* Class = "IBUIButton"; normalTitle = "Share on Facebook"; ObjectID = "pQN-JG-dwg"; */
-"pQN-JG-dwg.normalTitle" = "Partager sur Facebook";
+"pQN-JG-dwg.normalTitle" = "Partage Facebook";
 
 /* Class = "IBUIButton"; normalTitle = "Share on Twitter"; ObjectID = "u3G-ti-b0n"; */
-"u3G-ti-b0n.normalTitle" = "Partager sur Twitter";
+"u3G-ti-b0n.normalTitle" = "Partage Twitter";
 
 /* Class = "IBUILabel"; text = "01"; ObjectID = "vrw-ZW-sqP"; */
 "vrw-ZW-sqP.text" = "01";

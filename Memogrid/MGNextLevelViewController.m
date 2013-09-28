@@ -33,7 +33,7 @@
 - (void) initUI {
     self.view.backgroundColor = C_BACK;
     
-    NSString *s_next = @"Next Level";
+    NSString *s_next = NSLocalizedString(@"next_level", nil);
     
     // Next Level, centré dans l'écran
     b_next = [[MGButton alloc] initWithFrame:CGRectMake(35, (self.view.frame.size.height/2)-(55/2), 250, 55)];
@@ -43,7 +43,7 @@
     [self.view addSubview:b_next];
     
     b_level = [[MGButton alloc] initWithFrame:CGRectMake(35, self.view.frame.size.height-140, 250, 55)];
-    [b_level setTitle:@"Replay Level" forState:UIControlStateNormal];
+    [b_level setTitle:NSLocalizedString(@"replay_level", nil) forState:UIControlStateNormal];
     [b_level addTarget:self action:@selector(replayLevel:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:b_level];
 

@@ -27,7 +27,7 @@
     #define C_RED           [UIColor colorWithRed:182./255. green:4./255. blue:0/255. alpha:1.0] // Intense Red
     #define C_GREEN         [UIColor colorWithRed:0.349 green:0.522 blue:0.153 alpha:1.0] // Winning green.
 
-    #define SOCIAL @"Just did my brain a favour by playing with @Memogrid for iOS http://memogridapp.com"
+    #define SOCIAL NSLocalizedString(@"Just did my brain a favour by playing with @Memogrid for iOS http://memogridapp.com", nil)
 
 
     //#define C_RED [UIColor colorWithRed:204./255. green:91./255. blue:73./255. alpha:1.0] // Pink-ish
