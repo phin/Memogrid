@@ -1,0 +1,39 @@
+
+/* Class = "IBUIButton"; normalTitle = "Play"; ObjectID = "2jm-q3-0IG"; */
+"2jm-q3-0IG.normalTitle" = "Jouer";
+
+/* Class = "IBUIButton"; normalTitle = "Feedback"; ObjectID = "4HY-i3-jD4"; */
+"4HY-i3-jD4.normalTitle" = "Suggestions";
+
+/* Class = "IBUILabel"; text = "MEMOGRID"; ObjectID = "5OP-zb-56a"; */
+"5OP-zb-56a.text" = "MEMOGRID";
+
+/* Class = "IBUITextView"; text = "Memogrid 1.0 -  Séraphin Hochart"; ObjectID = "6Lh-O2-Ti0"; */
+"6Lh-O2-Ti0.text" = "Memogrid 1.0 -  Séraphin Hochart";
+
+/* Class = "IBUIButton"; normalTitle = "Tutorial"; ObjectID = "7IF-8j-Vm9"; */
+"7IF-8j-Vm9.normalTitle" = "Tutoriel";
+
+/* Class = "IBUIButton"; normalTitle = "About"; ObjectID = "EW7-oz-p49"; */
+"EW7-oz-p49.normalTitle" = "A Propos";
+
+/* Class = "IBUIButton"; normalTitle = "Play!"; ObjectID = "Opy-oL-kUJ"; */
+"Opy-oL-kUJ.normalTitle" = "Jouer!";
+
+/* Class = "IBUIButton"; normalTitle = "Start Game"; ObjectID = "Q7R-0b-Jk2"; */
+"Q7R-0b-Jk2.normalTitle" = "Nouveau jeu";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "gMC-NW-JKn"; */
+"gMC-NW-JKn.normalTitle" = "Retour";
+
+/* Class = "IBUILabel"; text = "MEMOGRID"; ObjectID = "izp-k1-RCD"; */
+"izp-k1-RCD.text" = "MEMOGRID";
+
+/* Class = "IBUIButton"; normalTitle = "Share on Facebook"; ObjectID = "pQN-JG-dwg"; */
+"pQN-JG-dwg.normalTitle" = "Partager sur Facebook";
+
+/* Class = "IBUIButton"; normalTitle = "Share on Twitter"; ObjectID = "u3G-ti-b0n"; */
+"u3G-ti-b0n.normalTitle" = "Partager sur Twitter";
+
+/* Class = "IBUILabel"; text = "01"; ObjectID = "vrw-ZW-sqP"; */
+"vrw-ZW-sqP.text" = "01";

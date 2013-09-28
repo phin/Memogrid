@@ -166,16 +166,19 @@
 		42D07A1E17DC213600127516 /* Tutorial00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial00.png; sourceTree = "<group>"; };
 		42D07A1F17DC213600127516 /* Tutorial01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial01.png; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		49E4FA0417F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
+		49E4FA0517F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49E4FA0617F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49FAB51417F74CF300FAFB22 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		49FAB51517F74CF300FAFB22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		49FAB51617F74CF300FAFB22 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		49FAB51717F74CF300FAFB22 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		49FAB51817F74CF300FAFB22 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		49FAB51917F74CF300FAFB22 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		49FAB52017F74E7600FAFB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		49FAB52017F74E7600FAFB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		49FAB52217F74EA900FAFB22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
-		49FAB52617F74F4A00FAFB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		49FAB52817F74F4F00FAFB22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49FAB52617F74F4A00FAFB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49FAB52817F74F4F00FAFB22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -612,6 +615,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				42A8682716D1A076009FAFD5 /* en */,
+				49E4FA0617F7530100C1399C /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -629,6 +633,7 @@
 			children = (
 				49FAB52017F74E7600FAFB22 /* Base */,
 				49FAB52217F74EA900FAFB22 /* en */,
+				49E4FA0417F7530100C1399C /* fr */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 			children = (
 				49FAB52617F74F4A00FAFB22 /* Base */,
 				49FAB52817F74F4F00FAFB22 /* en */,
+				49E4FA0517F7530100C1399C /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
