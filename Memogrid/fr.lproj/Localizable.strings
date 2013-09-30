@@ -26,7 +26,7 @@
 "classic_to_sequence" = "Mode séquence!\n N'oubliez pas de respecter l'ordre.";
 "start_to_tutorial"   = "On dirait que c'est votre première fois! Souhaitez-vous suivre un petit tutoriel?";
 "notnow"              = "Plus tard";
-"Tutorial"            = "Tutorial";
+"Tutorial"            = "Tutoriel";
 
 "congratulations"   = "Félicitations!";
 "finished_classic_message" = "Vous avez fini le mode Classique. Maintenant, le mode Séquence.";

@@ -79,8 +79,31 @@
     UIImageView *v_tutoriel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[a_tutorials objectAtIndex:index]]];
     v_tutoriel.contentMode = UIViewContentModeScaleAspectFit;
     
+    UILabel *l_title = [[UILabel alloc] initWithFrame:CGRectMake(0, 27.0, self.view.frame.size.width, 35)];
+    l_title.text          = (index == 0) ? NSLocalizedString(@"CLASSIC", nil) : NSLocalizedString(@"SEQUENCE", nil);
+    l_title.font          = [UIFont fontWithName:@"Futura" size:30.0];
+    l_title.textColor     = [UIColor whiteColor];
+    l_title.textAlignment = NSTextAlignmentCenter;
+    [v_tutoriel addSubview:l_title];
+    
+    UITextView *tv_explaination = [[UITextView alloc] initWithFrame:CGRectMake(0, 275, 320, 100)];
+    tv_explaination.text            = (index == 0) ? NSLocalizedString(@"tutorial_1", nil) : NSLocalizedString(@"tutorial_2", nil);
+    tv_explaination.font            = [UIFont fontWithName:@"Futura" size:20.0];
+    tv_explaination.textColor       = [UIColor whiteColor];
+    tv_explaination.backgroundColor = [UIColor clearColor];
+    tv_explaination.textAlignment   = NSTextAlignmentCenter;
+    [v_tutoriel addSubview:tv_explaination];
+    
     return v_tutoriel;
 }
 
 
 @end
+
+
+
+
+
+
+
+
