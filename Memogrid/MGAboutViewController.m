@@ -26,11 +26,11 @@
 }
 
 - (IBAction) shareFacebook {
-    [self actionShareOnFacebook:SOCIAL];
+    [self actionShareOnFacebook:NSLocalizedString(@"social", nil)];
 }
 
 - (IBAction) shareTwitter {
-    [self actionShareOnTwitter:SOCIAL];
+    [self actionShareOnTwitter:NSLocalizedString(@"social", nil)];
 }
 
 - (IBAction) sendFeedback {

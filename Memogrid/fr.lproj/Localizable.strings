@@ -5,3 +5,35 @@
   Created by Séraphin Hochart on 2013-09-28.
   Copyright (c) 2013 Seraphin Hochart. All rights reserved.
 */
+
+/* General */
+
+"CLASSIC" = "CLASSIQUE";
+
+"SEQUENCE" = "SEQUENCE";
+
+"social" = "Je viens de faire une faveur a mon cerveau avec @Memogrid pour iOS http://memogridapp.com";
+
+"tutorial_1" = "Répétez le motif jusqu'à ce que vous ne pouvez plus suivre.";
+"tutorial_2" = "Comment sont bâtis les motifs? A vous de vous souvenir.";
+
+/* Next Level Page */
+
+"next_level"   = "Prochain niveau";
+"replay_level" = "Rejouer";
+
+/* Transitions */
+"classic_to_sequence" = "Mode séquence!\n N'oubliez pas de respecter l'ordre.";
+"start_to_tutorial"   = "On dirait que c'est votre première fois! Souhaitez-vous suivre un petit tutoriel?";
+"notnow"              = "Plus tard";
+"Tutorial"            = "Tutorial";
+
+"congratulations"   = "Félicitations!";
+"finished_classic_message" = "Vous avez fini le mode Classique. Maintenant, le mode Séquence.";
+"finished_sequence_message" = "Vous êtes un des courageux à finir les deux modes que ce jeu offre jusqu'à présent. Restez à l'affut!";
+
+/* Shake */
+"shake_title"   = "Nouveau jeu";
+"shake_message" = "Voulez vous recommencer?";
+"no" = "NON";
+
