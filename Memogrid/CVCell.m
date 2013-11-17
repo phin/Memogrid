@@ -37,7 +37,7 @@
     self.titleLabel.textColor    = [UIColor whiteColor];
     
     self.layer.cornerRadius = 2.0;
-    self.backgroundColor = C_LIGHT;
+    self.backgroundColor = C_DEFAULT_ALPHA;
     
     self.canBePlayed = NO;
     
@@ -47,17 +47,17 @@
 - (void) setMode:(NSString *)mode {
     
     if (!self.completed) {
-        self.backgroundColor = C_LIGHT;
+        self.backgroundColor = C_DEFAULT_ALPHA;
     }
 }
 
 - (void) setCompleted:(BOOL)completed {
-    self.backgroundColor = (completed) ? C_GREEN : C_LIGHT;
+    self.backgroundColor = (completed) ? C_GREEN : C_DEFAULT_ALPHA;
 }
 
 - (void) setCanBePlayed:(BOOL)canBePlayed {
     if (!self.completed) {
-        self.backgroundColor = (canBePlayed) ? [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.2] : [UIColor colorWithRed: 0.598 green: 0.525 blue: 0.458 alpha: 0.1];
+        self.backgroundColor = (canBePlayed) ? C_DEFAULT : C_DEFAULT_ALPHA;
     } else {
         self.backgroundColor = C_GREEN;
     }

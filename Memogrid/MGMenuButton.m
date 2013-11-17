@@ -50,7 +50,7 @@
     UIColor* r_first;
     if ([self isHighlighted]) {
         //// Color Declarations Highlighted
-        r_first = C_RED;
+        r_first = C_DEFAULT;
     } else {
         r_first = C_LIGHT;
     }

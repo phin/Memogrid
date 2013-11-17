@@ -16,15 +16,30 @@
     #import "MGButton.h"
     #import "UIViewController+MGBase.h"
 
+    #define FREE YES
+
     #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
     #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     #define UNUSED(x) (void)(x)
     #define SCALE ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 2.0 : 1.0)
 
-    #define C_BACK          [UIColor colorWithRed:12./255. green:50./255. blue:84./255. alpha:1.0]
-    #define C_LIGHT_BACK    [UIColor colorWithRed:48./255. green:70./255. blue:92./255. alpha:1.0]
+//    #define C_BACK          [UIColor colorWithRed:12./255. green:50./255. blue:84./255. alpha:1.0]
+//    #define C_LIGHT_BACK    [UIColor colorWithRed:48./255. green:70./255. blue:92./255. alpha:1.0]
+//    #define C_LIGHT         [UIColor colorWithRed:240./255. green:239./255. blue:234./255. alpha:1.0] // White
+//    #define C_RED           [UIColor colorWithRed:182./255. green:4./255. blue:0/255. alpha:1.0] // Intense Red
+//    #define C_GREEN         [UIColor colorWithRed:0.349 green:0.522 blue:0.153 alpha:1.0] // Winning green.
+
+    // https://kuler.adobe.com/My-Kuler-Theme-color-theme-3210625/
+
+    #define C_BACK          [UIColor colorWithRed:18./255. green:108./255. blue:158./255. alpha:1.0]  // Base color
+    #define C_DEFAULT       [UIColor colorWithRed:16./255. green:96./255. blue:140./255. alpha:1.0]   // Base color variation darker
+    #define C_DEFAULT_ALPHA [UIColor colorWithRed:16./255. green:96./255. blue:140./255. alpha:0.5]   // Base color variation lighter
+    #define C_LIGHT_BACK    [UIColor colorWithRed:240./255. green:239./255. blue:234./255. alpha:1.0] // Border color
     #define C_LIGHT         [UIColor colorWithRed:240./255. green:239./255. blue:234./255. alpha:1.0] // White
-    #define C_RED           [UIColor colorWithRed:182./255. green:4./255. blue:0/255. alpha:1.0] // Intense Red
-    #define C_GREEN         [UIColor colorWithRed:0.349 green:0.522 blue:0.153 alpha:1.0] // Winning green.
+    #define C_RED           [UIColor colorWithRed:243./255. green:61./255. blue:53./255. alpha:1.0]   // Intense Red
+    #define C_GREEN         [UIColor colorWithRed:45./255. green:161./255. blue:95./255 alpha:1.0]   // Winning green. { 0.349, 0.522, 0.153, 1 },
+    #define C_SQUARE_DEFAULT 16./255.,  96./255., 140./255., 1  // Darker blue
+    #define C_SQUARE_GREEN   45./255.,  161./255.,95./255, 1
+    #define C_SQUARE_RED     243./255., 61./255., 53./255., 1
 
 #endif
