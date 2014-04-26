@@ -163,7 +163,6 @@
 		49C7352618386CE3006CD3EA /* UIViewController+BlurryModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BlurryModal.h"; sourceTree = "<group>"; };
 		49C7352718386CE3006CD3EA /* UIViewController+BlurryModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BlurryModal.m"; sourceTree = "<group>"; };
 		49C7352918386E5E006CD3EA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		49DDF4001839190D0069D5EB /* Memogrid free-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Memogrid free-Info.plist"; path = "/Users/phin/iOS/Memogrid/Memogrid free-Info.plist"; sourceTree = "<absolute>"; };
 		49E4FA0417F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		49E4FA0517F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49E4FA0617F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -336,7 +335,6 @@
 		42A8682416D1A076009FAFD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49DDF4001839190D0069D5EB /* Memogrid free-Info.plist */,
 				42A8682516D1A076009FAFD5 /* Memogrid-Info.plist */,
 				42A8682616D1A076009FAFD5 /* InfoPlist.strings */,
 				42A8682916D1A076009FAFD5 /* main.m */,

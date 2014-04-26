@@ -18,6 +18,9 @@
 
 @implementation MGViewController
 
+#define kAlertTutorial 234
+#define kAlertShaking  2345
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -104,7 +107,7 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstTime"];
         
         UIAlertView *firstTime = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"start_to_tutorial", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"notnow", nil) otherButtonTitles:NSLocalizedString(@"Tutorial", nil), nil];
-        firstTime.tag = 234;
+        firstTime.tag = kAlertTutorial;
         [firstTime show];
     }
 }
@@ -296,14 +299,14 @@
                                   delegate:self
                                   cancelButtonTitle:NSLocalizedString(@"no", nil)
                                   otherButtonTitles:@"OK",nil];
-        shakeAns.tag = 2345;
+        shakeAns.tag = kAlertShaking;
 		[shakeAns show];
 	}
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (actionSheet.tag == 234) {
+    if (actionSheet.tag == kAlertTutorial) {
         // First time playing
         // Shaking alert
         if (buttonIndex == 1) {
@@ -312,7 +315,7 @@
         } else {
             NSLog(@"Cancel Tutorial");
         }
-    } else if (actionSheet.tag == 2345){
+    } else if (actionSheet.tag == kAlertShaking){
         // Shaking alert
         if (buttonIndex == 1) {
             [self startGame];
