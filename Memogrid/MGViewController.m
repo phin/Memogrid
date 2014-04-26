@@ -179,8 +179,8 @@
     [self performSelector:@selector(startGuessing) withObject:self afterDelay:delay];
     
     // Analytics
-    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
-    [PFAnalytics trackEvent:@"Game - Start" dimensions:d_analytics];
+    //NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    //[PFAnalytics trackEvent:@"Game - Start" dimensions:d_analytics];
 }
 
 - (void) startGuessing
@@ -203,10 +203,10 @@
     [mg_square showAnswer];
     
     // Analytics
-    GameMode mode = [[MGUserLevel sharedInstance] current_mode];
-    int level     = [[MGUserLevel sharedInstance] current_level];
-    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
-    [PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
+    //GameMode mode = [[MGUserLevel sharedInstance] current_mode];
+    //int level     = [[MGUserLevel sharedInstance] current_level];
+    //NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    //[PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
     
     // 2. Then go to the Lost page.
     [self performSelector:@selector(endedLevelWithSuccess:) withObject:NO afterDelay:1.0];
@@ -230,7 +230,7 @@
     int level     = [[MGUserLevel sharedInstance] current_level];
     
     // Analytics
-    NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
+    //NSDictionary *d_analytics = [[NSDictionary alloc] initWithObjects:@[[MGLevelManager modeToString:mode], [NSString stringWithFormat:@"%i",level]] forKeys:@[@"mode", @"level"] ];
     
     if (didWin) {
         [MGLevelManager setUserFinishedLevel:level forMode:mode];
@@ -253,14 +253,14 @@
             [al_done show];
         }
 
-        [PFAnalytics trackEvent:@"Game - Succeeded" dimensions:d_analytics];
+        //[PFAnalytics trackEvent:@"Game - Succeeded" dimensions:d_analytics];
         [[MGUserLevel sharedInstance] setCurrentLevel:level forMode:mode];
         MGNextLevelViewController *vc_next = [[MGNextLevelViewController alloc] init];
         [self presentModalViewController:vc_next withPushDirection:kCATransitionFromTop];
 
     } else {
         // Start over
-        [PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
+        //[PFAnalytics trackEvent:@"Game - Failed" dimensions:d_analytics];
         [self initPreGame];
     }
     
@@ -282,7 +282,6 @@
 
 - (IBAction)reset
 {
-    // DEBUG ACTIONS
     [self clear];
 }
 
@@ -309,7 +308,7 @@
         // Shaking alert
         if (buttonIndex == 1) {
             [self performSegueWithIdentifier:@"goToTutorial" sender:self];
-            [PFAnalytics trackEvent:@"Game - First Tutorial"];
+            // [PFAnalytics trackEvent:@"Game - First Tutorial"];
         } else {
             NSLog(@"Cancel Tutorial");
         }

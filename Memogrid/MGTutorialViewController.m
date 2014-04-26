@@ -26,8 +26,6 @@
     
     [self initUI];
     [self initTutorial];
-    
-    [PFAnalytics trackEvent:@"Tutorial"];
 }
 
 

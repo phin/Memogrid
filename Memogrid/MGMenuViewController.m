@@ -182,8 +182,8 @@
     static NSString *cellIdentifier = @"cvCell";
     
     CVCell *cell = (CVCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    [cell.titleLabel setText:[NSString stringWithFormat:@"%i",indexPath.row+1]];
-    [cell setLevel:indexPath.row+1];
+    [cell.titleLabel setText:[NSString stringWithFormat:@"%li",indexPath.row+1]];
+    [cell setLevel:(int)indexPath.row+1];
     
     GameMode gm_current = Classic;
     [cell setMode:@"Classic"];
@@ -194,7 +194,7 @@
     }
     
     // Check if that level is accessible
-    if ([MGLevelManager userFinishedLevel:indexPath.row forMode:gm_current]) {
+    if ([MGLevelManager userFinishedLevel:(int)indexPath.row forMode:gm_current]) {
         [cell setCanBePlayed:YES];
         [cell setCompleted:YES];
     } else if (indexPath.row == [MGLevelManager getUserCurrentLevelForMode:gm_current]) {
@@ -229,12 +229,12 @@
         s_mode     = @"Sequence";
     }
     
-    NSDictionary *d_selected_level = @{ @"mode" : s_mode, @"level" : [NSString stringWithFormat:@"%i", indexPath.row] };
-    [PFAnalytics trackEvent:@"Menu - Selected Level" dimensions:d_selected_level];
+    //NSDictionary *d_selected_level = @{ @"mode" : s_mode, @"level" : [NSString stringWithFormat:@"%i", indexPath.row] };
+    //[PFAnalytics trackEvent:@"Menu - Selected Level" dimensions:d_selected_level];
     
-    if ([MGLevelManager canPlayLevelAtIndex:indexPath.row forMode:gm_current])
+    if ([MGLevelManager canPlayLevelAtIndex:(int)indexPath.row forMode:gm_current])
     {
-        [[MGUserLevel sharedInstance] setCurrentLevel: indexPath.row forMode:gm_current];
+        [[MGUserLevel sharedInstance] setCurrentLevel:(int)indexPath.row forMode:gm_current];
         [self dismissModalViewControllerWithPushDirection:kCATransitionFromBottom];
     } else {
         NSLog(@"User cannot access this level.");

@@ -75,7 +75,6 @@
     transition.removedOnCompletion = YES;
     
     [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:@"transition"];
-    
     [self dismissViewControllerAnimated:NO completion:nil];
     
     [CATransaction commit];

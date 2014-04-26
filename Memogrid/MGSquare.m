@@ -41,10 +41,6 @@
 #pragma mark - Drawing
 
 static struct color_def color_values[COLOR_MAX] = {
-//    { 48./255., 70./255., 92./255., 1 }, // Default
-//    { 182./255., 4./255., 0/255., 1 },   // RED
-//    { 0.349, 0.522, 0.153, 1 },          // ANSWER
-//    { 1, 1, 1, 1 }                       // MAX
     { C_SQUARE_DEFAULT },        // Default
     { C_SQUARE_RED },            // RED
     { C_SQUARE_GREEN },          // ANSWER
@@ -212,7 +208,7 @@ static struct color_def color_values[COLOR_MAX] = {
                     
                     
                     // Check if this was the last tile.
-                    int tilesRemaining = [[a_remainingTiles objectAtIndex:0] count];
+                    int tilesRemaining = (int)[[a_remainingTiles objectAtIndex:0] count];
                     for (int i = 0; i < [[a_remainingTiles objectAtIndex:0] count]; i++) {
                         if ([[[a_remainingTiles objectAtIndex:0] objectAtIndex:i] isEqualToString:@"99 Used"]) {
                             tilesRemaining--;

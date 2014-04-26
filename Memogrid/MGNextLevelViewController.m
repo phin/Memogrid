@@ -31,7 +31,7 @@
 }
 
 - (void) initUI {
-    //self.view.backgroundColor = C_BACK;
+    self.view.backgroundColor = C_DEFAULT;
     
     NSString *s_next = NSLocalizedString(@"next_level", nil);
     

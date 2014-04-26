@@ -50,7 +50,7 @@
 
 + (int)getTotalLevelsForMode:(GameMode)mode {
     NSArray *a_mode_levels = [self getLevelsForMode:mode];
-    int total = [a_mode_levels count];
+    int total = (int)[a_mode_levels count];
     return total;
 }
 
@@ -71,7 +71,7 @@
 + (BOOL)finishedGameMode:(GameMode)mode {
     
     int i_usr = [self getUserCurrentLevelForMode:mode]; // starts at 0 to 24 (Classic)
-    int i_max = [[self getLevelsForMode:mode] count];   // 25 (Classic)
+    int i_max = (int)[[self getLevelsForMode:mode] count];   // 25 (Classic)
 
     return (i_usr+1 == i_max) ? YES : NO;
 }
