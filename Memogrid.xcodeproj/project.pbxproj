@@ -65,7 +65,6 @@
 		42D07A2117DC213600127516 /* Tutorial01.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D07A1F17DC213600127516 /* Tutorial01.png */; };
 		42D1D1C916EBA2E8004262BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D1D1C816EBA2E8004262BF /* QuartzCore.framework */; };
 		42ED9BE016D1BEF90040C951 /* VerbBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42A8685E16D1BB00009FAFD5 /* VerbBlack.otf */; };
-		49C7352818386CE3006CD3EA /* UIViewController+BlurryModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C7352718386CE3006CD3EA /* UIViewController+BlurryModal.m */; };
 		49C7352A18386E5E006CD3EA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C7352918386E5E006CD3EA /* CoreImage.framework */; };
 		49FAB51D17F74E4000FAFB22 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB51F17F74E4000FAFB22 /* MainStoryboard_iPhone.storyboard */; };
 		49FAB52517F74F4A00FAFB22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB52717F74F4A00FAFB22 /* Localizable.strings */; };
@@ -160,8 +159,6 @@
 		42D07A1E17DC213600127516 /* Tutorial00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial00.png; sourceTree = "<group>"; };
 		42D07A1F17DC213600127516 /* Tutorial01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial01.png; sourceTree = "<group>"; };
 		42D1D1C816EBA2E8004262BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		49C7352618386CE3006CD3EA /* UIViewController+BlurryModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BlurryModal.h"; sourceTree = "<group>"; };
-		49C7352718386CE3006CD3EA /* UIViewController+BlurryModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BlurryModal.m"; sourceTree = "<group>"; };
 		49C7352918386E5E006CD3EA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		49E4FA0417F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		49E4FA0517F7530100C1399C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -383,8 +380,6 @@
 		42ED9BE416D1C7680040C951 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				49C7352618386CE3006CD3EA /* UIViewController+BlurryModal.h */,
-				49C7352718386CE3006CD3EA /* UIViewController+BlurryModal.m */,
 				425C83D116ED920A0069FB73 /* PagedFlowView.h */,
 				425C83D216ED920A0069FB73 /* PagedFlowView.m */,
 			);
@@ -581,7 +576,6 @@
 				4242F4E017C06EFB002FE638 /* UIViewController+MGBase.m in Sources */,
 				4247F49116FE8B7300C6A494 /* MGButton.m in Sources */,
 				4200AD881708E6E800B8B9B2 /* CVCell.m in Sources */,
-				49C7352818386CE3006CD3EA /* UIViewController+BlurryModal.m in Sources */,
 				42A4D8D3171B77B5001DB069 /* MGUserLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
