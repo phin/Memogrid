@@ -28,4 +28,4 @@ For the designers, feel free to discuss with me on the design work via email: `s
 
 ## License
 
-In addition to the GPL v2 Licence(https://raw.github.com/phin/Memogrid/LICENSE), I ask that you do not publicly distribute the app as a whole in binary form (e.g. on the App Store). If you do want to, please contact me for the permission first. Thank you!
+In addition to the GPL v2 Licence(https://raw.githubusercontent.com/phin/Memogrid/master/LICENSE), I ask that you do not publicly distribute the app as a whole in binary form (e.g. on the App Store). If you do want to, please contact me for the permission first. Thank you!
